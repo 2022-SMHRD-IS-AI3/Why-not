@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.Filtration_infoDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.MapDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -49,10 +52,10 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=82a09d330020169ca7770768877a9db3&libraries=services"></script>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = {
-        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };  
+mapOption = {
+    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+    level: 10 // 지도의 확대 레벨
+};  
 
 // 지도를 생성합니다    
 var map = new kakao.maps.Map(mapContainer, mapOption); 
@@ -60,8 +63,32 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 // 주소-좌표 변환 객체를 생성합니다
 var geocoder = new kakao.maps.services.Geocoder();
 
+
+<%
+MapDAO dao = new MapDAO();
+List<Filtration_infoDTO> list = dao.selectAll();
+%>
+
+var listAddress = [];
+
+<%for(int i=0; i<list.size(); i++){%>
+	listAddress.push('<%=list.get(i).getSup_area()%>')
+<%}%>
+
+console.log(listAddress)
+
+var listName = [];
+
+<%for(int i=0; i<list.size(); i++){%>
+	listAddress.push('<%=list.get(i).getFilt_name()%>')
+<%}%>
+
+console.log(listName)
+
+listAddress.forEach(function(addr, index){
+
 // 주소로 좌표를 검색합니다
-geocoder.addressSearch('행암동 산160', function(result, status) {
+geocoder.addressSearch(addr, function(result, status) {
 
     // 정상적으로 검색이 완료됐으면 
      if (status === kakao.maps.services.Status.OK) {
@@ -73,17 +100,21 @@ geocoder.addressSearch('행암동 산160', function(result, status) {
             map: map,
             position: coords
         });
-
+        //marker.setMap(map);
+               
         // 인포윈도우로 장소에 대한 설명을 표시합니다
-        var infowindow = new kakao.maps.InfoWindow({
-            content: '<div style="width:150px;text-align:center;padding:6px 0;">장성정수장</div>'
+         var infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="width:100px;text-align:center;padding:6px;">'+listName[index]+'</div>'
+           // content: ''
         });
-        infowindow.open(map, marker);
-
+        infowindow.open(map, marker); 
+        
+		// style="display:none;" 
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-        map.setCenter(coords);
+        //map.setCenter(coords);
     } 
-});    
+}); 
+});
 </script>
 	
 	

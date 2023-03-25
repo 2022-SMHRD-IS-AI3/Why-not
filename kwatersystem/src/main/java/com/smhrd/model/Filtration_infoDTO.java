@@ -1,6 +1,8 @@
 package com.smhrd.model;
 
+import lombok.Getter;
 
+@Getter
 
 public class Filtration_infoDTO {
 	private String filt_num;
