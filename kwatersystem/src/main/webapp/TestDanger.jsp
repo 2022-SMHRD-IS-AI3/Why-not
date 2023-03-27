@@ -29,13 +29,68 @@
 		})
 	</script>
 	<div class="box" style="width:30%;height:350px;">
-		<button>광주광역시</buttom><br>
-		<button>전라북도</buttom><br>
-		<button>전라남도</buttom>
+		<table>
+		<tr><td><button  onclick="getGwang()">광주광역시</buttom></td></tr><br>
+		<tr><td><button  onclick="getBook()">전라북도</buttom></td></tr><br>
+		<tr><td><button  onclick="getNam()">전라남도</buttom></td></tr>
 		<!--버튼에 클릭 이벤트 넣을 것-->
+		</table>
 	</div>
-	<div class="box" style="width:70%;height:350px;background-color:lightblue;">
-		<div id="danger"><p>버튼 클릭시 ajax로 처리할 공간</p></div>
+	<div class="box" style="width:70%;height:350px;background-color:lightblue;position:fixed;left:200px">
+		<div id="danger"><p>버튼 클릭시 ajax로 처리할 공간</p>
+		<p>위험도 상위 top10</p>
+		<table border=1 align='center'>
+		<th class=''>
+		<td class='rank'>순위</td>
+		<td class='filt_name'>정수장 이름</td>
+		<td class='danger'>위험도 항목</td>
+		</th>
+		
+		</table>
+		
+		
+		</div>
 	</div>
+	<script>
+	const getGwang = ()=>{
+		 $.ajax({
+			 url:'dangerList.jsp',type : 'post',success :
+				 $(data).find('user').each(function() {
+					 
+					 
+
+		                var us = "";                
+
+		                us += "<tr class=''>";
+		                
+		                for(int i=0;i<10;i++){
+
+		                us +=     "<td class='rank'>"+${i+1}+"</td>";
+
+		                us +=    "<td class='filt_name'>"+${datalist[i].filt_Name}+"</td>";
+
+		                us +=    "<td class='danger'>"+${datalist[i].danger_No}+"</td>";
+		                
+		                us += "</tr>";	                
+
+		                $('.resultTable-body').append(us);
+
+		            });
+				 }
+		 }
+	}
+	const getBook = ()=>{
+		 $.ajax({
+			 url:'',,type : 'get',success :
+			 
+		 }
+	}
+	const getNam = ()=>{
+		 $.ajax({
+			 url:'',,type : 'get',success :
+			 
+		 }
+	}
+	</script>
 </body>
 </html>
