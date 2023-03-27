@@ -233,6 +233,7 @@ mapicon.forEach(function(addr, index) {
 	<table align="center">
 	<tr class="rank">
 	<td colspan="2">120위 중  위</td>
+	<td>commit</td>
 	</tr>
 	</table></div>
 
