@@ -15,7 +15,7 @@
 }
 
 #details_head {
-	width: 1600px;
+	width: 1900px;
 	height: 80px;
 	font-size: 50px;
 }
@@ -26,9 +26,10 @@
 
 #oper_table {
 	position: absolute;
-	top: 120px;
+	top: 140px;
 	width: 500px;
-	margin-left: 30px;
+	margin-left: 110px;
+	background-color: skyblue;
 }
 
 #oper_table th {
@@ -42,9 +43,10 @@
 
 #popu_table {
 	position: absolute;
-	top: 120px;
+	top: 140px;
 	width: 500px;
-	margin-left: 590px;
+	margin-left: 670px;
+	background-color: skyblue;
 }
 
 #popu_table th {
@@ -59,8 +61,8 @@
 #i_table {
 	background-color: black;
 	position: absolute;
-	top: 120px;
-	right: 45px;
+	top: 140px;
+	right: 135px;
 }
 
 #i_table th {
@@ -87,8 +89,8 @@
 #f_table {
 	background-color: black;
 	position: absolute;
-	top: 500px;
-	margin-left: 30px;
+	top: 550px;
+	margin-left: 110px;
 }
 
 #f_table th {
@@ -109,7 +111,8 @@
 	#f_table td[name=no23], #f_table td[name=no29], #f_table td[name=no33],
 	#f_table td[name=no34], #f_table td[name=no35], #f_table td[name=no36],
 	#f_table td[name=no37], #f_table td[name=no39], #f_table td[name=no54],
-	#f_table td[name=no55] {
+	#f_table td[name=no55], #f_table td[name=no3], #f_table td[name=no11],
+	#f_table td[name=no31] {
 	font-size: 12px;
 }
 </style>
