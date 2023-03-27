@@ -32,6 +32,7 @@
 	</script>
 	<div class="box" style="width:30%;height:350px;">
 		<table>
+		<tr><td><button  onclick="getJungook()">전국</buttom></td></tr><br>
 		<tr><td><button  onclick="getGwang()">광주광역시</buttom></td></tr><br>
 		<tr><td><button  onclick="getBook()">전라북도</buttom></td></tr><br>
 		<tr><td><button  onclick="getNam()">전라남도</buttom></td></tr>
@@ -54,6 +55,11 @@
 		</div>
 	</div>
 	<script>
+	const getJungook = ()=>{
+		 $.ajax({
+			 url:'dangerList.jsp',,type : 'get',success :
+			 
+		 }
 	const getGwang = ()=>{
 		 $.ajax({
 			 url:'dangerList.jsp',type : 'post',success :
@@ -90,6 +96,7 @@
 		            });
 				 }
 		 
+	}
 	}
 	const getBook = ()=>{
 		 $.ajax({
