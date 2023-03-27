@@ -205,8 +205,36 @@ mapicon.forEach(function(addr, index) {
 	</script>
 
 
-	<div id="mapcont" class="map1" style="width: 50%; height: 350px;">ajax로
-		불러올 공간(간략정보)</div>
+	<div id="mapcont" class="map1" style="width: 50%; height: 350px;"><table border="1" id="bbb">
+	<tr class="imfor">
+	<td colspan="2">간략정보</td>
+	</tr>
+	<tr class="name">
+	<td>정수장 이름</td>
+	<td>00 정수장</td>
+	</tr>
+	<tr class="address">
+	<td>주소</td>
+	<td></td>
+	</tr>
+	<tr class="region">
+	<td>급수 지역</td>
+	<td></td>
+	</tr>
+	<tr class="year_pro">
+	<td>년간 처리용량</td>
+	<td></td>
+	</tr>
+	</table>
+	<br>
+	<br>
+	<br>
+	<br>
+	<table align="center">
+	<tr class="rank">
+	<td colspan="2">120위 중  위</td>
+	</tr>
+	</table></div>
 
 </body>
 </html>
