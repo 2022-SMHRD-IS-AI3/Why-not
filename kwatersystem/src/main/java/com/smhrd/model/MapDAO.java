@@ -20,6 +20,13 @@ public class MapDAO {
 		
 		return list;
 	}
+	public List<Filtration_infoDTO> selectGwangju() {
+		SqlSession sqlsession = sqlSessionfactory.openSession(true);
+		List<Filtration_infoDTO> list = sqlsession.selectList("selectGwangju");
+		sqlsession.close();
+		
+		return list;
+	}
 	
 	
 	

@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.MapDAO"%>
+<%@page import="com.smhrd.model.Filtration_infoDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -55,33 +57,43 @@
 	const getGwang = ()=>{
 		 $.ajax({
 			 url:'dangerList.jsp',type : 'post',success :
-				 $(data).find('user').each(function() {
-					 
-					 
+				 					 
+					 let dataList=[];
+		 MapDAO dao = new MapDAO();
+		 List<Filtration_infoDTO> dataList = dao.selectGwangju();
+						 
+					 let tableForm = `
+			                <table>
+			                    <tr>
+			                        <th>순위</th>
+			                        <th>정수장 이름</th>
+			                        <th>위험도</th>
+			                    </tr>
+			                `;
 
-		                var us = "";                
+			                for(let i=0;i<10;i++){
+			                tableForm+=`
+			                <tr>
+			                    <td>${i+1}</td>
+			                    <td>${dataList[i].filt_Name}</td>
+			                    <td>${dataList[i].danger_No}</td>
+			                 </tr>
+			                `;
 
-		                us += "<tr class=''>";
-		                
-		                for(int i=0;i<10;i++){
+			            }
+			            tableForm+=`</table>`;
+			            $('#danger').html(tableForm);
+			            error:function(){
+			                //alert('통신실패')
 
-		                us +=     "<td class='rank'>"+${i+1}+"</td>";
-
-		                us +=    "<td class='filt_name'>"+${datalist[i].filt_Name}+"</td>";
-
-		                us +=    "<td class='danger'>"+${datalist[i].danger_No}+"</td>";
-		                
-		                us += "</tr>";	                
-
-		                $('.resultTable-body').append(us);
-
+			            }
 		            });
 				 }
-		 }
+		 
 	}
 	const getBook = ()=>{
 		 $.ajax({
-			 url:'',,type : 'get',success :
+			 url:'dangerList.jsp',,type : 'get',success :
 			 
 		 }
 	}
