@@ -9,7 +9,7 @@
 <script src="./circle-progress.js"></script>
 <style>
 li{list-style:none}
-.menu, {
+.menu {
 	width: 1668px;
 	position: fixed;
 	top: 0px;
@@ -201,7 +201,7 @@ li{list-style:none}
         <a href="TestMain.jsp">홈</a>
       </li>
       <li>
-        <a href="TestMap">지도</a>
+        <a href="TestMap.jsp">정수장 현황</a>
       </li>
       <li>
         <a href="TestDanger.jsp">위험도 순위</a>
