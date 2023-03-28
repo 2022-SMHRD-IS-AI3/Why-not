@@ -58,11 +58,16 @@ li{list-style:none}
 	background-color: skyblue;
 }
 #ccc{
-	width:400px;
-	font-size:15px;
+position:fixed;
+top:350px;
+left:1380px;
+	width:350px;
+	font-size:20px;
+	background-color:transparent;
+	text-align:center;
 }
 #ccc>tr{
-	height:25px;
+	height:40px;
 }
 #ccc td:nth-child(1){
 	width:100px;
@@ -308,7 +313,7 @@ const getsimplecon = (addr)=>{
             //     console.log(movieList[i].rank,movieList[i].movieNm,movieList[i].openDt);
             // }
 		let tableForm = `	
-    <table border="1" id="ccc">
+    <table border="0" id="ccc">
 		<tr class="imfor">
 			<td colspan="2">간략정보</td>
 		</tr>
