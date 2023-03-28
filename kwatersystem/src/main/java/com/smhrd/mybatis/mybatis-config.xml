@@ -22,7 +22,6 @@
     </environment>
   </environments>
   <mappers>
-    <mapper resource="com/smhrd/mapper/TestMapper.xml"/>
     <mapper resource="com/smhrd/mapper/MapMapper.xml"/>   
   </mappers>
 </configuration>
