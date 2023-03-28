@@ -9,7 +9,7 @@
 <script src="./circle-progress.js"></script>
 <style>
 li{list-style:none}
-.menu {
+.menu, {
 	width: 1668px;
 	position: fixed;
 	top: 0px;
@@ -195,8 +195,7 @@ li{list-style:none}
 }
 </style>
 </head>
-<body>
-	
+<body>	
 	<ul class="menu">
       <li>
         <a href="TestMain.jsp">홈</a>
