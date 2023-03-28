@@ -6,30 +6,70 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="./circle-progress.js"></script>
 <style>
-.menu_box {
+li{list-style:none}
+.menu {
+	width: 1668px;
 	position: fixed;
-	top: 10px;
-	right: 10px;
-	text-align: right;
+	top: 0px;
+	left: 78px;
 }
+
+.menu > li {
+  width: 20%; /*20*5=100%*/
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  background-color: #5778ff;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration:none;
+  font-size:14px
+}
+
 
 #details_head {
 	width: 1900px;
 	height: 80px;
-	font-size: 50px;
+	position: fixed;
+	top: 80px;
+	left: 30px;
 }
 
 #details_head>a {
 	margin-left: 100px;
+	font-weight:550;
 }
-
+#details_head>a:nth-child(1){
+	width:380px; 	
+	font-size: 30px;
+	position: fixed;
+	top: 80px;
+	left: 30px;
+}
+#details_head>a:nth-child(3){
+	width:250px; 	
+	font-size: 30px;
+	position: fixed;
+	top: 80px;
+	left: 1450px;
+}
+#details_head>a:nth-child(2){
+	width: 1010px;
+	font-size: 30px;
+	position: fixed;
+	top: 80px;
+	left: 420px;
+}
 #oper_table {
-	position: absolute;
-	top: 140px;
+	position: fixed;
+	top: 185px;
 	width: 500px;
 	margin-left: 110px;
-	background-color: skyblue;
+	background-color: whitesmoke;
 }
 
 #oper_table th {
@@ -38,15 +78,25 @@
 }
 
 #oper_g {
-	height: 303px;
+	height: 307px;
+}
+#circle{
+	text-align: center;
+}
+#circle>div{
+	position: fixed;
+	top: 363px;
+	left: 330px;
+	font-size: 40px;
+	text-align: center;
 }
 
 #popu_table {
-	position: absolute;
-	top: 140px;
+	position: fixed;
+	top: 185px;
 	width: 500px;
 	margin-left: 670px;
-	background-color: skyblue;
+	background-color: whitesmoke;
 }
 
 #popu_table th {
@@ -55,14 +105,41 @@
 }
 
 #popu_g {
-	height: 303px;
+	height: 307px;
+	text-align: center;
+	font-size:30px;
+}
+#popu_g>div:nth-child(1){
+	height: 260px;
+}
+#popu_img{
+	width:250px;
+	position:absolute;
+	left:25%;
+	animation-name: imgAni;
+	animation-duration: 1s;
+	animation-direction: normal;
+	animation-delay: 0.5s;
+}
+@keyframes imgAni{
+	from{
+		width:25px;
+		left:48%;
+		top:50%;
+	}
+	to{
+		left:25%;
+		top:0%;
+		width:250px;
+	}	
 }
 
 #i_table {
+	width:570px;
+	position: fixed;
 	background-color: black;
-	position: absolute;
-	top: 140px;
-	right: 135px;
+	top: 185px;
+	left: 1215px;
 }
 
 #i_table th {
@@ -87,9 +164,10 @@
 }
 
 #f_table {
+	position: fixed;
 	background-color: black;
-	position: absolute;
-	top: 550px;
+	width:1668px;
+	top: 580px;
 	margin-left: 110px;
 }
 
@@ -118,16 +196,29 @@
 </style>
 </head>
 <body>
-	<div class="menu_box">
-		<div class="menu" onclick="hmFunc">메뉴〓</div>
-		<div id="hiddenMenu" style="display: none;">
-			<a>홈</a><br> <a>정수장 현황</a><br> <a>시도별 현황</a><br> <a>위험
-				순위</a>
-		</div>
-	</div>
+	
+	<ul class="menu">
+      <li>
+        <a href="TestMain.jsp">홈</a>
+      </li>
+      <li>
+        <a href="TestMap">지도</a>
+      </li>
+      <li>
+        <a href="TestDanger.jsp">위험도 순위</a>
+      </li>
+      <li>
+        <a href="Details.jsp">상세보기</a>
+      </li>
+      <li>
+        <a href="#">MENU5</a>
+      </li>
+    </ul>
 
 	<div id="details_head">
-		<a>이름 : ??정수장</a> <a>주소 : ?? ?? ??</a> <a>준공년도 : ????</a>
+		<a>이름 : ??? 정수장</a> 
+		<a>주소 : ?? ?? ??</a> 
+		<a>준공년도 : 0000</a>
 	</div>
 
 	<table id="oper_table">
@@ -136,7 +227,9 @@
 		</tr>
 		<tr>
 			<td id="oper_g">
-				가동률 그래프
+				<div id="circle">
+					<div>90%</div>
+				</div>
 			</td>
 		</tr>
 	</table>
@@ -145,7 +238,10 @@
 			<th>급수 인구</th>
 		</tr>
 		<tr>
-			<td id="popu_g">급수인구표시</td>
+			<td id="popu_g">
+				<div style="position:relative"><img src="./icon_users.png" id="popu_img"></div>
+				<div>300,000</div>
+			</td>
 		</tr>
 	</table>
 	<table id="i_table">
@@ -162,75 +258,75 @@
 		</tr>
 		<tr class="i_code">
 			<td>수소이온농도</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td name="no1"></td>
+			<td name="no2"></td>
+			<td name="no3"></td>
+			<td name="no4"></td>
+			<td name="no5"></td>
 		</tr>
 		<tr class="i_code">
 			<td>생물화학적_산소요구량</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td name="no1"></td>
+			<td name="no2"></td>
+			<td name="no3"></td>
+			<td name="no4"></td>
+			<td name="no5"></td>
 		</tr>
 		<tr class="i_code">
 			<td>화학적_산소요구량</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td name="no1"></td>
+			<td name="no2"></td>
+			<td name="no3"></td>
+			<td name="no4"></td>
+			<td name="no5"></td>
 		</tr>
 		<tr class="i_code">
 			<td>총유기탄소</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td name="no1"></td>
+			<td name="no2"></td>
+			<td name="no3"></td>
+			<td name="no4"></td>
+			<td name="no5"></td>
 		</tr>
 		<tr class="i_code">
 			<td>총인</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td name="no1"></td>
+			<td name="no2"></td>
+			<td name="no3"></td>
+			<td name="no4"></td>
+			<td name="no5"></td>
 		</tr>
 		<tr class="i_code">
 			<td>부유물질량</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td name="no1"></td>
+			<td name="no2"></td>
+			<td name="no3"></td>
+			<td name="no4"></td>
+			<td name="no5"></td>
 		</tr>
 		<tr class="i_code">
 			<td>용존산소량</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td name="no1"></td>
+			<td name="no2"></td>
+			<td name="no3"></td>
+			<td name="no4"></td>
+			<td name="no5"></td>
 		</tr>
 		<tr class="i_code">
 			<td>총대장균군</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td name="no1"></td>
+			<td name="no2"></td>
+			<td name="no3"></td>
+			<td name="no4"></td>
+			<td name="no5"></td>
 		</tr>
 		<tr class="i_code">
 			<td>대장균_분원성대장균군</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td name="no1"></td>
+			<td name="no2"></td>
+			<td name="no3"></td>
+			<td name="no4"></td>
+			<td name="no5"></td>
 		</tr>
 	</table>
 	<table id="f_table">
@@ -369,7 +465,7 @@
 	</table>
 
 	<script>
-		$(document).on('click', '[class=menu]', function() {
+		/* $(document).on('click', '[class=menu]', function() {
 			$("#hiddenMenu").css("display", "inline");
 			$(this).removeClass('menu');
 			$(this).attr('class', 'h_menu');
@@ -378,7 +474,18 @@
 			$("#hiddenMenu").css("display", "none");
 			$(this).removeClass('h_menu');
 			$(this).attr('class', 'menu');
-		})
+		}) */
+	</script>
+	<script>
+		$('#circle').circleProgress({
+			startAngle: -Math.PI ,
+	        value: 0.90,
+	        size: 280,
+	        thickness:40,
+	        emptyFill: "rgba(0,0,0,0.1)",
+	        fill: {gradient: ["#DDF1FE", "#016FFE"]},
+			animationStartValue:0.0
+	    });
 	</script>
 
 
