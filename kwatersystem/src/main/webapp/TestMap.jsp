@@ -131,7 +131,7 @@ li{list-style:none}
 			<td>검색</td>
 			<td><input type="text" id="search_fname"></td>
 			<td>정수장</td>
-			<td><button><img src="search_icon.png"></button></td>
+			<td><button onclick="search()"><img src="search_icon.png"></button></td>
 		</tr>
 	</table>
 	
@@ -221,6 +221,10 @@ mapicon.forEach(function(addr, index) {
             // 마커에 클릭이벤트를 등록합니다
             kakao.maps.event.addListener(marker, 'click', function() {
                   // ajax실행
+                  if(infowindow !=null){
+                  infowindow.close();}
+                  
+                  infowindow.open(map, marker);
                   getsimplecon(addr[0]);
                   // console.log(addr[0]);
             });
@@ -229,7 +233,12 @@ mapicon.forEach(function(addr, index) {
       
     });
 });
-		
+
+
+
+
+
+
 						// 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
 						function makeOverListener(map, marker, infowindow) {
 							return function() {
@@ -244,7 +253,7 @@ mapicon.forEach(function(addr, index) {
 							};
 						}
 								
-	</script>
+</script>
 
 
 <script>
@@ -303,6 +312,60 @@ const getsimplecon = (addr)=>{
 }
 </script>
 	
+	<!-- 검색함수 스크립트 -->
+	<script>
+	var infowindow;
+		const search = ()=>{
+			
+			if(infowindow != null){
+			infowindow.close();
+			};
+			
+			let name = $("#search_fname").val();
+			// console.log(name); --> 확인 완.
+			
+			// 정수장 이름으로 주소 찾기
+			var num;
+			var i=0;
+			while(true){
+				if(mapicon[i][1]==name){
+					num = i;
+					break;
+				}
+				i++;
+			}
+			// console.log(i); --> 확인 완.
+			
+			// 지도에 정수장 띄우기
+			geocoder.addressSearch(mapicon[i][0], function(result, status) {
+		        if (status === kakao.maps.services.Status.OK) {
+		            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+		            var marker = new kakao.maps.Marker({
+		            	map : map,
+		                position : coords
+		            });
+
+		            // 인포윈도우를 생성합니다
+		            infowindow = new kakao.maps.InfoWindow({
+		                content : '<div style="width:150px;text-align:center;padding:6px 0;">' + name + '</div>'
+		            });
+		                           
+		            infowindow.open(map, marker);
+		            map.setCenter(coords);
+		                       
+		    } 
+		      
+		    });
+			
+			// 간략정보 띄우기
+			
+			getsimplecon(mapicon[i][0]);
+			
+		}
+	</script>
+	
+
 
 </body>
 </html>
