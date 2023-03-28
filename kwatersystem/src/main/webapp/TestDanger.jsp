@@ -54,18 +54,16 @@
 		
 		</div>
 	</div>
+	
 	<script>
-	const getJungook = ()=>{
-		 $.ajax({
-			 url:'dangerList.jsp',,type : 'get',success :
-			 
-		 }
-	const getGwang = ()=>{
-		 $.ajax({
-			 url:'dangerList.jsp',type : 'post',success :
-				 					 
 					 let dataList=[];
 		 MapDAO dao = new MapDAO();
+	
+	const getJungook = ()=>{
+		 
+		 }
+	const getGwang = ()=>{		
+				 					 
 		 List<Filtration_infoDTO> dataList = dao.selectGwangju();
 						 
 					 let tableForm = `
@@ -88,27 +86,77 @@
 
 			            }
 			            tableForm+=`</table>`;
-			            $('#danger').html(tableForm);
-			            error:function(){
-			                //alert('통신실패')
-
-			            }
-		            });
-				 }
-		 
+			            $('#danger').html(tableForm);			     
+	
 	}
-	}
+	
+	
+	
+	
+	
 	const getBook = ()=>{
-		 $.ajax({
-			 url:'dangerList.jsp',,type : 'get',success :
+		 
+		 
+List<Filtration_infoDTO> dataList = dao.selectJunbook();
 			 
-		 }
+		 let tableForm = `
+               <table>
+                   <tr>
+                       <th>순위</th>
+                       <th>정수장 이름</th>
+                       <th>위험도</th>
+                   </tr>
+               `;
+
+               for(let i=0;i<10;i++){
+               tableForm+=`
+               <tr>
+                   <td>${i+1}</td>
+                   <td>${dataList[i].filt_Name}</td>
+                   <td>${dataList[i].danger_No}</td>
+                </tr>
+               `;
+
+           }
+           tableForm+=`</table>`;
+           $('#danger').html(tableForm);               
 	}
+	
+	
+	
+	
+	
 	const getNam = ()=>{
-		 $.ajax({
-			 url:'',,type : 'get',success :
+		 
+		 
+List<Filtration_infoDTO> dataList = dao.selectJunnam();
 			 
+		 let tableForm = `
+               <table>
+                   <tr>
+                       <th>순위</th>
+                       <th>정수장 이름</th>
+                       <th>위험도</th>
+                   </tr>
+               `;
+
+               for(let i=0;i<10;i++){
+               tableForm+=`
+               <tr>
+                   <td>${i+1}</td>
+                   <td>${dataList[i].filt_Name}</td>
+                   <td>${dataList[i].danger_No}</td>
+                </tr>
+               `;
+           }
+           tableForm+=`</table>`;
+           $('#danger').html(tableForm);           
+     
 		 }
+	
+	
+	
+	
 	}
 	</script>
 </body>
