@@ -100,6 +100,33 @@ li{list-style:none}
 	width:43px;
 	height:43px;
 }
+.button {
+  position:fixed;
+  top:800px;
+  left:1612px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
 
 
 </style>
@@ -134,7 +161,7 @@ li{list-style:none}
 			<td><button onclick="search()"><img src="search_icon.png"></button></td>
 		</tr>
 	</table>
-	
+	<button class="button button2"><a href="Details.jsp">상세보기</a></button>
 
 	<!-- 지도 div -->
 	<div id="map" class="map1"></div>
