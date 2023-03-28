@@ -39,18 +39,7 @@ li{list-style:none}
 	font-weight:550;
 }
 
-.button_box{
-	width:200px;
-	position:fixed;
-	top:210px;
-	left:150px;
-	text-align:center;
-}
-.button_box td>button{
-	width:180px;
-	height:40px;
-	font-size:20px;
-}
+
 
 .box{
 	width:1350px;
@@ -86,7 +75,30 @@ li{list-style:none}
 	background-color:white;
 	font-size:30px;
 }
+.bbb{
+position:fixed; top:210px; left:150px;
+}
+.button_box .button {
+border-radius: 5px;
+  background-color: #00BFFF;
+  border: 1px solid green;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 150px;
+  display: block;
+}
 
+.button_box .button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+.button_box .button:hover {
+  background-color: #008CBA;
+}
 
 
 </style>
@@ -114,19 +126,22 @@ li{list-style:none}
 	<script>
 		
 	</script>
+	<div class="bbb">
 	<table class="button_box">
+	
 		<tr>
-			<td><button id='start' class="jungook">전국</button></td>
+			<td><button id="jungook" class="button">전국</button></td>
 		</tr>
 		<tr>
-			<td><button  class="gwang">광주광역시</button></td>
+			<td><button id="gwang" class="button">광주광역시</button></td>
 		</tr>
 		<tr>
-			<td><button  class="junbook">전라북도</button></td>
+			<td><button id="junbook" class="button">전라북도</button></td>
 		</tr>
 		<tr>
-			<td><button  class="junnam">전라남도</button></td>
+			<td><button id="junnam" class="button">전라남도</button></td>
 		</tr>
+		</table>
 		<!--버튼에 클릭 이벤트 넣을 것-->
 
 	</div>
@@ -182,7 +197,7 @@ li{list-style:none}
 	 console.log(mapicon);
 	
 	
-	 $(".jungook").on('click',function(){
+	 $("#jungook").on('click',function(){
 		console.log('ㅎㅇ');
 		  let tableForm =  `
             <table id='danger'>
@@ -257,7 +272,7 @@ li{list-style:none}
 	 console.log(mapicon2);
 	
 	
-	 $(".gwang").on('click',function(){
+	 $("#gwang").on('click',function(){
 		console.log('ㅎㅇ');
 		  let tableForm2 =  `
             <table id='danger'>
@@ -326,7 +341,7 @@ li{list-style:none}
 	 console.log(mapicon3);
 	
 	
-	 $(".junbook").on('click',function(){
+	 $("#junbook").on('click',function(){
 		console.log('ㅎㅇ');
 		  let tableForm3 =  `
             <table id='danger'>
@@ -395,7 +410,7 @@ li{list-style:none}
 	 console.log(mapicon4);
 	
 	
-	 $(".junnam").on('click',function(){
+	 $("#junnam").on('click',function(){
 		console.log('ㅎㅇ');
 		  let tableForm4 =  `
             <table id='danger'>
@@ -431,7 +446,7 @@ li{list-style:none}
 				
 		</div>
 	</div>
-	<script>$("#start").trigger("click");</script>
+	<script>$("#jungook").trigger("click");</script>
 	
 </body>
 </html>
