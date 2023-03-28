@@ -10,37 +10,136 @@
 <title>Insert title here</title>
 
 <style>
-#simplecontext {
-	background-color: skyblue;
+li{list-style:none}
+.menu {
+	width: 1668px;
+	position: fixed;
+	top: 0px;
+	left: 78px;
+}
+
+.menu > li {
+  width: 20%; /*20*5=100%*/
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  background-color: #5778ff;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration:none;
+  font-size:14px
+}
+.head{
+	position:fixed;
+	top:90px;
+	left:145px;
+	font-size:40px;
+	font-weight:550;
 }
 .map1 {
 	float: left;
 }
+#map{
+	width:1200px;
+	height:700px;
+	position:fixed;
+	top: 200px;
+	left: 118px;
+}
+
+#simplecontext {
+	width:400px;
+	height:500px;
+	position:fixed;
+	top:270px;
+	left: 1360px;
+	background-color: skyblue;
+}
+#ccc{
+	width:400px;
+	font-size:15px;
+}
+#ccc>tr{
+	height:25px;
+}
+#ccc td:nth-child(1){
+	width:100px;
+}
+
+.f_search{
+	width:400px;
+	height:50px;
+	font-size:20px;
+	position:fixed;
+	top: 200px;
+	left:1360px;
+}
+.f_search td:nth-child(1){
+	width:100px;
+	height:25px;
+	background-color:whitesmoke;
+	text-align:center;
+}
+.f_search td:nth-child(3){
+
+}
+#search_fname{
+	height:30px;
+}
+.f_search td>button{
+	width:45px;
+	height:45px;
+	text-align:center;	
+}
+.f_search button>img{
+	position:absolute;
+	top:4px;
+	left:353px;;
+	width:43px;
+	height:43px;
+}
+
+
 </style>
 </head>
 <body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-	<h1>지도</h1>
 
-	<span class="menu" onclick="hmFunc">메뉴〓</span>
-	<div id="hiddenMenu" style="display: none;">
-		<a href="TestMain.jsp">홈</a> <a href="TestMap.jsp">정수장 현황</a> <a
-			href="TestLocal1.jsp">시도별 현황</a> <a href="TestDanger.jsp">위험 순위</a>
-	</div>
+	<ul class="menu">
+      <li>
+        <a href="TestMain.jsp">홈</a>
+      </li>
+      <li>
+        <a href="TestMap.jsp">정수장 현황</a>
+      </li>
+      <li>
+        <a href="TestDanger.jsp">위험도 순위</a>
+      </li>
+      <li>
+        <a href="Details.jsp">상세보기</a>
+      </li>
+      <li>
+        <a href="#">MENU5</a>
+      </li>
+    </ul>
+	<div class="head">정수장 현황</div>
+
+	<table class="f_search">
+		<tr>
+			<td>검색</td>
+			<td><input type="text" id="search_fname"></td>
+			<td>정수장</td>
+			<td><button><img src="search_icon.png"></button></td>
+		</tr>
+	</table>
 	
-	<script>
-		$(".menu").on('click',function(){
-			$("#hiddenMenu").css("display","block");
-		})
-	</script>
-
-	<br>
-	<br>
 
 	<!-- 지도 div -->
-	<div id="map" class="map1" style="width: 50%; height: 350px;"></div>
+	<div id="map" class="map1"></div>
 	<!-- 간략보기 div -->
-	<div id="simplecontext" class="map1" style="width: 50%; height: 350px;"></div>
+	<div id="simplecontext" class="map1"></div>
 	
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=82a09d330020169ca7770768877a9db3&libraries=services"></script>
