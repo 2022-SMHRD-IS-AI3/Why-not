@@ -9,18 +9,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectAll" resultType="Filtration_infoDTO">
 		select * from FILTLATION_INFO
 	</select>
-	<select id="selectjungook" resultType="Filtration_infoDTO">
-		select * from FILTLATION_INFO order by danger_no desc;
+	<select id="simpleContext" resultType="Filtration_infoDTO">
+		select * from FILTLATION_INFO where addr=#{addr}
+	</select>
+	
+	
+	<!-- <select id="selectjungook" resultType="Filtration_infoDTO">
+		select * from FILTLATION_INFO order by danger_no desc
 	</select>
 	<select id="selectGwangju" resultType="Filtration_infoDTO">
-		select * from FILTLATION_INFO where local='광주광역시' order by danger_no desc;
+		select * from FILTLATION_INFO where local='광주광역시' order by danger_no desc
 	</select>
 	<select id="selectjunbook" resultType="Filtration_infoDTO">
-		select * from FILTLATION_INFO where local='전라북도' order by danger_no desc;
+		select * from FILTLATION_INFO where local='전라북도' order by danger_no desc
 	</select>
 	<select id="selectjunnam" resultType="Filtration_infoDTO">
-		select * from FILTLATION_INFO where local='전라남도' order by danger_no desc;
-	</select>
+		select * from FILTLATION_INFO where local='전라남도' order by danger_no desc
+	</select> -->
 	
 	
 	

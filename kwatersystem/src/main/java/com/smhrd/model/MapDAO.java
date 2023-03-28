@@ -15,18 +15,38 @@ public class MapDAO {
 	// 지도 아이콘 표시
 	public List<Filtration_infoDTO> selectAll() {
 		SqlSession sqlsession = sqlSessionfactory.openSession(true);
-		List<Filtration_infoDTO> list = sqlsession.selectList("selectAll");
+		List<Filtration_infoDTO> list = sqlsession.selectList("com.smhrd.mapper.MapMapper.selectAll");
 		sqlsession.close();
 		
-		return list;
+		return list;		
 	}
-	public List<Filtration_infoDTO> selectGwangju() {
+
+
+	public Filtration_infoDTO simpleContext(Filtration_infoDTO dto) {
 		SqlSession sqlsession = sqlSessionfactory.openSession(true);
-		List<Filtration_infoDTO> list = sqlsession.selectList("selectGwangju");
+		Filtration_infoDTO simpleContext = sqlsession.selectOne("simpleContext", dto);
 		sqlsession.close();
 		
-		return list;
+		return simpleContext;
 	}
+
+
+	
+
+
+	
+	
+	
+	
+	
+	
+//	public List<Filtration_infoDTO> selectGwangju() {
+//		SqlSession sqlsession = sqlSessionfactory.openSession(true);
+//		List<Filtration_infoDTO> list = sqlsession.selectList("selectGwangju");
+//		sqlsession.close();
+//				
+//		return list;
+//	}
 	
 	
 	
