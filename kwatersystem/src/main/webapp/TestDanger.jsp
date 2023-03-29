@@ -1,4 +1,6 @@
 
+<%@page import="com.smhrd.model.Danger_infoDTO"%>
+<%@page import="com.smhrd.model.Danger_infoDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.MapDAO"%>
 <%@page import="com.smhrd.model.Filtration_infoDTO"%>
@@ -150,10 +152,17 @@ border-radius: 5px;
 	
 	console.log("test")
 	 <%MapDAO dao = new MapDAO();
+	 Danger_infoDAO ddao= new Danger_infoDAO();
 	 List<Filtration_infoDTO> dataList = dao.selectJungook();
 	 List<Filtration_infoDTO> gwangList = dao.selectGwangju();
 	 List<Filtration_infoDTO> bookList = dao.selectJunbook();
 	 List<Filtration_infoDTO> namList = dao.selectJunnam();
+	 List<Danger_infoDTO> dataDList = ddao.selectDJungook();
+	 List<Danger_infoDTO> gwangDList = ddao.selectDGwangju();
+	 List<Danger_infoDTO> bookDList = ddao.selectDJunbook();
+	 List<Danger_infoDTO> namDList = ddao.selectDJunnam();
+	 
+	 
 	 
 	 %>
 	 
@@ -168,8 +177,8 @@ border-radius: 5px;
 	 filt_name.push('<%=dataList.get(i).getFilt_name() %>')
 	 <%}%>
 	 
-	 console.log(filt_name)
-
+/* 	 console.log(filt_name)
+	  */
 
 	 // 정수장 위험도 리스트
 	 var danger = [];
@@ -177,16 +186,63 @@ border-radius: 5px;
 	 danger.push('<%=dataList.get(i).getDanger_no()%>')
 	 <%}%>
 	 
-	 console.log(danger)
+	/*  console.log(danger) */
+	 
+	//가동률 위험도 리스트
+ 	 var oper_danger = [];
+	 <%for (int i = 0; i < dataList.size(); i++) {%>
+	 oper_danger.push('<%=dataDList.get(i).getOper_danger() %>')
+	 <%}%>
+/* 	 console.log('ㅜㅜ')
+	 console.log(oper_danger) */
+	 
+	//공급세대 위험도 리스트 const_danger
+ 	 var sup_danger = [];
+	 <%for (int i = 0; i < dataList.size(); i++) {%>
+	 sup_danger.push('<%=dataDList.get(i).getSup_danger() %>')
+	 <%}%>
+/* 	 console.log('ㅜㅜ')
+	 console.log(sup_danger) */
+	 
+	 
+	//준공년도 위험도 리스트 const_danger
+ 	 var const_danger = [];
+	 <%for (int i = 0; i < dataList.size(); i++) {%>
+	 const_danger.push('<%=dataDList.get(i).getConst_danger() %>')
+	 <%}%>
+/* 	 console.log('ㅜㅜ')
+	 console.log(const_danger) */
+	 
+	 
+	//취수장 수질 위험도 리스트 const_danger
+ 	 var inta_danger = [];
+	 <%for (int i = 0; i < dataList.size(); i++) {%>
+	 inta_danger.push('<%=dataDList.get(i).getInta_danger() %>')
+	 <%}%>
+/* 	 console.log('ㅜㅜ')
+	 console.log(inta_danger) */
+	 
+	 
+	//정수장 수질 위험도 리스트 const_danger
+ 	 var filt_danger = [];
+	 <%for (int i = 0; i < dataList.size(); i++) {%>
+	 filt_danger.push('<%=dataDList.get(i).getFilt_danger() %>')
+	 <%}%>
+/* 	 console.log('ㅜㅜ')
+	 console.log(filt_danger) */
 
-
-	 // 주소 이름 이차원배열
+	 
+	 
+	 
+	 // 전국 위험도 데이터 이차원배열생성 데이터 넣기전 셋팅
 	 const mapicon = new Array(danger.length);
 	 for (var i = 0; i< danger.length; i++){
-	 	mapicon[i] = new Array(2);
+	 	mapicon[i] = new Array(2); //2차원배열
 	 }
 	 //console.log(mapicon);
-
+	
+	 
+	 //mapicon에 이차원 배열값 넣어주기
 	 for(var i =0; i<danger.length; i++){
 	 	mapicon[i][0] = filt_name[i];
 	 }
@@ -194,11 +250,40 @@ border-radius: 5px;
 	 	mapicon[i][1] = danger[i];
 	 }
 	 
+	 
+	 for(var i =0; i<danger.length; i++){
+	 	mapicon[i][2] = oper_danger[i];
+	 }
+	 for(var i =0; i<danger.length; i++){
+	 	mapicon[i][3] = sup_danger[i];
+	 }
+	 for(var i =0; i<danger.length; i++){
+	 	mapicon[i][4] = const_danger[i];
+	 }
+	 for(var i =0; i<danger.length; i++){
+	 	mapicon[i][5] = inta_danger[i];
+	 }
+	 for(var i =0; i<danger.length; i++){
+	 	mapicon[i][6] = filt_danger[i];
+	 }
+	 
+	 
+	 
+	 
+	 
+	 
+/* 	 var filt_name = mapicon[1][0];
+	 console.log(filt_name); */
 	 console.log(mapicon);
-	
+		<%-- <% 
+		 Danger_infoDAO ddao= new Danger_infoDAO();
+		 Danger_infoDTO dto = new Danger_infoDTO(%>${filt_name}<%);
+		 List<Danger_infoDTO> operList = ddao.selectOper(dto);
+		%> --%>
 	
 	 $("#jungook").on('click',function(){
-		console.log('ㅎㅇ');
+		console.log('ㅎㅇ');	
+		
 		  let tableForm =  `
             <table id='danger'>
                 <tr>
@@ -212,8 +297,8 @@ border-radius: 5px;
         tableForm+=`
         <tr>
             <td>${i+1}</td>
-             <td>${mapicon[i][0]}</td>
-            <td>${mapicon[i][1]}</td> 
+             <td><a href="#">${mapicon[i][0]}</a></td>
+            <td>위험도 총점: ${mapicon[i][1]} 가동률위험도 :${mapicon[i][2]} 피해세대수${mapicon[i][3]} 준공년도 위험도 : ${mapicon[i][4]} 취수장 수질위험도 : ${mapicon[i][5]} 정수장 수질 위험도 : ${mapicon[i][6]}</td> 
          </tr>
         `;
 	
@@ -243,7 +328,7 @@ border-radius: 5px;
 	 filt_name2.push('<%=gwangList.get(i).getFilt_name() %>')
 	 <%}%>
 	 
-	 console.log(filt_name2)
+	 
 
 
 	 // 정수장 위험도 리스트
@@ -252,7 +337,56 @@ border-radius: 5px;
 	 danger2.push('<%=gwangList.get(i).getDanger_no()%>')
 	 <%}%>
 	 
-	 console.log(danger)
+	 
+	  //가동률 위험도 리스트
+ 	  var oper_danger2 = [];
+	 <%for (int i = 0; i < gwangDList.size(); i++) {%>
+	 oper_danger2.push('<%=gwangDList.get(i).getOper_danger() %>')
+	 <%}%> 
+	 /* console.log('ㅜㅜ')
+	 console.log(oper_danger2) */
+	 
+	//공급세대 위험도 리스트 const_danger
+ 	 var sup_danger2 = [];
+	 <%for (int i = 0; i < gwangDList.size(); i++) {%>
+	 sup_danger2.push('<%=gwangDList.get(i).getSup_danger() %>')
+	 <%}%>
+	 
+	
+	 
+	//준공년도 위험도 리스트 const_danger
+ 	 var const_danger2 = [];
+	 <%for (int i = 0; i < gwangDList.size(); i++) {%>
+	 const_danger2.push('<%=gwangDList.get(i).getConst_danger() %>')
+	 <%}%>
+	 console.log('ㅜㅜ')
+	 console.log(const_danger2)
+	 
+	 
+	//취수장 수질 위험도 리스트 const_danger
+ 	 var inta_danger2 = [];
+	 <%for (int i = 0; i < gwangDList.size(); i++) {%>
+	 inta_danger2.push('<%=gwangDList.get(i).getInta_danger() %>')
+	 <%}%>
+	 console.log('ㅜㅜ')
+	 console.log(inta_danger2)
+	 
+	 
+	//정수장 수질 위험도 리스트 const_danger
+ 	 var filt_danger2 = [];
+	 <%for (int i = 0; i < gwangDList.size(); i++) {%>
+	 filt_danger2.push('<%=gwangDList.get(i).getFilt_danger() %>')
+	 <%}%>
+	 console.log('ㅜㅜ')
+	 console.log(filt_danger2) 
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 
 
 	 // 주소 이름 이차원배열
@@ -270,6 +404,26 @@ border-radius: 5px;
 	 }
 	 
 	 console.log(mapicon2);
+	 
+	 for(var i =0; i<3; i++){
+		 	mapicon2[i][2] = oper_danger2[i];
+		 }
+		  for(var i =0; i<3; i++){
+		 	mapicon2[i][3] = sup_danger2[i];
+		 }
+		 for(var i =0; i<3; i++){
+		 	mapicon2[i][4] = const_danger2[i];
+		 }
+		 for(var i =0; i<3; i++){
+		 	mapicon2[i][5] = inta_danger2[i];
+		 }
+		 for(var i =0; i<3; i++){
+		 	mapicon2[i][6] = filt_danger2[i];
+		 }
+	   
+	 
+	 
+	 
 	
 	
 	 $("#gwang").on('click',function(){
@@ -285,10 +439,10 @@ border-radius: 5px;
 
 		for(let i=0;i<3;i++){
         tableForm2 +=`
-        <tr>
+        	<tr>
             <td>${i+1}</td>
-             <td>${mapicon2[i][0]}</td>
-            <td>${mapicon2[i][1]}</td> 
+             <td><a href="#">${mapicon2[i][0]}</a></td>
+             <td>위험도 총점: ${mapicon2[i][1]} 가동률위험도 :${mapicon2[i][2]} 피해세대수${mapicon2[i][3]} 준공년도 위험도 : ${mapicon2[i][4]} 취수장 수질위험도 : ${mapicon2[i][5]} 정수장 수질 위험도 : ${mapicon2[i][6]}</td> 
          </tr>
         `;
 	
@@ -302,6 +456,8 @@ border-radius: 5px;
 		
 	})
 	//광주 위험도 이벤트 스크립트 끝
+	
+	
 	
 	
 	
@@ -322,6 +478,51 @@ border-radius: 5px;
 	 <%}%>
 	 console.log("danger3")
 	 console.log(danger3)
+	 
+	 // 가동률 위험도 리스트
+	 var oper_danger3 = [];
+	 <%for (int i = 0; i < bookDList.size(); i++) {%>
+	 oper_danger3.push('<%=bookDList.get(i).getOper_danger() %>')
+	 <%}%>
+	 
+ 	 //공급세대 위험도 리스트 const_danger
+ 	 var sup_danger3 = [];
+	 <%for (int i = 0; i < bookDList.size(); i++) {%>
+	 sup_danger3.push('<%=bookDList.get(i).getSup_danger() %>')
+	 <%}%>
+	
+	 
+	 
+	//준공년도 위험도 리스트 const_danger
+ 	 var const_danger3 = [];
+	 <%for (int i = 0; i < bookDList.size(); i++) {%>
+	 const_danger3.push('<%=bookDList.get(i).getConst_danger() %>')
+	 <%}%>
+
+	 
+	 
+	//취수장 수질 위험도 리스트 const_danger
+ 	 var inta_danger3 = [];
+	 <%for (int i = 0; i < bookDList.size(); i++) {%>
+	 inta_danger3.push('<%=bookDList.get(i).getInta_danger() %>')
+	 <%}%>
+
+	 
+	//정수장 수질 위험도 리스트 const_danger
+ 	 var filt_danger3 = [];
+	 <%for (int i = 0; i < bookDList.size(); i++) {%>
+	 filt_danger3.push('<%=bookDList.get(i).getFilt_danger() %>')
+	 <%}%>
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 
 
 	 // 주소 이름 이차원배열
@@ -337,6 +538,32 @@ border-radius: 5px;
 	 for(var i =0; i<danger3.length; i++){
 	 	mapicon3[i][1] = danger3[i];
 	 }
+	 for(var i =0; i<danger3.length; i++){
+		 	mapicon3[i][2] = oper_danger3[i];
+		 }
+	 for(var i =0; i<danger3.length; i++){
+		 	mapicon3[i][3] = sup_danger3[i];
+		 }
+	 for(var i =0; i<danger3.length; i++){
+		 	mapicon3[i][4] = const_danger3[i];
+		 }
+		 
+	 for(var i =0; i<danger3.length; i++){
+		 	mapicon3[i][5] = inta_danger3[i];
+		 }
+		 
+	 for(var i =0; i<danger3.length; i++){
+		 	mapicon3[i][6] = filt_danger3[i];
+		 }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	 console.log("mapicon3")
 	 console.log(mapicon3);
 	
@@ -356,8 +583,10 @@ border-radius: 5px;
         tableForm3 +=`
         <tr>
             <td>${i+1}</td>
-             <td>${mapicon3[i][0]}</td>
-            <td>${mapicon3[i][1]}</td> 
+            
+            <td>${mapicon3[i][0]}</td> 
+            <td>위험도 총점: ${mapicon3[i][1]} 가동률위험도 :${mapicon3[i][2]} 피해세대수${mapicon3[i][3]} 준공년도 위험도 : ${mapicon3[i][4]} 취수장 수질위험도 : ${mapicon3[i][5]} 정수장 수질 위험도 : ${mapicon3[i][6]}</td> 
+
          </tr>
         `;
 	
@@ -425,7 +654,7 @@ border-radius: 5px;
         tableForm4 +=`
         <tr>
             <td>${i+1}</td>
-             <td>${mapicon4[i][0]}</td>
+             <td><a href='#'>${mapicon4[i][0]}</a></td>
             <td>${mapicon4[i][1]}</td> 
          </tr>
         `;

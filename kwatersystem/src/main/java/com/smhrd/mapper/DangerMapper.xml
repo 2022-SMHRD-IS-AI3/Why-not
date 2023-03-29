@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.smhrd.mapper.DangerMapper">
+	
+	<!-- <select id="selectAll" resultType="Filtration_infoDTO">
+		select * from FILTLATION_INFO
+	</select>	
+
+	<select id="simpleContext" resultType="Filtration_infoDTO">
+		select * from FILTLATION_INFO where addr=#{addr}
+	</select> -->
+	
+<!-- 	<select id="list" resultType="Danger_infoDTO">
+		select * from Danger_infoDTO where filt_name=#{filt_name}
+	</select> --> 
+	<select id="selectDAll" resultType="Danger_infoDTO">
+		select * from Danger_infoDTO
+	</select>
+
+	<select id="selectDJungook" resultType="Danger_infoDTO">
+		select * from Danger_info order by danger_no desc
+	</select>
+	
+	<select id="selectDGwangju" resultType="Danger_infoDTO">
+		select * from Danger_info where local='광주광역시' order by danger_no desc
+	</select>
+	
+	<select id="selectDJunbook" resultType="Danger_infoDTO">
+		select * from Danger_info where local='전라북도' order by danger_no desc
+	</select>
+	
+	<select id="selectDJunnam" resultType="Danger_infoDTO">
+		select * from Danger_info where local='전라남도' order by danger_no desc
+	</select>
+	
+	
+	
+	
+	
+</mapper>
