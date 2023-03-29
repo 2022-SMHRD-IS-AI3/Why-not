@@ -80,8 +80,15 @@ li{list-style:none}
 #oper_g {
 	height: 307px;
 }
-#circle{
+#circle, #circle2{
 	text-align: center;
+}
+#circle2{
+	display:hidden;
+	position:fixed;
+	top:254px;
+	left:228px;
+	animation-delay: 2s;
 }
 #circle>div{
 	position: fixed;
@@ -118,11 +125,66 @@ li{list-style:none}
 	left:48%;
 	top:50%;
 	animation-name: imgAni;
-	animation-duration: 1s;
+	animation-duration: 1.5s;
 	animation-direction: normal;
 	animation-delay: 0.3s;
 	animation-fill-mode:forwards;
 }
+
+<%
+	int val_num = 80;
+	double val_num2 = val_num*(0.01);
+	double val_num3 = val_num2 - 1.0;
+	
+	int popu_num = 10000;
+	
+	int n_left = 0;
+	int n_top = 0;
+	int n_width = 0;	
+%>
+<%	if(popu_num==0){%>
+		#popu_img{
+			display:none;
+		}
+		
+<%	}else if(popu_num<1000){
+		n_left = 46;
+		n_top = 46;
+		n_width = 40;
+	}else if(popu_num<5000){
+		n_left = 42;
+		n_top = 38;
+		n_width = 80;
+	}else if(popu_num<10000){
+		n_left = 39;
+		n_top = 35;
+		n_width = 110;
+	}else if(popu_num<50000){
+		n_left = 35;
+		n_top = 25;
+		n_width = 150;
+	}else if(popu_num<100000){
+		n_left = 32;
+		n_top = 20;
+		n_width = 180;
+	}else if(popu_num<200000){
+		n_left = 30;
+		n_top = 12;
+		n_width = 200;	
+	}else if(popu_num<500000){
+		n_left = 26;
+		n_top = 5;
+		n_width = 235;	
+	}else if(popu_num<1000000){
+		n_left = 22;
+		n_top = -2;
+		n_width = 275;			
+	}else if(popu_num>=1000000){
+		n_left = 20;
+		n_top = -10;
+		n_width = 300;
+	}%>
+	
 @keyframes imgAni{
 	from{
 		width:25px;
@@ -130,12 +192,12 @@ li{list-style:none}
 		top:50%;
 	}
 	to{
-		left:25%;
-		top:0%;
-		width:250px;
-	}	
+		left: <%=n_left%>%;
+		top: <%=n_top%>%;
+		width: <%=n_width%>px;
+	}
 }
-
+	
 #i_table {
 	width:570px;
 	position: fixed;
@@ -229,7 +291,9 @@ li{list-style:none}
 		<tr>
 			<td id="oper_g">
 				<div id="circle">
-					<div>90%</div>
+					<div><%=val_num %>%</div>
+				</div>
+				<div id="circle2">
 				</div>
 			</td>
 		</tr>
@@ -241,7 +305,7 @@ li{list-style:none}
 		<tr>
 			<td id="popu_g">
 				<div style="position:relative"><img src="./icon_users.png" id="popu_img"></div>
-				<div>300,000</div>
+				<div><%=popu_num %>명</div>
 			</td>
 		</tr>
 	</table>
@@ -478,15 +542,38 @@ li{list-style:none}
 		}) */
 	</script>
 	<script>
-		$('#circle').circleProgress({
-			startAngle: -Math.PI ,
-	        value: 0.90,
-	        size: 280,
-	        thickness:40,
-	        emptyFill: "rgba(0,0,0,0.1)",
-	        fill: {gradient: ["#DDF1FE", "#016FFE"]},
-			animationStartValue:0.0
-	    });
+		<%if(val_num<=100){%>
+			$('#circle').circleProgress({
+				startAngle: -Math.PI ,
+	        	value: <%=val_num2 %>,
+	        	size: 280,
+	        	thickness:40,
+	        	emptyFill: "rgba(0,0,0,0.1)",
+	        	fill: {gradient: ["#DDF1FE", "#016FFE"]},
+				animationStartValue:0.0
+	    	});
+		<%}else if(val_num>100){%>
+  			$('#circle').circleProgress({
+				startAngle: -Math.PI ,
+	        	value: 1.00,
+	        	size: 280,
+	        	thickness:40,
+	        	emptyFill: "rgba(0,0,0,0.1)",
+	        	fill: {gradient: ["#DDF1FE", "#016FFE"]},
+				animationStartValue:0.0
+ 			});
+  	 		setTimeout(function() {
+	  	 		$('#circle2').circleProgress({
+					startAngle: -Math.PI ,
+	        		value: <%=val_num3 %>,
+	        		size: 280,
+	        		thickness:40,
+	        		emptyFill: "rgba(0,0,0,0.0)",
+	        		fill: {gradient: ["#DDF1FE","#FED32A","#F72509"]},
+					animationStartValue:0.0,
+				});
+	  	 	}, 1000);
+		<%}%>
 	</script>
 
 
