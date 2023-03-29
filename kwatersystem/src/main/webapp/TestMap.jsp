@@ -58,11 +58,11 @@ li{list-style:none}
 	background-color: skyblue;
 }
 #ccc{
-position:fixed;
-top:350px;
-left:1380px;
+	position:fixed;
+	top:350px;
+	left:1380px;
 	width:350px;
-	font-size:20px;
+	font-size:15px;
 	background-color:transparent;
 	text-align:center;
 }

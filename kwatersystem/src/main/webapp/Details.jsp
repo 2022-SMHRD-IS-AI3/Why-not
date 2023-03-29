@@ -113,13 +113,15 @@ li{list-style:none}
 	height: 260px;
 }
 #popu_img{
-	width:250px;
+	width:25px;
 	position:absolute;
-	left:25%;
+	left:48%;
+	top:50%;
 	animation-name: imgAni;
 	animation-duration: 1s;
 	animation-direction: normal;
-	animation-delay: 0.5s;
+	animation-delay: 0.3s;
+	animation-fill-mode:forwards;
 }
 @keyframes imgAni{
 	from{

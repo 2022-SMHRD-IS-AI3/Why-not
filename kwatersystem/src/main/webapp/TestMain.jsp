@@ -8,13 +8,13 @@
 <style>
 	.team_info{
 		width:1800px;
-		height:200px;
+		height:150px;
 		position:fixed;
-		top:0px;
+		top:10px;
 		left:60px;
 		background-color:#5778ff;
 		text-align:center;
-		font-size:100px;
+		font-size:80px;
 		font-weight:500;
 	}
 	.warp{
@@ -36,11 +36,11 @@
 	}
 	#warp_map{
 		left:60px;
-		background-color:yellow;
+		overflow: hidden;
 	}
 	#warp_dan{
 		left:960px;
-		background-color:red;
+		overflow: hidden;
 	}
 	#warp_map div{
 		position:fixed;
@@ -52,13 +52,32 @@
 	#warp_map img{
 		width:900px;
 		height:700px;
+		filter: brightness(70%);
+		transition: all 0.2s linear;
 	}
+	#warp_map img:hover{
+		transition: all 0.2s linear;
+		transform: scale(1.2);
+		filter: brightness(100%);
+	}
+		
 	#warp_dan div{
 		position:fixed;
 		top:520px;
 		left:1210px;
 		font-size:80px;
 		color: black;
+	}
+	#warp_dan img{
+		width:900px;
+		height:700px;
+		filter: brightness(70%);
+		transition: all 0.2s linear;
+	}
+	#warp_dan img:hover{
+		transition: all 0.2s linear;
+		transform: scale(1.2);
+		filter: brightness(100%);
 	}
 </style>
 </head>
@@ -70,16 +89,18 @@
 	<div class="warp">
 		<div id="warp_map">
 			<a href="TestMap.jsp">
-				<img src="map_img.png">
+				<img src="map_img2.png">
 				<div>정수장 현황</div>
 			</a>
 		</div>
 		<div id="warp_dan">
 			<a href="TestDanger.jsp">
-				<img src="dan_img.png">
+				<img src="error_img.jpg">
 				<div>위험도 순위</div>
 			</a>
 		</div>
 	</div>
+	
+
 </body>
 </html>
