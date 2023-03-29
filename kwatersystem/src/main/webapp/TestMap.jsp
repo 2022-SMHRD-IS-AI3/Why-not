@@ -58,16 +58,11 @@ li{list-style:none}
 	background-color: skyblue;
 }
 #ccc{
-	position:fixed;
-	top:350px;
-	left:1380px;
-	width:350px;
+	width:400px;
 	font-size:15px;
-	background-color:transparent;
-	text-align:center;
 }
 #ccc>tr{
-	height:40px;
+	height:25px;
 }
 #ccc td:nth-child(1){
 	width:100px;
@@ -166,7 +161,7 @@ li{list-style:none}
 			<td><button onclick="search()"><img src="search_icon.png"></button></td>
 		</tr>
 	</table>
-	<button class="button button2"><a href="Details.jsp">상세보기</a></button>
+	<button class="button button2"><a href="#" onclick="test123()">상세보기</a></button>
 
 	<!-- 지도 div -->
 	<div id="map" class="map1"></div>
@@ -257,7 +252,7 @@ mapicon.forEach(function(addr, index) {
                   infowindow.close();}
                   
                   infowindow.open(map, marker);
-                  getsimplecon(addr[0]);
+                  getsimplecon(addr[0],addr[1]);
                   // console.log(addr[0]);
             });
                        
@@ -289,9 +284,13 @@ mapicon.forEach(function(addr, index) {
 
 
 <script>
-const getsimplecon = (addr)=>{
+let data23 =""
+function test123(){
+	location.href="DetailsCon?data="+data23
+}
+const getsimplecon = (addr,Filtname)=>{
     // ajax문
-    console.log(addr); // --> 함수 안에 매개변수를 안 넣은 것이었음...
+    // console.log(addr); // --> 함수 안에 매개변수를 안 넣은 것이었음...
     $.ajax({
         // 어디랑 통신 할건지
         url : "./MapCon",
@@ -313,7 +312,7 @@ const getsimplecon = (addr)=>{
             //     console.log(movieList[i].rank,movieList[i].movieNm,movieList[i].openDt);
             // }
 		let tableForm = `	
-    <table border="0" id="ccc">
+    <table border="1" id="ccc">
 		<tr class="imfor">
 			<td colspan="2">간략정보</td>
 		</tr>
@@ -340,7 +339,10 @@ const getsimplecon = (addr)=>{
         error:function(){
             alert("통신 실패..")
         }
-    })
+    }),
+    // 정수장 이름 세션에 저장
+    data23 = Filtname;
+    //window.sessionStorage.setItem("SessionFilterName",Filtname);
 }
 </script>
 	
