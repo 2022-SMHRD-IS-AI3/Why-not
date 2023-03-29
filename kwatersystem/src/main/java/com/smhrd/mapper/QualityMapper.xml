@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.smhrd.mapper.QualityMapper">
+	
+	<select id="filtQualityContext" resultType="Filteration_qualityDTO">
+		select * from FILTLATION_QUALITY where filt_no=#{filt_no} and year=2022
+	</select>
+
+	<select id="intakeQualityContext" resultType="Intake_quality">
+		select * from INTAKE_QUALITY where intake_no=#{intake_no}
+	</select>
+	
+	
+	
+	
+</mapper>

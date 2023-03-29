@@ -31,7 +31,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from FILTLATION_INFO where addr=#{addr}
 	</select>
 	
-	
+	<select id="detailsContext" resultType="Filtration_infoDTO" parameterType="String">
+		select * from FILTLATION_INFO where filt_name=#{filt_name}
+	</select>
 	
 	
 	

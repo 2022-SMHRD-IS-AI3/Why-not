@@ -22,7 +22,7 @@ public class MapDAO {
 	}
 
 
-
+	// 정수장 간략보기
 	public Filtration_infoDTO simpleContext(Filtration_infoDTO dto) {
 
 		SqlSession sqlsession = sqlSessionfactory.openSession(true);
@@ -60,6 +60,17 @@ public class MapDAO {
 		sqlsession.close();
 		
 		return junbooklist;
+	}
+
+
+	// 정수장 상세보기
+	public Filtration_infoDTO detailsContext(String filt_name) {
+		SqlSession sqlsession = sqlSessionfactory.openSession(true);
+		System.out.println("여기까지 오케이?"+filt_name);
+		Filtration_infoDTO detailsContext = sqlsession.selectOne("detailsContext", filt_name);
+		sqlsession.close();
+		
+		return detailsContext;
 	}
 	
 	

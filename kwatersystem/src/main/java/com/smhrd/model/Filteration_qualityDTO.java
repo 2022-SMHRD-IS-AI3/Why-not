@@ -1,5 +1,9 @@
 package com.smhrd.model;
 
+import lombok.Getter;
+
+@Getter
+
 public class Filteration_qualityDTO {
 	private String f_index;
 	private String filt_no;

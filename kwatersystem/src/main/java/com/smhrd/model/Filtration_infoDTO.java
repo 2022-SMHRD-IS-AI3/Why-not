@@ -1,5 +1,6 @@
 package com.smhrd.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -9,6 +10,7 @@ import lombok.ToString;
 @Getter
 @RequiredArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 
 public class Filtration_infoDTO {
 	private String filt_num;
@@ -24,3 +26,5 @@ public class Filtration_infoDTO {
 	
 
 }
+
+

@@ -1,5 +1,9 @@
 package com.smhrd.model;
 
+import lombok.Getter;
+
+@Getter
+
 public class Intake_quality {
 	
 	private int i_index;

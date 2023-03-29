@@ -27,7 +27,7 @@ public class MapCon extends HttpServlet {
 		String addr = request.getParameter("addr");
 		System.out.println(addr);
 		
-		
+		// 정수장 간략보기
 		Filtration_infoDTO dto = new Filtration_infoDTO(addr);
 		MapDAO dao = new MapDAO();
 		

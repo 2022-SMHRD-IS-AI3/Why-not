@@ -4,10 +4,12 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<properties resource="com/smhrd/mybatis/db.properties"></properties>
+	
 	<typeAliases>
 		<typeAlias type="com.smhrd.model.Filtration_infoDTO" alias="Filtration_infoDTO"/>
-	
 		<typeAlias type="com.smhrd.model.Danger_infoDTO" alias="Danger_infoDTO"/>
+		<typeAlias type="com.smhrd.model.Filteration_qualityDTO" alias="Filteration_qualityDTO"/>
+		<typeAlias type="com.smhrd.model.Intake_quality" alias="Intake_quality"/>
 	</typeAliases>
 	
 	
@@ -22,9 +24,9 @@
       </dataSource>
     </environment>
   </environments>
-  <mappers>  
-    <mapper resource="com/smhrd/mapper/MapMapper.xml"/>   
-    <mapper resource="com/smhrd/mapper/DangerMapper.xml"/>   
+  <mappers>
+    <mapper resource="com/smhrd/mapper/MapMapper.xml"/>
+    <mapper resource="com/smhrd/mapper/DangerMapper.xml"/>
+    <mapper resource="com/smhrd/mapper/QualityMapper.xml"/>   
   </mappers>
-  
 </configuration>
