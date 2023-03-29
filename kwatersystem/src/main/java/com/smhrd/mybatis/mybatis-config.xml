@@ -4,9 +4,10 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<properties resource="com/smhrd/mybatis/db.properties"></properties>
-	
 	<typeAliases>
 		<typeAlias type="com.smhrd.model.Filtration_infoDTO" alias="Filtration_infoDTO"/>
+	
+		<typeAlias type="com.smhrd.model.Danger_infoDTO" alias="Danger_infoDTO"/>
 	</typeAliases>
 	
 	
@@ -21,7 +22,9 @@
       </dataSource>
     </environment>
   </environments>
-  <mappers>
+  <mappers>  
     <mapper resource="com/smhrd/mapper/MapMapper.xml"/>   
+    <mapper resource="com/smhrd/mapper/DangerMapper.xml"/>   
   </mappers>
+  
 </configuration>
