@@ -22,6 +22,12 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.MapCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>DetailsCon</servlet-name>
+  	<display-name>DetailsCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.DetailsCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>TestCon</servlet-name>
   	<url-pattern>/TestCon</url-pattern>
@@ -33,5 +39,9 @@
   <servlet-mapping>
   	<servlet-name>MapCon</servlet-name>
   	<url-pattern>/MapCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DetailsCon</servlet-name>
+  	<url-pattern>/DetailsCon</url-pattern>
   </servlet-mapping>
 </web-app>
