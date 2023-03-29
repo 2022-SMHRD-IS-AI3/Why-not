@@ -297,7 +297,7 @@ border-radius: 5px;
         tableForm+=`
         <tr>
             <td>${i+1}</td>
-             <td><a href="#">${mapicon[i][0]}</a></td>
+             <td><a href='DetailsCon?data="${mapicon[i][0]}"'>${mapicon[i][0]}</a></td>
             <td>위험도 총점: ${mapicon[i][1]} 가동률위험도 :${mapicon[i][2]} 피해세대수${mapicon[i][3]} 준공년도 위험도 : ${mapicon[i][4]} 취수장 수질위험도 : ${mapicon[i][5]} 정수장 수질 위험도 : ${mapicon[i][6]}</td> 
          </tr>
         `;
@@ -441,7 +441,7 @@ border-radius: 5px;
         tableForm2 +=`
         	<tr>
             <td>${i+1}</td>
-             <td><a href="#">${mapicon2[i][0]}</a></td>
+             <td><a href='DetailsCon?data="${mapicon2[i][0]}"'>${mapicon2[i][0]}</a></td>
              <td>위험도 총점: ${mapicon2[i][1]} 가동률위험도 :${mapicon2[i][2]} 피해세대수${mapicon2[i][3]} 준공년도 위험도 : ${mapicon2[i][4]} 취수장 수질위험도 : ${mapicon2[i][5]} 정수장 수질 위험도 : ${mapicon2[i][6]}</td> 
          </tr>
         `;
@@ -584,7 +584,7 @@ border-radius: 5px;
         <tr>
             <td>${i+1}</td>
             
-            <td><a href='#'>${mapicon3[i][0]}</td> 
+            <td><a href='DetailsCon?data="${mapicon3[i][0]}"'>${mapicon3[i][0]}</td> 
             <td>위험도 총점: ${mapicon3[i][1]} 가동률위험도 :${mapicon3[i][2]} 피해세대수${mapicon3[i][3]} 준공년도 위험도 : ${mapicon3[i][4]} 취수장 수질위험도 : ${mapicon3[i][5]} 정수장 수질 위험도 : ${mapicon3[i][6]}</td> 
 
          </tr>
@@ -733,7 +733,7 @@ border-radius: 5px;
         tableForm4 +=`
         <tr>
             <td>${i+1}</td>
-             <td><a href='#'>${mapicon4[i][0]}</a></td>
+             <td><a href='DetailsCon?data="${mapicon4[i][0]}"'>${mapicon4[i][0]}</a></td>
              <td>위험도 총점: ${mapicon4[i][1]} 가동률위험도 :${mapicon4[i][2]} 피해세대수${mapicon4[i][3]} 준공년도 위험도 : ${mapicon4[i][4]} 취수장 수질위험도 : ${mapicon4[i][5]} 정수장 수질 위험도 : ${mapicon4[i][6]}</td> 
 
          </tr>
@@ -753,7 +753,7 @@ border-radius: 5px;
 	<div class="box">
 		<div id="dangerid">
 				
-		</div>
+	</div>
 	</div>
 	<script>$("#jungook").trigger("click");</script>
 	
