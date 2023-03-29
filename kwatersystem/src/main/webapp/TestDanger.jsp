@@ -584,7 +584,7 @@ border-radius: 5px;
         <tr>
             <td>${i+1}</td>
             
-            <td>${mapicon3[i][0]}</td> 
+            <td><a href='#'>${mapicon3[i][0]}</td> 
             <td>위험도 총점: ${mapicon3[i][1]} 가동률위험도 :${mapicon3[i][2]} 피해세대수${mapicon3[i][3]} 준공년도 위험도 : ${mapicon3[i][4]} 취수장 수질위험도 : ${mapicon3[i][5]} 정수장 수질 위험도 : ${mapicon3[i][6]}</td> 
 
          </tr>
@@ -619,7 +619,50 @@ border-radius: 5px;
 	 danger4.push('<%=namList.get(i).getDanger_no()%>')
 	 <%}%>
 	 
-	 console.log(danger4)
+	  
+	 
+	 // 가동률 위험도 리스트
+	 var oper_danger4 = [];
+	 <%for (int i = 0; i < namDList.size(); i++) {%>
+	 oper_danger4.push('<%=namDList.get(i).getOper_danger() %>')
+	 <%}%>
+	 
+ 	 //공급세대 위험도 리스트 const_danger
+ 	 var sup_danger4 = [];
+	 <%for (int i = 0; i < namDList.size(); i++) {%>
+	 sup_danger4.push('<%=namDList.get(i).getSup_danger() %>')
+	 <%}%>
+	
+	 
+	 
+	//준공년도 위험도 리스트 const_danger
+ 	 var const_danger4 = [];
+	 <%for (int i = 0; i < namDList.size(); i++) {%>
+	 const_danger4.push('<%=namDList.get(i).getConst_danger() %>')
+	 <%}%>
+
+	 
+	 
+	//취수장 수질 위험도 리스트 const_danger
+ 	 var inta_danger4 = [];
+	 <%for (int i = 0; i < namDList.size(); i++) {%>
+	 inta_danger4.push('<%=namDList.get(i).getInta_danger() %>')
+	 <%}%>
+
+	 
+	//정수장 수질 위험도 리스트 const_danger
+ 	 var filt_danger4 = [];
+	 <%for (int i = 0; i < namDList.size(); i++) {%>
+	 filt_danger4.push('<%=namDList.get(i).getFilt_danger() %>')
+	 <%}%> 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 
 
 	 // 주소 이름 이차원배열
@@ -636,7 +679,43 @@ border-radius: 5px;
 	 	mapicon4[i][1] = danger4[i];
 	 }
 	 
+	 
 	 console.log(mapicon4);
+	 
+	 for(var i =0; i<danger4.length; i++){
+		 	mapicon4[i][0] = filt_name4[i];
+		 }
+		 for(var i =0; i<danger4.length; i++){
+		 	mapicon4[i][1] = danger4[i];
+		 }
+		 for(var i =0; i<danger4.length; i++){
+			 	mapicon4[i][2] = oper_danger4[i];
+			 }
+		 for(var i =0; i<danger4.length; i++){
+			 	mapicon4[i][3] = sup_danger4[i];
+			 }
+		 for(var i =0; i<danger4.length; i++){
+			 	mapicon4[i][4] = const_danger4[i];
+			 }
+			 
+		 for(var i =0; i<danger4.length; i++){
+			 	mapicon4[i][5] = inta_danger4[i];
+			 }
+			 
+		 for(var i =0; i<danger4.length; i++){
+			 	mapicon4[i][6] = filt_danger4[i];
+			 }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	
 	
 	 $("#junnam").on('click',function(){
@@ -655,7 +734,8 @@ border-radius: 5px;
         <tr>
             <td>${i+1}</td>
              <td><a href='#'>${mapicon4[i][0]}</a></td>
-            <td>${mapicon4[i][1]}</td> 
+             <td>위험도 총점: ${mapicon4[i][1]} 가동률위험도 :${mapicon4[i][2]} 피해세대수${mapicon4[i][3]} 준공년도 위험도 : ${mapicon4[i][4]} 취수장 수질위험도 : ${mapicon4[i][5]} 정수장 수질 위험도 : ${mapicon4[i][6]}</td> 
+
          </tr>
         `;
 	
