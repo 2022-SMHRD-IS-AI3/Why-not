@@ -199,6 +199,7 @@ li {
 
 .button_button2 a {
 	text-decoration-line: none;
+	color:black;
 }
 
 #simplecontext {

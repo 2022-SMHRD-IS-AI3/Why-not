@@ -65,11 +65,19 @@ li{list-style:none}
 }
 #danger th:nth-child(2){
 	font-size:30px;
-	width:200px;5
+	width:200px;
 }
 #danger th:nth-child(3){
 	font-size:30px;
 	width:900px;
+}
+#danger td a{
+    text-decoration-line: none;
+	color:black;
+}
+#danger tr>td:nth-child(2):hover{
+    background-color:#00BFFF;
+    text-decoration: none;
 }
 
 #danger td{
