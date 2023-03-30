@@ -75,6 +75,14 @@ li{list-style:none}
 	font-size:30px;
 	width:900px;
 }
+#danger td a{
+    text-decoration-line: none;
+	color:black;
+}
+#danger tr>td:nth-child(2):hover{
+    background-color:#00BFFF;
+    text-decoration: none;
+}
 
 #danger td{
 	height:80px;
