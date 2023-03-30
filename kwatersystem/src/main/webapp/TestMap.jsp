@@ -10,7 +10,10 @@
 <title>Insert title here</title>
 
 <style>
-li{list-style:none}
+li {
+	list-style: none
+}
+
 .menu {
 	width: 1668px;
 	position: fixed;
@@ -18,156 +21,232 @@ li{list-style:none}
 	left: 78px;
 }
 
-.menu > li {
-  width: 20%; /*20*5=100%*/
-  float: left;
-  text-align: center;
-  line-height: 40px;
-  background-color: #5778ff;
+.menu>li {
+	width: 20%; /*20*5=100%*/
+	float: left;
+	text-align: center;
+	line-height: 40px;
+	background-color: #5778ff;
 }
 
 .menu a {
-  color: #fff;
-  text-decoration:none;
-  font-size:14px
+	color: #fff;
+	text-decoration: none;
+	font-size: 14px
 }
-.head{
-	position:fixed;
-	top:90px;
-	left:145px;
-	font-size:40px;
-	font-weight:550;
+
+.head {
+	position: fixed;
+	top: 90px;
+	left: 145px;
+	font-size: 40px;
+	font-weight: 550;
 }
+
 .map1 {
 	float: left;
 }
-#map{
-	width:1200px;
-	height:700px;
-	position:fixed;
-	top: 200px;
-	left: 118px;
+
+#map {
+	width: 1180px;
+	height: 700px;;
+}
+
+#mapWrap {
+	position: fixed;
+	top: 183px;
+	left: 120px;
+	padding: 10px;
+	overflow: hidden;
+	box-shadow: 0px 0px 0px 1px black;
+	border-radius: 5px;
+}
+
+#ccc {
+	position: fixed;
+	top: 315px;
+	left: 1361px;
+	border-radius: 5px;
+	border: 1px solid black;
+	width: 430px;
+	height: 430px;
+	font-size: 15px;
+	text-align: center;
+}
+
+#ccc>tr {
+	height: 25px;
+}
+
+#ccc td:nth-child(1) {
+	width: 100px;
+	height: 50px;
+	font-size: 15px;
+}
+
+.bubutton {
+	width: 430px;
+	height: 40px;
+	position: fixed;
+	top: 255px;
+	left: 1360px;
+}
+
+.bubutton button {
+	height: 40px;
+	width: 104px;
+	border: 2px solid #008CBA;
+	background-color: white;
+	color: black;
+	border-radius: 5px;
+	font-size: 15px;
+}
+
+.bubutton button:hover {
+	background-color: #008CBA;
+	color: white;
+	text-decoration: none;
+}
+
+.f_search {
+	width: 430px;
+	height: 55px;
+	font-size: 20px;
+	position: fixed;
+	top: 182px;
+	left: 1360px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.f_search .sesearch {
+	height: 45px;
+	width: 80px;
+	border: 2px solid #008CBA;
+	background-color: white;
+	color: black;
+	border-radius: 5px;
+	font-size: 15px;
+	margin-left: 15px;
+}
+
+.f_search .sesearch:hover {
+	background-color: #008CBA;
+	color: white;
+	text-decoration: none;
+}
+
+.f_search td:nth-child(1) {
+	width: 100px;
+	height: 25px;
+	background-color: whitesmoke;
+	text-align: center;
+}
+
+#search_fname {
+	outline: 0 none;
+	border: white;
+	width: 70px;
+	height: 30px;
+	border-bottom: 1px solid black;
+	font-size: 20px;
+}
+
+#ss {
+	background-color: white;
+	width: 200px;
+	padding: 10px;
+}
+
+.f_search td>button {
+	width: 45px;
+	height: 45px;
+	text-align: center;
+}
+
+.f_search button>img {
+	position: absolute;
+	top: 4px;
+	left: 353px;;
+	width: 43px;
+	height: 43px;
+}
+
+.button_button2 {
+	position: fixed;
+	top: 840px;
+	left: 1640px;
+	border-radius: 5px;
+	border: none;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	cursor: pointer;
+	background-color: white;
+	color: black;
+	border: 2px solid #008CBA;
+}
+
+.button_button2:hover {
+	background-color: #008CBA;
+	color: white;
+	text-decoration: none;
+}
+
+.button_button2 a {
+	text-decoration-line: none;
 }
 
 #simplecontext {
-	width:400px;
-	height:500px;
-	position:fixed;
-	top:270px;
+	width: 400px;
+	height: 500px;
+	position: fixed;
+	top: 300px;
 	left: 1360px;
-	background-color: skyblue;
+	background-color: white;
 }
-#ccc{
-	width:400px;
-	font-size:15px;
-}
-#ccc>tr{
-	height:25px;
-}
-#ccc td:nth-child(1){
-	width:100px;
-}
-
-.f_search{
-	width:400px;
-	height:50px;
-	font-size:20px;
-	position:fixed;
-	top: 200px;
-	left:1360px;
-}
-.f_search td:nth-child(1){
-	width:100px;
-	height:25px;
-	background-color:whitesmoke;
-	text-align:center;
-}
-.f_search td:nth-child(3){
-
-}
-#search_fname{
-	height:30px;
-}
-.f_search td>button{
-	width:45px;
-	height:45px;
-	text-align:center;	
-}
-.f_search button>img{
-	position:absolute;
-	top:4px;
-	left:353px;;
-	width:43px;
-	height:43px;
-}
-.button {
-  position:fixed;
-  top:800px;
-  left:1612px;
-  border-radius: 5px;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-.button2 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
-}
-
-.button2:hover {
-  background-color: #008CBA;
-  color: white;
-}
-
-
 </style>
 </head>
 <body>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 	<ul class="menu">
-      <li>
-        <a href="TestMain.jsp">홈</a>
-      </li>
-      <li>
-        <a href="TestMap.jsp">정수장 현황</a>
-      </li>
-      <li>
-        <a href="TestDanger.jsp">위험도 순위</a>
-      </li>
-      <li>
-        <a href="Details.jsp">상세보기</a>
-      </li>
-      <li>
-        <a href="#">MENU5</a>
-      </li>
-    </ul>
+		<li><a href="TestMain.jsp">홈</a></li>
+		<li><a href="TestMap.jsp">정수장 현황</a></li>
+		<li><a href="TestDanger.jsp">위험도 순위</a></li>
+		<li><a href="Details.jsp">상세보기</a></li>
+		<li><a href="#">MENU5</a></li>
+	</ul>
 	<div class="head">정수장 현황</div>
 
 	<table class="f_search">
 		<tr>
-			<td>검색</td>
-			<td><input type="text" id="search_fname"></td>
-			<td>정수장</td>
-			<td><button onclick="search()"><img src="search_icon.png"></button></td>
+			<td id="ss"><input type="text" id="search_fname"> 정수장</td>
+			<td><button class="sesearch">검색</button></td>
 		</tr>
 	</table>
-	<button class="button button2"><a href="#" onclick="test123()">상세보기</a></button>
+	<table class="bubutton">
+		<td><button class="map10">전체</button></td>
+		<td><button class="map11">광주광역시</button></td>
+		<td><button class="map12">전라남도</button></td>
+		<td><button class="map13">전라북도</button></td>
+	</table>
+	<button class="button_button2">
+		<a href="Details.jsp">상세보기</a>
+	</button>
 
 	<!-- 지도 div -->
-	<div id="map" class="map1"></div>
-	<!-- 간략보기 div -->
-	<div id="simplecontext" class="map1"></div>
-	
+	<div id="mapWrap">
+		<div id="map" class="map1"></div>
+		<div id="simplecontext" class="map1"></div>
+	</div>
+
+
+
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=82a09d330020169ca7770768877a9db3&libraries=services"></script>
 	<script>
@@ -283,7 +362,7 @@ mapicon.forEach(function(addr, index) {
 </script>
 
 
-<script>
+	<script>
 let data23 =""
 function test123(){
 	location.href="DetailsCon?data="+data23
@@ -311,13 +390,13 @@ const getsimplecon = (addr,Filtname)=>{
             // for(let i=0;i<movieList.length;i++){
             //     console.log(movieList[i].rank,movieList[i].movieNm,movieList[i].openDt);
             // }
-		let tableForm = `	
+		let tableForm = `
     <table border="1" id="ccc">
 		<tr class="imfor">
 			<td colspan="2">간략정보</td>
 		</tr>
 		<tr class="name">
-			<td>정수장 이름</td>
+			<td>정수장   이름</td>
 			<td>${data.map.filt_name} 정수장</td>
 		</tr>
 		<tr class="address">
@@ -328,6 +407,22 @@ const getsimplecon = (addr,Filtname)=>{
 			<td>급수 지역</td>
 			<td>${data.map.sup_area}</td>
 		</tr>
+		<tr class="simple06">
+	        <td>준공년도</td>
+	        <td></td>
+        </tr>
+        <tr class="simple07">
+	        <td>가동률</td>
+	        <td></td>
+        </tr>
+        <tr class="simple08">
+	        <td>급수인구</td>
+	        <td></td>
+        </tr>
+        <tr>
+        <td colspan="2">120위 중 위</td>
+      
+        </tr>
 	</table>`;
     $('#simplecontext').html(tableForm);
 	
@@ -345,7 +440,7 @@ const getsimplecon = (addr,Filtname)=>{
     //window.sessionStorage.setItem("SessionFilterName",Filtname);
 }
 </script>
-	
+
 	<!-- 검색함수 스크립트 -->
 	<script>
 	var infowindow;
@@ -398,7 +493,7 @@ const getsimplecon = (addr,Filtname)=>{
 			
 		}
 	</script>
-	
+
 
 
 </body>
