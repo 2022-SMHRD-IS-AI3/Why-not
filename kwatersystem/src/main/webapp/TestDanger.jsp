@@ -1,4 +1,3 @@
-
 <%@page import="com.smhrd.model.Danger_infoDTO"%>
 <%@page import="com.smhrd.model.Danger_infoDAO"%>
 <%@page import="java.util.List"%>
@@ -11,6 +10,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="./circle-progress.js"></script>
 <style>
 li{list-style:none}
 
@@ -75,19 +76,61 @@ li{list-style:none}
 	font-size:30px;
 	width:900px;
 }
+
 #danger td a{
     text-decoration-line: none;
 	color:black;
 }
+
 #danger tr>td:nth-child(2):hover{
     background-color:#00BFFF;
     text-decoration: none;
 }
 
 #danger td{
-	height:80px;
+	position: relative;
+	height:120px;
 	background-color:white;
 	font-size:30px;
+	text-align: center;
+}
+
+#danger td:nth-child(3), #danger td:nth-child(4), #danger td:nth-child(5), 
+#danger td:nth-child(6), #danger td:nth-child(7), #danger td:nth-child(8){
+	font-size: 20px;
+	/* 테두리 없음 */
+} 
+#danger td:nth-child(3){
+	width: 70px;
+}
+#danger td:nth-child(4), #danger td:nth-child(5), #danger td:nth-child(6),
+#danger td:nth-child(7), #danger td:nth-child(8){
+	width: 160px;
+}
+
+#danger td:nth-child(3)>a:nth-child(1){
+	position: absolute;
+	top:3px;
+	left:7px;
+}
+
+#danger td:nth-child(3)>a:nth-child(2){
+	position: absolute;
+	width : 100%; 
+	background-image : linear-gradient(to top, yellow, red);
+	bottom:0;
+	right:0;
+}
+
+#danger td:nth-child(4)>a{
+	position: absolute;
+	text-align:center;
+	top: 3px;
+	left:20px;
+}
+
+#danger td:nth-child(4)>canvas{
+	padding-top:26px;
 }
 
 .bbb{
@@ -125,7 +168,6 @@ border-radius: 5px;
 </style>
 </head>
 <body>	
-	<script src="./circle-progress.js"></script>
 	<ul class="menu">
       <li>
         <a href="TestMain.jsp">홈</a>
@@ -144,7 +186,6 @@ border-radius: 5px;
       </li>
     </ul>
 	<div class="head">위험도 순위</div>
-	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<div class="bbb">
 		<table class="button_box">
 	
@@ -178,17 +219,10 @@ border-radius: 5px;
 	 List<Danger_infoDTO> gwangDList = ddao.selectDGwangju();
 	 List<Danger_infoDTO> bookDList = ddao.selectDJunbook();
 	 List<Danger_infoDTO> namDList = ddao.selectDJunnam();
-	 
-	 
-	 
 	 %>
 	 
-	 
-	 
-	 
-	 
 	 //전국  위험도 이벤트 시작
-	// 정수장 이름 리스트
+	 // 정수장 이름 리스트
 	 var filt_name = [];
 	 <%for (int i = 0; i < dataList.size(); i++) {%>
 	 filt_name.push('<%=dataList.get(i).getFilt_name() %>')
@@ -196,7 +230,6 @@ border-radius: 5px;
 	 
 /* 	 console.log(filt_name)
 	  */
-
 	 // 정수장 위험도 리스트
 	 var danger = [];
 	 <%for (int i = 0; i < dataList.size(); i++) {%>
@@ -204,7 +237,6 @@ border-radius: 5px;
 	 <%}%>
 	 
 	/*  console.log(danger) */
-	 
 	//가동률 위험도 리스트
  	 var oper_danger = [];
 	 <%for (int i = 0; i < dataList.size(); i++) {%>
@@ -212,7 +244,6 @@ border-radius: 5px;
 	 <%}%>
 /* 	 console.log('ㅜㅜ')
 	 console.log(oper_danger) */
-	 
 	//공급세대 위험도 리스트 const_danger
  	 var sup_danger = [];
 	 <%for (int i = 0; i < dataList.size(); i++) {%>
@@ -220,8 +251,6 @@ border-radius: 5px;
 	 <%}%>
 /* 	 console.log('ㅜㅜ')
 	 console.log(sup_danger) */
-	 
-	 
 	//준공년도 위험도 리스트 const_danger
  	 var const_danger = [];
 	 <%for (int i = 0; i < dataList.size(); i++) {%>
@@ -229,8 +258,6 @@ border-radius: 5px;
 	 <%}%>
 /* 	 console.log('ㅜㅜ')
 	 console.log(const_danger) */
-	 
-	 
 	//취수장 수질 위험도 리스트 const_danger
  	 var inta_danger = [];
 	 <%for (int i = 0; i < dataList.size(); i++) {%>
@@ -238,8 +265,6 @@ border-radius: 5px;
 	 <%}%>
 /* 	 console.log('ㅜㅜ')
 	 console.log(inta_danger) */
-	 
-	 
 	//정수장 수질 위험도 리스트 const_danger
  	 var filt_danger = [];
 	 <%for (int i = 0; i < dataList.size(); i++) {%>
@@ -247,8 +272,6 @@ border-radius: 5px;
 	 <%}%>
 /* 	 console.log('ㅜㅜ')
 	 console.log(filt_danger) */
-
-	 
 	 
 	 
 	 // 전국 위험도 데이터 이차원배열생성 데이터 넣기전 셋팅
@@ -257,7 +280,6 @@ border-radius: 5px;
 	 	mapicon[i] = new Array(2); //2차원배열
 	 }
 	 //console.log(mapicon);
-	
 	 
 	 //mapicon에 이차원 배열값 넣어주기
 	 for(var i =0; i<danger.length; i++){
@@ -266,8 +288,6 @@ border-radius: 5px;
 	 for(var i =0; i<danger.length; i++){
 	 	mapicon[i][1] = danger[i];
 	 }
-	 
-	 
 	 for(var i =0; i<danger.length; i++){
 	 	mapicon[i][2] = oper_danger[i];
 	 }
@@ -292,10 +312,9 @@ border-radius: 5px;
 		int inta_num = 0;
 		int filt_num = 0;
 	%>	 
-	 
 /* 	 var filt_name = mapicon[1][0];
 	 console.log(filt_name); */
-	 console.log(mapicon);
+	 /* console.log(mapicon); */
 		<%-- <% 
 		 Danger_infoDAO ddao= new Danger_infoDAO();
 		 Danger_infoDTO dto = new Danger_infoDTO(%>${filt_name}<%);
@@ -305,47 +324,130 @@ border-radius: 5px;
 	 $("#jungook").on('click',function(){
 		console.log('ㅎㅇ');	
 		
-		  let tableForm =  `
+		  let tableForm =`
             <table id='danger'>
                 <tr>
                     <th>순위</th>
                     <th>정수장 이름</th>
-                    <th>위험도</th>
+                    <th colspan="6">위험도</th>
                 </tr>
             `;
-
+            
+        var dang_g = [];
+		var oper_g = [];
+		var inta_g = [];
+		var filt_g = [];
+		
 		for(let i=0;i<5;i++){
-			dang_num = `${mapicon[i][1]}`
-			oper_num = `${mapicon[i][2]}`
-			popu_num = `${mapicon[i][3]}`
-			const_num = `${mapicon[i][4]}`
-			inta_num = `${mapicon[i][5]}`
-			filt_num = `${mapicon[i][6]}`
+			dang_num = mapicon[i][1];
+			oper_num = mapicon[i][2];
+			popu_num = mapicon[i][3];
+			const_num = mapicon[i][4];
+			inta_num = mapicon[i][5];
+			filt_num = mapicon[i][6];
+			dang_g[i] = dang_num/4;
+			oper_g[i] = oper_num*0.01;
+			inta_g[i] = inta_num;
+			filt_g[i] = filt_num;
+			console.log(inta_g[i]);
+			
 	        tableForm+=`
     	    <tr>
         	    <td>${i+1}</td>
              	<td><a href='DetailsCon?data=${mapicon[i][0]}'>${mapicon[i][0]}</a></td>
-            	<td>
-            		<a id='dang_td'>위험도 총점:${dang_num}</a>
-        			<a id='oper_td'>가동률위험도 :${oper_num}</a>
-        			<a id='popu_td'>피해세대수${popu_num}</a>
-        			<a id='const'>준공년도 위험도 :${const_num}</a>
-        			<a id='inta_td'>취수장 수질위험도 : ${inta_num}</a>
-        			<a id='filt_td'>정수장 수질 위험도 : ${filt_num}</a>
-            	</td> 
+           		<td id='dang_td${i}'>
+           			<a>위험도</a>
+           			<a></a>
+           		</td>
+       			<td id='oper_td${i}'><a>가동률 ${oper_num}점</a></td>
+       			<td id='popu_td'>피해세대수${popu_num}</td>
+       			<td id='const'>준공년도 위험도 :${const_num}</td>
+       			<td id='inta_td${i}'>취수장 수질위험도 : ${inta_num}</td>
+       			<td id='filt_td${i}'>정수장 수질 위험도 : ${filt_num}</td>
          	</tr>
-        	`;
-		
+         	`;        	
 	    }
 	    tableForm += `</table>`; 
 	    
 	    console.log(tableForm); 
 	    
 	    $('#dangerid').html(tableForm);
-			
+	   	
+	    $('#dang_td0>a:nth-child(2)').css('height', 0);
+ 	    $('#dang_td0>a:nth-child(2)').animate({
+ 	    	height : dang_g[0]
+ 	    },1500);
+		$('#dang_td1>a:nth-child(2)').css('height', 0);
+ 	    $('#dang_td1>a:nth-child(2)').animate({
+ 	    	height : dang_g[1]
+ 	    },1500);
+  	    $('#dang_td2>a:nth-child(2)').css('height', 0);
+ 	    $('#dang_td2>a:nth-child(2)').animate({
+ 	    	height : dang_g[2]
+ 	    },1500);
+  	    $('#dang_td3>a:nth-child(2)').css('height', 0);
+ 	    $('#dang_td3>a:nth-child(2)').animate({
+ 	    	height : dang_g[3]
+ 	    },1500);
+ 	    $('#dang_td4>a:nth-child(2)').css('height', 0);
+ 	    $('#dang_td4>a:nth-child(2)').animate({
+ 	    	height : dang_g[4]
+ 	    },1500);	    
+	    
+	    // 가동률 위험도 그래프
+	    $('#oper_td0').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[0],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+
+		$('#oper_td1').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[1],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+		
+		$('#oper_td2').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[2],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+		
+		$('#oper_td3').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[3],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+		
+		$('#oper_td4').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[4],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+		//가동률 위험도 그래프 끝
+		
 			
 	})
-	
 	//전국 위험도 이벤트 끝
 	
 	
@@ -739,18 +841,6 @@ border-radius: 5px;
 		 for(var i =0; i<danger4.length; i++){
 			 	mapicon4[i][6] = filt_danger4[i];
 			 }
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	
 	
 	 $("#junnam").on('click',function(){
 		console.log('ㅎㅇ');
@@ -786,26 +876,11 @@ border-radius: 5px;
 
 	<div class="box">
 		<div id="dangerid">
-				
-	</div>
+		</div>
 	</div>
 	<script>$("#jungook").trigger("click");</script>
-	
-	<%
-		double oper_num2 = oper_num * (0.01);
-	%>
-	
-	<script>
-		$('#oper_td').circleProgress({
-			startAngle: -Math.PI ,
-    		value: <%=oper_num2 %>,
-    		size: 2500,
-    		thickness:100,
-    		emptyFill: "rgba(0,0,0,0.1)",
-    		fill: {gradient: ["#DDF1FE", "#016FFE"]},
-			animationStartValue:0.0
-		});
-	</script>
-	
+		
+
+
 </body>
 </html>
