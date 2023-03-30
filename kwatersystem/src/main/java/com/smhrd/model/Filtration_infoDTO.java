@@ -19,7 +19,7 @@ public class Filtration_infoDTO {
 	private String local;
 	private int const_year;
 	private String sup_area; // 급수지역
-	private int sup_pop;
+	private int sup_popu;
 	private double oper_rate;
 	private String intake_no;
 	private int danger_no;

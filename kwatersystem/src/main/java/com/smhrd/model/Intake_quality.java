@@ -1,21 +1,27 @@
 package com.smhrd.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 
 public class Intake_quality {
 	
-	private int i_index;
+	@NonNull private int i_index;
 	private String intake_no; 
-	private int year;
-	private int b_1;
-	private int b_2;
-	private int b_3;
-	private int b_4;
-	private int b_5;
-	private int b_6;
-	private int b_7;
-	private int b_8;
-	private int b_9;
+	private Integer year;
+	private Integer b_1;
+	private Integer b_2;
+	private Integer b_3;
+	private Integer b_4;
+	private Integer b_5;
+	private Integer b_6;
+	private Integer b_7;
+	private Integer b_8;
+	private Integer b_9;
 }

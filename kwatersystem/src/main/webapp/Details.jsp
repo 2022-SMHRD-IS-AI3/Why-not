@@ -232,9 +232,9 @@ List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute(
     </ul>
 
 	<div id="details_head">
-		<a>이름 : ??? 정수장</a> 
-		<a>주소 : ?? ?? ??</a> 
-		<a>준공년도 : 0000</a>
+		<a>이름 : <%=filtinfo.getFilt_name() %> 정수장</a> 
+		<a>주소 : <%=filtinfo.getAddr() %></a> 
+		<a>준공년도 : <%=filtinfo.getConst_year() %></a>
 	</div>
 
 	<table id="oper_table">
@@ -244,7 +244,7 @@ List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute(
 		<tr>
 			<td id="oper_g">
 				<div id="circle">
-					<div>90%</div>
+					<div><%=filtinfo.getOper_rate() %>%</div>
 				</div>
 			</td>
 		</tr>
@@ -256,7 +256,7 @@ List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute(
 		<tr>
 			<td id="popu_g">
 				<div style="position:relative"><img src="./icon_users.png" id="popu_img"></div>
-				<div>300,000</div>
+				<div><%= filtinfo.getSup_popu() %></div>
 			</td>
 		</tr>
 	</table>
@@ -274,11 +274,31 @@ List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute(
 		</tr>
 		<tr class="i_code">
 			<td>수소이온농도</td>
-			<td name="no1"></td>
-			<td name="no2"></td>
-			<td name="no3"></td>
-			<td name="no4"></td>
-			<td name="no5"></td>
+			<td name="no1"><%
+			try{%><%=intakeQuality.get(0).getB_1()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no2"><%
+			try{%><%=intakeQuality.get(1).getB_1()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no3"><%
+			try{%><%=intakeQuality.get(2).getB_1()%>
+			<%}
+			catch(Exception e){ }
+			%><td>
+			<td name="no4"><%
+			try{%><%=intakeQuality.get(3).getB_1()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no5"><%
+			try{%><%=intakeQuality.get(4).getB_1()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
 		</tr>
 		<tr class="i_code">
 			<td>생물화학적_산소요구량</td>
