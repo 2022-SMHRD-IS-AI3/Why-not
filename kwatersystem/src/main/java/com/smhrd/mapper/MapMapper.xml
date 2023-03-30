@@ -35,7 +35,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from FILTLATION_INFO where filt_name=#{filt_name}
 	</select>
 	
-	
+	<select id="dangerrank" resultType="Danger_infoDTO">
+		select * from DANGER_INFO order by DANGER_NO desc
+	</select>
 	
 	
 </mapper>
