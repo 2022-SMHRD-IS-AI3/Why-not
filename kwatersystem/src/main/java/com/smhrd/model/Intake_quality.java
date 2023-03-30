@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 public class Intake_quality {
 	
 	@NonNull private int i_index;
-	private String intake_no; 
+	@NonNull private String intake_no; 
 	private Integer year;
 	private Integer b_1;
 	private Integer b_2;

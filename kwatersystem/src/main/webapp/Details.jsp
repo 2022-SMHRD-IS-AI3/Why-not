@@ -1,3 +1,4 @@
+<%@page import="java.util.Arrays"%>
 <%@page import="com.smhrd.model.Intake_quality"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.Filteration_qualityDTO"%>
@@ -20,6 +21,7 @@ Filteration_qualityDTO filtQuality = (Filteration_qualityDTO)request.getAttribut
 List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute("취수장수질");
 
 %>
+
 <style>
 <%
    double val_num = filtinfo.getOper_rate() ;
@@ -344,15 +346,15 @@ li{
          <td name="no4">2019</td>
          <td name="no5">2018</td>
       </tr>
-      <tr class="i_code">
+        <tr class="i_code">
          <td>수소이온농도</td>
          <td name="no1"><%
-         try{%><%=intakeQuality.get(0).getB_1()%>
+         try{%><%=intakeQuality.get(4).getB_1()%>
          <%}
          catch(Exception e){ }
          %></td>
          <td name="no2"><%
-         try{%><%=intakeQuality.get(1).getB_1()%>
+         try{%><%=intakeQuality.get(3).getB_1()%>
          <%}
          catch(Exception e){ }
          %></td>
@@ -362,12 +364,12 @@ li{
          catch(Exception e){ }
          %></td>
          <td name="no4"><%
-         try{%><%=intakeQuality.get(3).getB_1()%>
+         try{%><%=intakeQuality.get(1).getB_1()%>
          <%}
          catch(Exception e){ }
          %></td>
          <td name="no5"><%
-         try{%><%=intakeQuality.get(1).getB_1()%>
+         try{%><%=intakeQuality.get(0).getB_1()%>
          <%}
          catch(Exception e){ }
          %></td>
@@ -452,7 +454,7 @@ li{
 			catch(Exception e){ }
 			%></td>
 			<td name="no5"><%
-			try{%><%=intakeQuality.get(1).getB_4()%>
+			try{%><%=intakeQuality.get(0).getB_4()%>
 			<%}
 			catch(Exception e){ }
 			%></td>
@@ -595,20 +597,64 @@ li{
          <td name="no14">페놀</td>
       </tr>
       <tr clase="f_value">
-         <td name="no1"></td>
-         <td name="no2"></td>
-         <td name="no3"></td>
-         <td name="no4"></td>
-         <td name="no5"></td>
-         <td name="no6"></td>
-         <td name="no7"></td>
-         <td name="no8"></td>
-         <td name="no9"></td>
-         <td name="no10"></td>
-         <td name="no11"></td>
-         <td name="no12"></td>
-         <td name="no13"></td>
-         <td name="no14"></td>
+         <td name="no1">
+         <%
+			try{%><%=filtQuality.getA_1() %>
+			<%}
+			catch(Exception e){ } %>
+         </td>
+         <td name="no2"><%
+			try{%><%=filtQuality.getA_2() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no3"><%
+			try{%><%=filtQuality.getA_3() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no4"><%
+			try{%><%=filtQuality.getA_4() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no5"><%
+			try{%><%=filtQuality.getA_5() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no6"><%
+			try{%><%=filtQuality.getA_6() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no7"><%
+			try{%><%=filtQuality.getA_7() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no8"><%
+			try{%><%=filtQuality.getA_8() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no9"><%
+			try{%><%=filtQuality.getA_9() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no10"><%
+			try{%><%=filtQuality.getA_10() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no11"><%
+			try{%><%=filtQuality.getA_11() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no12"><%
+			try{%><%=filtQuality.getA_12() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no13"><%
+			try{%><%=filtQuality.getA_13() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no14"><%
+			try{%><%=filtQuality.getA_14() %>
+			<%}
+			catch(Exception e){ } %></td>
       </tr>
       <tr clase="f_code">
          <td name="no15">1.1.1-트리클로로에탄</td>
@@ -627,20 +673,62 @@ li{
          <td name="no28">카바릴</td>
       </tr>
       <tr clase="f_value">
-         <td name="no15"></td>
-         <td name="no16"></td>
-         <td name="no17"></td>
-         <td name="no18"></td>
-         <td name="no19"></td>
-         <td name="no20"></td>
-         <td name="no21"></td>
-         <td name="no22"></td>
-         <td name="no23"></td>
-         <td name="no24"></td>
-         <td name="no25"></td>
-         <td name="no26"></td>
-         <td name="no27"></td>
-         <td name="no28"></td>
+         <td name="no15"><%
+			try{%><%=filtQuality.getA_15() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no16"><%
+			try{%><%=filtQuality.getA_16() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no17"><%
+			try{%><%=filtQuality.getA_17() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no18"><%
+			try{%><%=filtQuality.getA_18() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no19"><%
+			try{%><%=filtQuality.getA_19() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no20"><%
+			try{%><%=filtQuality.getA_20() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no21"><%
+			try{%><%=filtQuality.getA_21() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no22"><%
+			try{%><%=filtQuality.getA_22() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no23"><%
+			try{%><%=filtQuality.getA_23() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no24"><%
+			try{%><%=filtQuality.getA_24() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no25"><%
+			try{%><%=filtQuality.getA_25() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no26"><%
+			try{%><%=filtQuality.getA_26() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no27"><%
+			try{%><%=filtQuality.getA_27() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no28"><%
+			try{%><%=filtQuality.getA_28() %>
+			<%}
+			catch(Exception e){ } %></td>
       </tr>
       <tr clase="f_code">
          <td name="no29">1,2-디브로모-3-클로로프로판</td>
@@ -659,20 +747,62 @@ li{
          <td name="no42">동</td>
       </tr>
       <tr clase="f_value">
-         <td name="no29"></td>
-         <td name="no30"></td>
-         <td name="no31"></td>
-         <td name="no32"></td>
-         <td name="no33"></td>
-         <td name="no34"></td>
-         <td name="no35"></td>
-         <td name="no36"></td>
-         <td name="no37"></td>
-         <td name="no38"></td>
-         <td name="no39"></td>
-         <td name="no40"></td>
-         <td name="no41"></td>
-         <td name="no42"></td>
+         <td name="no29"><%
+			try{%><%=filtQuality.getA_29() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no30"><%
+			try{%><%=filtQuality.getA_30() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no31"><%
+			try{%><%=filtQuality.getA_31() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no32"><%
+			try{%><%=filtQuality.getA_32() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no33"><%
+			try{%><%=filtQuality.getA_33() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no34"><%
+			try{%><%=filtQuality.getA_34() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no35"><%
+			try{%><%=filtQuality.getA_35() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no36"><%
+			try{%><%=filtQuality.getA_36() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no37"><%
+			try{%><%=filtQuality.getA_37() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no38"><%
+			try{%><%=filtQuality.getA_38() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no39"><%
+			try{%><%=filtQuality.getA_39() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no40"><%
+			try{%><%=filtQuality.getA_40() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no41"><%
+			try{%><%=filtQuality.getA_41() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no42"><%
+			try{%><%=filtQuality.getA_42() %>
+			<%}
+			catch(Exception e){ } %></td>
       </tr>
       </tr>
       <tr clase="f_code">
@@ -692,20 +822,62 @@ li{
          <td name="no56">1,4-다이옥산</td>
       </tr>
       <tr clase="f_value">
-         <td name="no43"></td>
-         <td name="no44"></td>
-         <td name="no45"></td>
-         <td name="no46"></td>
-         <td name="no47"></td>
-         <td name="no48"></td>
-         <td name="no49"></td>
-         <td name="no50"></td>
-         <td name="no51"></td>
-         <td name="no52"></td>
-         <td name="no53"></td>
-         <td name="no54"></td>
-         <td name="no55"></td>
-         <td name="no56"></td>
+         <td name="no43"><%
+			try{%><%=filtQuality.getA_43() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no44"><%
+			try{%><%=filtQuality.getA_44() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no45"><%
+			try{%><%=filtQuality.getA_45() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no46"><%
+			try{%><%=filtQuality.getA_46() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no47"><%
+			try{%><%=filtQuality.getA_47() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no48"><%
+			try{%><%=filtQuality.getA_48() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no49"><%
+			try{%><%=filtQuality.getA_49() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no50"><%
+			try{%><%=filtQuality.getA_50() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no51"><%
+			try{%><%=filtQuality.getA_51() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no52"><%
+			try{%><%=filtQuality.getA_52() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no53"><%
+			try{%><%=filtQuality.getA_53() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no54"><%
+			try{%><%=filtQuality.getA_54() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no55"><%
+			try{%><%=filtQuality.getA_55() %>
+			<%}
+			catch(Exception e){ } %></td>
+         <td name="no56"><%
+			try{%><%=filtQuality.getA_56() %>
+			<%}
+			catch(Exception e){ } %></td>
       </tr>
    </table>
 
