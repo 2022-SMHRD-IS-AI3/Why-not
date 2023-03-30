@@ -236,7 +236,7 @@ li {
 		<td><button class="map13">전라북도</button></td>
 	</table>
 	<button class="button_button2">
-		<a href="Details.jsp">상세보기</a>
+		<a href="#" onclick="test123()">상세보기</a>
 	</button>
 
 	<!-- 지도 div -->
