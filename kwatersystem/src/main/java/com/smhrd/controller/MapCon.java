@@ -3,6 +3,7 @@ package com.smhrd.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
 
+import com.smhrd.model.Danger_infoDTO;
 import com.smhrd.model.Filtration_infoDTO;
 import com.smhrd.model.MapDAO;
 
@@ -43,6 +45,24 @@ public class MapCon extends HttpServlet {
 		}
 		
 		
+		// 위험도 순위 가져오기
+		System.out.println("여긴가..");
+		String name = simpleContext.getFilt_name();
+		System.out.println("아니 여긴가...");
+		List<Danger_infoDTO> dangerrank = dao.dangerrank();
+		System.out.println("설마 여긴가...");
+		int i = 0;
+		int rank = 0;
+		while(true) {
+			if(dangerrank.get(i).getFilt_name().equals(name)) {
+				rank = i;
+				break;
+			}
+			i++;
+		}
+		
+		
+		
 		JSONObject json = new JSONObject();
 		
 //		json.put("Const_year", simpleContext.getConst_year());
@@ -53,6 +73,10 @@ public class MapCon extends HttpServlet {
 			map.put("filt_name", simpleContext.getFilt_name());
 			map.put("addr", simpleContext.getAddr());
 			map.put("sup_area", simpleContext.getSup_area());
+			map.put("const_year", simpleContext.getConst_year());
+			map.put("oper_rate", simpleContext.getOper_rate());
+			map.put("sup_popu", simpleContext.getSup_popu());
+			map.put("rank", rank);
 			
 			json.put("map", map);
 		

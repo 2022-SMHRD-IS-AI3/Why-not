@@ -72,6 +72,17 @@ public class MapDAO {
 		
 		return detailsContext;
 	}
+
+
+	public List<Danger_infoDTO> dangerrank() {
+		System.out.println("넘어왔니?");
+		SqlSession sqlsession = sqlSessionfactory.openSession(true);
+		List<Danger_infoDTO> dangerrank = sqlsession.selectList("dangerrank");
+		System.out.println("디비 갔다왔니?");
+		sqlsession.close();
+		
+		return dangerrank;
+	}
 	
 	
 
