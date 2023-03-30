@@ -12,8 +12,73 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="./circle-progress.js"></script>
+<%
+System.out.println("정수장정보, 정수장수질, 취수장수질 넘기는 스트릿틀릿!!");
+
+Filtration_infoDTO filtinfo = (Filtration_infoDTO)request.getAttribute("정수장정보");
+Filteration_qualityDTO filtQuality = (Filteration_qualityDTO)request.getAttribute("정수장수질");
+List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute("취수장수질");
+
+%>
 <style>
-li{list-style:none}
+<%
+	double val_num = filtinfo.getOper_rate() ;
+	double val_num2 = val_num*(0.01) ;
+	double val_num3 = val_num2 - 1.0 ;
+	
+	
+	int popu_num = filtinfo.getSup_popu() ;
+	
+	int n_left = 0 ;
+	int n_top = 0 ;
+	int n_width = 0 ;	
+ %> 
+  <% if(popu_num ==0) { %> 
+ 		#popu_img { 
+ 			display:none;
+		}
+	<%}else if(popu_num<1000) {
+		n_left = 46;
+		n_top = 46;
+		n_width = 40;
+	}else if(popu_num<5000) {
+		n_left = 42;
+		n_top = 38;
+		n_width = 80;
+	}else if(popu_num<10000) {
+		n_left = 39;
+		n_top = 35;
+		n_width = 110;
+	}else if(popu_num<50000) {
+		n_left = 35;
+		n_top = 25;
+		n_width = 150;	
+	}else if(popu_num<100000) {
+		n_left = 32;
+		n_top = 20;
+		n_width = 180;
+	}else if(popu_num<200000) {
+		n_left = 30;
+		n_top = 12;
+		n_width = 200;
+	}else if(popu_num<500000) {
+		n_left = 26;
+		n_top = 5;
+		n_width = 235;
+	}else if(popu_num<1000000) {
+		n_left = 22;
+		n_top = -2;
+		n_width = 275;
+	}else if(popu_num>=1000000) {
+		n_left = 20;
+		n_top = -10;
+		n_width = 300;
+	}%>
+	
+li{
+	list-style:none
+}
+
 .menu {
 	width: 1668px;
 	position: fixed;
@@ -88,6 +153,15 @@ li{list-style:none}
 #circle{
 	text-align: center;
 }
+
+#circle2 {
+	display: hidden;
+	position: fixed;
+	top: 254px;
+	left: 228px;
+	animation-delay: 2s;
+}
+
 #circle>div{
 	position: fixed;
 	top: 363px;
@@ -117,32 +191,35 @@ li{list-style:none}
 #popu_g>div:nth-child(1){
 	height: 260px;
 }
-#popu_img{
-	width:25px;
-	position:absolute;
-	left:48%;
-	top:50%;
+
+#popu_img {
+	width: 25px;
+	position: absolute;
+	left: 48%;
+	top: 50%;
 	animation-name: imgAni;
-	animation-duration: 1s;
+	animation-duration: 1.5s;
 	animation-direction: normal;
 	animation-delay: 0.3s;
-	animation-fill-mode:forwards;
+	animation-fill-mode: forwards;
 }
-@keyframes imgAni{
-	from{
+
+@keyframes imgAni {
+	from { 
 		width:25px;
-		left:48%;
-		top:50%;
+		left: 48%;
+		top: 50%;
 	}
-	to{
-		left:25%;
-		top:0%;
-		width:250px;
-	}	
+
+	to {
+		left: <%=n_left%>%;
+		top: <%=n_top%>%;
+		width: <%=n_width%>px;
+	}
 }
 
 #i_table {
-	width:570px;
+	width: 570px;
 	position: fixed;
 	background-color: black;
 	top: 185px;
@@ -203,16 +280,6 @@ li{list-style:none}
 </style>
 </head>
 <body>
-
-<%
-System.out.println("정수장정보, 정수장수질, 취수장수질 넘기는 스트릿틀릿!!");
-
-Filtration_infoDTO filtinfo = (Filtration_infoDTO)request.getAttribute("정수장정보");
-Filteration_qualityDTO filtQuality = (Filteration_qualityDTO)request.getAttribute("정수장수질");
-List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute("취수장수질");
-
-%>
-	
 	<ul class="menu">
       <li>
         <a href="TestMain.jsp">홈</a>
@@ -244,7 +311,10 @@ List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute(
 		<tr>
 			<td id="oper_g">
 				<div id="circle">
-					<div><%=filtinfo.getOper_rate() %>%</div>
+					<div><%=val_num %>%</div>
+				</div>
+				<div id="circle2">
+					<div></div>
 				</div>
 			</td>
 		</tr>
@@ -255,8 +325,10 @@ List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute(
 		</tr>
 		<tr>
 			<td id="popu_g">
-				<div style="position:relative"><img src="./icon_users.png" id="popu_img"></div>
-				<div><%= filtinfo.getSup_popu() %></div>
+				<div style="position:relative">
+					<img src="./icon_users.png" id="popu_img">
+				</div>
+				<div><%=popu_num  %></div>
 			</td>
 		</tr>
 	</table>
@@ -511,20 +583,49 @@ List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute(
 			$(this).removeClass('h_menu');
 			$(this).attr('class', 'menu');
 		}) */
+		
+		
+		
 	</script>
-	<script>
+	
+
+	
+<script>
+		
+	<%if(val_num<=100){%>
 		$('#circle').circleProgress({
-			startAngle: -Math.PI ,
-	        value: 0.90,
-	        size: 280,
-	        thickness:40,
-	        emptyFill: "rgba(0,0,0,0.1)",
-	        fill: {gradient: ["#DDF1FE", "#016FFE"]},
-			animationStartValue:0.0
-	    });
+			startAngle : -Math.PI,
+			value : <%=val_num2 %>,
+			size : 280,
+			thickness : 40,
+			emptyFill : "rgba(0,0,0,0.1)",
+			fill : {gradient : [ "#DDF1FE", "#016FFE" ]},
+			animationStartValue : 0.0
+		});
+	<%}else if(val_num>100){%>
+		$('#circle').circleProgress({
+			startAngle : -Math.PI,
+			value : 1.00,
+			size : 280,
+			thickness : 40,
+			emptyFill : "rgba(0,0,0,0.1)",
+			fill : {gradient : [ "#DDF1FE", "#016FFE" ]},
+			animationStartValue : 0.0
+		});
+		setTimeout(function() {
+			$('#circle2').circleProgress({
+				startAngle : -Math.PI,
+				value : <%=val_num3 %>,
+				size : 280,
+				thickness : 40,
+				emptyFill : "rgba(0,0,0,0.0)",
+				fill : {gradient : [ "#DDF1FE", "#FED32A", "#F72509" ]},
+				animationStartValue : 0.0,
+			});
+		}, 1000);
+	<%}%>
+		
 	</script>
-
-
 
 </body>
 </html>
