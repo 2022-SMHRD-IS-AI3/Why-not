@@ -13,7 +13,10 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="./circle-progress.js"></script>
 <style>
-li{list-style:none}
+li {
+	list-style: none
+}
+
 .menu {
 	width: 1668px;
 	position: fixed;
@@ -21,20 +24,19 @@ li{list-style:none}
 	left: 78px;
 }
 
-.menu > li {
-  width: 20%; /*20*5=100%*/
-  float: left;
-  text-align: center;
-  line-height: 40px;
-  background-color: #5778ff;
+.menu>li {
+	width: 20%; /*20*5=100%*/
+	float: left;
+	text-align: center;
+	line-height: 40px;
+	background-color: #5778ff;
 }
 
 .menu a {
-  color: #fff;
-  text-decoration:none;
-  font-size:14px
+	color: #fff;
+	text-decoration: none;
+	font-size: 14px
 }
-
 
 #details_head {
 	width: 1900px;
@@ -46,29 +48,33 @@ li{list-style:none}
 
 #details_head>a {
 	margin-left: 100px;
-	font-weight:550;
+	font-weight: 550;
 }
-#details_head>a:nth-child(1){
-	width:380px; 	
+
+#details_head>a:nth-child(1) {
+	width: 380px;
 	font-size: 30px;
 	position: fixed;
 	top: 80px;
 	left: 30px;
 }
-#details_head>a:nth-child(3){
-	width:250px; 	
+
+#details_head>a:nth-child(3) {
+	width: 250px;
 	font-size: 30px;
 	position: fixed;
 	top: 80px;
 	left: 1450px;
 }
-#details_head>a:nth-child(2){
+
+#details_head>a:nth-child(2) {
 	width: 1010px;
 	font-size: 30px;
 	position: fixed;
 	top: 80px;
 	left: 420px;
 }
+
 #oper_table {
 	position: fixed;
 	top: 185px;
@@ -85,10 +91,20 @@ li{list-style:none}
 #oper_g {
 	height: 307px;
 }
-#circle{
+
+#circle {
 	text-align: center;
 }
-#circle>div{
+
+#circle2 {
+	display: hidden;
+	position: fixed;
+	top: 254px;
+	left: 228px;
+	animation-delay: 2s;
+}
+
+#circle>div {
 	position: fixed;
 	top: 363px;
 	left: 330px;
@@ -112,37 +128,94 @@ li{list-style:none}
 #popu_g {
 	height: 307px;
 	text-align: center;
-	font-size:30px;
+	font-size: 30px;
 }
-#popu_g>div:nth-child(1){
+
+#popu_g>div:nth-child(1) {
 	height: 260px;
 }
-#popu_img{
-	width:25px;
-	position:absolute;
-	left:48%;
-	top:50%;
+
+#popu_img {
+	width: 25px;
+	position: absolute;
+	left: 48%;
+	top: 50%;
 	animation-name: imgAni;
-	animation-duration: 1s;
+	animation-duration: 1.5s;
 	animation-direction: normal;
 	animation-delay: 0.3s;
-	animation-fill-mode:forwards;
+	animation-fill-mode: forwards;
 }
-@keyframes imgAni{
-	from{
+
+<%
+	int val_num = 180 ;
+	double val_num2 = val_num*(0.01) ;
+	double val_num3 = val_num2 - 1.0 ;
+	
+	int popu_num = 1000000 ;
+	
+	int n_left = 0 ;
+	int n_top = 0 ;
+	int n_width = 0 ;	
+ %> 
+ <% if(popu_num ==0) { %> 
+ 		#popu_img { 
+ 			display:none;
+		}
+	<%}else if(popu_num<1000) {
+		n_left = 46;
+		n_top = 46;
+		n_width = 40;
+	}else if(popu_num<5000) {
+		n_left = 42;
+		n_top = 38;
+		n_width = 80;
+	}else if(popu_num<10000) {
+		n_left = 39;
+		n_top = 35;
+		n_width = 110;
+	}else if(popu_num<50000) {
+		n_left = 35;
+		n_top = 25;
+		n_width = 150;	
+	}else if(popu_num<100000) {
+		n_left = 32;
+		n_top = 20;
+		n_width = 180;
+	}else if(popu_num<200000) {
+		n_left = 30;
+		n_top = 12;
+		n_width = 200;
+	}else if(popu_num<500000) {
+		n_left = 26;
+		n_top = 5;
+		n_width = 235;
+	}else if(popu_num<1000000) {
+		n_left = 22;
+		n_top = -2;
+		n_width = 275;
+	}else if(popu_num>=1000000) {
+		n_left = 20;
+		n_top = -10;
+		n_width = 300;
+	}%>
+
+@keyframes imgAni {
+	from { 
 		width:25px;
-		left:48%;
-		top:50%;
+		left: 48%;
+		top: 50%;
 	}
-	to{
-		left:25%;
-		top:0%;
-		width:250px;
-	}	
+
+	to {
+		left: <%=n_left%>%;
+		top: <%=n_top%>%;
+		width: <%=n_width%>px;
+	}
 }
 
 #i_table {
-	width:570px;
+	width: 570px;
 	position: fixed;
 	background-color: black;
 	top: 185px;
@@ -173,7 +246,7 @@ li{list-style:none}
 #f_table {
 	position: fixed;
 	background-color: black;
-	width:1668px;
+	width: 1668px;
 	top: 580px;
 	margin-left: 110px;
 }
@@ -204,7 +277,7 @@ li{list-style:none}
 </head>
 <body>
 
-<%
+	<%
 System.out.println("정수장정보, 정수장수질, 취수장수질 넘기는 스트릿틀릿!!");
 
 Filtration_infoDTO filtinfo = (Filtration_infoDTO)request.getAttribute("정수장정보");
@@ -212,29 +285,17 @@ Filteration_qualityDTO filtQuality = (Filteration_qualityDTO)request.getAttribut
 List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute("취수장수질");
 
 %>
-	
+
 	<ul class="menu">
-      <li>
-        <a href="TestMain.jsp">홈</a>
-      </li>
-      <li>
-        <a href="TestMap.jsp">정수장 현황</a>
-      </li>
-      <li>
-        <a href="TestDanger.jsp">위험도 순위</a>
-      </li>
-      <li>
-        <a href="Details.jsp">상세보기</a>
-      </li>
-      <li>
-        <a href="#">MENU5</a>
-      </li>
-    </ul>
+		<li><a href="TestMain.jsp">홈</a></li>
+		<li><a href="TestMap.jsp">정수장 현황</a></li>
+		<li><a href="TestDanger.jsp">위험도 순위</a></li>
+		<li><a href="Details.jsp">상세보기</a></li>
+		<li><a href="#">MENU5</a></li>
+	</ul>
 
 	<div id="details_head">
-		<a>이름 : ??? 정수장</a> 
-		<a>주소 : ?? ?? ??</a> 
-		<a>준공년도 : 0000</a>
+		<a>이름 : ??? 정수장</a> <a>주소 : ?? ?? ??</a> <a>준공년도 : 0000</a>
 	</div>
 
 	<table id="oper_table">
@@ -244,7 +305,11 @@ List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute(
 		<tr>
 			<td id="oper_g">
 				<div id="circle">
-					<div>90%</div>
+					<div><%=val_num %>%
+					</div>
+				</div>
+				<div id="circle2">
+					<div></div>
 				</div>
 			</td>
 		</tr>
@@ -255,8 +320,11 @@ List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute(
 		</tr>
 		<tr>
 			<td id="popu_g">
-				<div style="position:relative"><img src="./icon_users.png" id="popu_img"></div>
-				<div>300,000</div>
+				<div style="position: relative">
+					<img src="./icon_users.png" id="popu_img">
+				</div>
+				<div><%=popu_num %>명
+				</div>
 			</td>
 		</tr>
 	</table>
@@ -493,18 +561,41 @@ List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute(
 		}) */
 	</script>
 	<script>
+		
+	<%if(val_num<=100){%>
 		$('#circle').circleProgress({
-			startAngle: -Math.PI ,
-	        value: 0.90,
-	        size: 280,
-	        thickness:40,
-	        emptyFill: "rgba(0,0,0,0.1)",
-	        fill: {gradient: ["#DDF1FE", "#016FFE"]},
-			animationStartValue:0.0
-	    });
+			startAngle : -Math.PI,
+			value : <%=val_num2 %>,
+			size : 280,
+			thickness : 40,
+			emptyFill : "rgba(0,0,0,0.1)",
+			fill : {gradient : [ "#DDF1FE", "#016FFE" ]},
+			animationStartValue : 0.0
+		});
+	<%}else if(val_num>100){%>
+		$('#circle').circleProgress({
+			startAngle : -Math.PI,
+			value : 1.00,
+			size : 280,
+			thickness : 40,
+			emptyFill : "rgba(0,0,0,0.1)",
+			fill : {gradient : [ "#DDF1FE", "#016FFE" ]},
+			animationStartValue : 0.0
+		});
+		setTimeout(function() {
+			$('#circle2').circleProgress({
+				startAngle : -Math.PI,
+				value : <%=val_num3 %>,
+				size : 280,
+				thickness : 40,
+				emptyFill : "rgba(0,0,0,0.0)",
+				fill : {gradient : [ "#DDF1FE", "#FED32A", "#F72509" ]},
+				animationStartValue : 0.0,
+			});
+		}, 1000);
+	<%}%>
+		
 	</script>
-
-
 
 </body>
 </html>
