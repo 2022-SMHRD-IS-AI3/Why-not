@@ -360,7 +360,7 @@ li{
          try{%><%=intakeQuality.get(2).getB_1()%>
          <%}
          catch(Exception e){ }
-         %><td>
+         %></td>
          <td name="no4"><%
          try{%><%=intakeQuality.get(3).getB_1()%>
          <%}
@@ -373,68 +373,205 @@ li{
          %></td>
       </tr>
       <tr class="i_code">
-         <td>생물화학적_산소요구량</td>
-         <td name="no1"></td>
-         <td name="no2"></td>
-         <td name="no3"></td>
-         <td name="no4"></td>
-         <td name="no5"></td>
+      <td>생물화학적_산소요구량</td>
+         <td name="no1"><%
+			try{%><%=intakeQuality.get(4).getB_2()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no2"><%
+			try{%><%=intakeQuality.get(3).getB_2()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no3"><%
+			try{%><%=intakeQuality.get(2).getB_2()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no4"><%
+			try{%><%=intakeQuality.get(1).getB_2()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no5"><%
+			try{%><%=intakeQuality.get(0).getB_2()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
       </tr>
       <tr class="i_code">
          <td>화학적_산소요구량</td>
-         <td name="no1"></td>
-         <td name="no2"></td>
-         <td name="no3"></td>
-         <td name="no4"></td>
-         <td name="no5"></td>
+         <td name="no1"><%
+			try{%><%=intakeQuality.get(4).getB_3()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no2"><%
+			try{%><%=intakeQuality.get(3).getB_3()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no3"><%
+			try{%><%=intakeQuality.get(2).getB_3()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no4"><%
+			try{%><%=intakeQuality.get(1).getB_3()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no5"><%
+			try{%><%=intakeQuality.get(0).getB_3()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
       </tr>
       <tr class="i_code">
+         
          <td>총유기탄소</td>
-         <td name="no1"></td>
-         <td name="no2"></td>
-         <td name="no3"></td>
-         <td name="no4"></td>
-         <td name="no5"></td>
+			<td name="no1"><%
+			try{%><%=intakeQuality.get(4).getB_4()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no2"><%
+			try{%><%=intakeQuality.get(3).getB_4()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no3"><%
+			try{%><%=intakeQuality.get(2).getB_4()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no4"><%
+			try{%><%=intakeQuality.get(1).getB_4()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no5"><%
+			try{%><%=intakeQuality.get(1).getB_4()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
       </tr>
       <tr class="i_code">
          <td>총인</td>
-         <td name="no1"></td>
-         <td name="no2"></td>
-         <td name="no3"></td>
-         <td name="no4"></td>
-         <td name="no5"></td>
+         <td name="no1"><%
+			try{%><%=intakeQuality.get(4).getB_5()%>
+			<%}
+			catch(Exception e){ }
+			%></td>
+			<td name="no2"><%
+			try{%><%=intakeQuality.get(3).getB_5()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no3"><%
+			try{%><%=intakeQuality.get(2).getB_5()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no4"><%
+			try{%><%=intakeQuality.get(1).getB_5()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no5"><%
+			try{%><%=intakeQuality.get(0).getB_5()%>
+			<%}
+			catch(Exception e){ } %></td>
       </tr>
       <tr class="i_code">
          <td>부유물질량</td>
-         <td name="no1"></td>
-         <td name="no2"></td>
-         <td name="no3"></td>
-         <td name="no4"></td>
-         <td name="no5"></td>
+         <td name="no1"><%
+			try{%><%=intakeQuality.get(4).getB_6()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no2"><%
+			try{%><%=intakeQuality.get(3).getB_6()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no3"><%
+			try{%><%=intakeQuality.get(2).getB_6()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no4"><%
+			try{%><%=intakeQuality.get(1).getB_6()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no5"><%
+			try{%><%=intakeQuality.get(0).getB_6()%>
+			<%}
+			catch(Exception e){ } %></td>
       </tr>
       <tr class="i_code">
          <td>용존산소량</td>
-         <td name="no1"></td>
-         <td name="no2"></td>
-         <td name="no3"></td>
-         <td name="no4"></td>
-         <td name="no5"></td>
+         <td name="no1"><%
+			try{%><%=intakeQuality.get(4).getB_7()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no2"><%
+			try{%><%=intakeQuality.get(3).getB_7()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no3"><%
+			try{%><%=intakeQuality.get(2).getB_7()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no4"><%
+			try{%><%=intakeQuality.get(1).getB_7()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no5"><%
+			try{%><%=intakeQuality.get(0).getB_7()%>
+			<%}
+			catch(Exception e){ } %></td>
       </tr>
       <tr class="i_code">
          <td>총대장균군</td>
-         <td name="no1"></td>
-         <td name="no2"></td>
-         <td name="no3"></td>
-         <td name="no4"></td>
-         <td name="no5"></td>
+         <td name="no1"><%
+			try{%><%=intakeQuality.get(4).getB_8()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no2"><%
+			try{%><%=intakeQuality.get(3).getB_8()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no3"><%
+			try{%><%=intakeQuality.get(2).getB_8()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no4"><%
+			try{%><%=intakeQuality.get(1).getB_8()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no5"><%
+			try{%><%=intakeQuality.get(0).getB_8()%>
+			<%}
+			catch(Exception e){ } %></td>
       </tr>
       <tr class="i_code">
          <td>대장균_분원성대장균군</td>
-         <td name="no1"></td>
-         <td name="no2"></td>
-         <td name="no3"></td>
-         <td name="no4"></td>
-         <td name="no5"></td>
+         <td name="no1"><%
+			try{%><%=intakeQuality.get(4).getB_9()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no2"><%
+			try{%><%=intakeQuality.get(3).getB_9()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no3"><%
+			try{%><%=intakeQuality.get(2).getB_9()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no4"><%
+			try{%><%=intakeQuality.get(1).getB_9()%>
+			<%}
+			catch(Exception e){ } %></td>
+			<td name="no5"><%
+			try{%><%=intakeQuality.get(0).getB_9()%>
+			<%}
+			catch(Exception e){ } %></td>
       </tr>
    </table>
    <table id="f_table">
