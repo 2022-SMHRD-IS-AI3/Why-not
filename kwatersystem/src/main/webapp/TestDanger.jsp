@@ -13,6 +13,7 @@
 <title>Insert title here</title>
 <style>
 li{list-style:none}
+
 .menu {
 	width: 1668px;
 	position: fixed;
@@ -33,6 +34,7 @@ li{list-style:none}
   text-decoration:none;
   font-size:14px
 }
+
 .head{
 	position:fixed;
 	top:90px;
@@ -41,8 +43,6 @@ li{list-style:none}
 	font-weight:550;
 }
 
-
-
 .box{
 	width:1350px;
 	height:620px;
@@ -50,6 +50,7 @@ li{list-style:none}
 	top:180px;
 	left:410px;
 }
+
 #danger{
 	text-align:center;
 	background-color:black;
@@ -59,14 +60,17 @@ li{list-style:none}
 	height:60px;
 	background-color:#5778ff;
 }
+
 #danger th:nth-child(1){
 	font-size:30px;
 	width:130px;
 }
+
 #danger th:nth-child(2){
 	font-size:30px;
-	width:200px;5
+	width:200px;
 }
+
 #danger th:nth-child(3){
 	font-size:30px;
 	width:900px;
@@ -77,9 +81,13 @@ li{list-style:none}
 	background-color:white;
 	font-size:30px;
 }
+
 .bbb{
-position:fixed; top:210px; left:150px;
+	position:fixed; 
+	top:210px; 
+	left:150px;
 }
+
 .button_box .button {
 border-radius: 5px;
   background-color: #00BFFF;
@@ -102,10 +110,14 @@ border-radius: 5px;
   background-color: #008CBA;
 }
 
+#oper_td{
+	text-align: center;
+}
 
 </style>
 </head>
 <body>	
+	<script src="./circle-progress.js"></script>
 	<ul class="menu">
       <li>
         <a href="TestMain.jsp">홈</a>
@@ -125,27 +137,24 @@ border-radius: 5px;
     </ul>
 	<div class="head">위험도 순위</div>
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-	<script>
-		
-	</script>
 	<div class="bbb">
-	<table class="button_box">
+		<table class="button_box">
 	
-		<tr>
-			<td><button id="jungook" class="button">전국</button></td>
-		</tr>
-		<tr>
-			<td><button id="gwang" class="button">광주광역시</button></td>
-		</tr>
-		<tr>
-			<td><button id="junbook" class="button">전라북도</button></td>
-		</tr>
-		<tr>
-			<td><button id="junnam" class="button">전라남도</button></td>
-		</tr>
+			<tr>
+				<td><button id="jungook" class="button">전국</button></td>
+			</tr>
+			<tr>
+				<td><button id="gwang" class="button">광주광역시</button></td>
+			</tr>
+			<tr>
+				<td><button id="junbook" class="button">전라북도</button></td>
+			</tr>
+			<tr>
+				<td><button id="junnam" class="button">전라남도</button></td>
+			</tr>
 		</table>
 		<!--버튼에 클릭 이벤트 넣을 것-->
-
+	
 	</div>
 	
 	<script>
@@ -267,10 +276,14 @@ border-radius: 5px;
 	 	mapicon[i][6] = filt_danger[i];
 	 }
 	 
-	 
-	 
-	 
-	 
+	 <%
+		int dang_num = 0;
+		double oper_num = 0.0;
+		int popu_num = 0;
+		int const_num = 0;
+		int inta_num = 0;
+		int filt_num = 0;
+	%>	 
 	 
 /* 	 var filt_name = mapicon[1][0];
 	 console.log(filt_name); */
@@ -294,22 +307,35 @@ border-radius: 5px;
             `;
 
 		for(let i=0;i<5;i++){
-        tableForm+=`
-        <tr>
-            <td>${i+1}</td>
-             <td><a href='DetailsCon?data=${mapicon[i][0]}'>${mapicon[i][0]}</a></td>
-            <td>위험도 총점: ${mapicon[i][1]} 가동률위험도 :${mapicon[i][2]} 피해세대수${mapicon[i][3]} 준공년도 위험도 : ${mapicon[i][4]} 취수장 수질위험도 : ${mapicon[i][5]} 정수장 수질 위험도 : ${mapicon[i][6]}</td> 
-         </tr>
-        `;
-	
-    }
-    tableForm += `</table>`; 
-    
-    console.log(tableForm); 
-    
-    $('#dangerid').html(tableForm);
+			dang_num = `${mapicon[i][1]}`
+			oper_num = `${mapicon[i][2]}`
+			popu_num = `${mapicon[i][3]}`
+			const_num = `${mapicon[i][4]}`
+			inta_num = `${mapicon[i][5]}`
+			filt_num = `${mapicon[i][6]}`
+	        tableForm+=`
+    	    <tr>
+        	    <td>${i+1}</td>
+             	<td><a href='DetailsCon?data=${mapicon[i][0]}'>${mapicon[i][0]}</a></td>
+            	<td>
+            		<a id='dang_td'>위험도 총점:${dang_num}</a>
+        			<a id='oper_td'>가동률위험도 :${oper_num}</a>
+        			<a id='popu_td'>피해세대수${popu_num}</a>
+        			<a id='const'>준공년도 위험도 :${const_num}</a>
+        			<a id='inta_td'>취수장 수질위험도 : ${inta_num}</a>
+        			<a id='filt_td'>정수장 수질 위험도 : ${filt_num}</a>
+            	</td> 
+         	</tr>
+        	`;
 		
-		
+	    }
+	    tableForm += `</table>`; 
+	    
+	    console.log(tableForm); 
+	    
+	    $('#dangerid').html(tableForm);
+			
+			
 	})
 	
 	//전국 위험도 이벤트 끝
@@ -756,6 +782,22 @@ border-radius: 5px;
 	</div>
 	</div>
 	<script>$("#jungook").trigger("click");</script>
+	
+	<%
+		double oper_num2 = oper_num * (0.01);
+	%>
+	
+	<script>
+		$('#oper_td').circleProgress({
+			startAngle: -Math.PI ,
+    		value: <%=oper_num2 %>,
+    		size: 2500,
+    		thickness:100,
+    		emptyFill: "rgba(0,0,0,0.1)",
+    		fill: {gradient: ["#DDF1FE", "#016FFE"]},
+			animationStartValue:0.0
+		});
+	</script>
 	
 </body>
 </html>

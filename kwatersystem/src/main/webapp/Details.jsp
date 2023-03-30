@@ -74,7 +74,7 @@ List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute(
 		n_top = -10;
 		n_width = 300;
 	}%>
-	
+
 li{
 	list-style:none
 }
@@ -277,6 +277,7 @@ li{
 	#f_table td[name=no31] {
 	font-size: 12px;
 }
+
 </style>
 </head>
 <body>
