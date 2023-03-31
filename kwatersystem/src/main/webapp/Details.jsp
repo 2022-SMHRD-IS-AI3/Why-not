@@ -348,232 +348,292 @@ li{
       </tr>
         <tr class="i_code">
          <td>수소이온농도</td>
-         <td name="no1"><%
-         try{%><%=intakeQuality.get(4).getB_1()%>
+         <td id='I01' name="no1"><%
+         try{%><%=intakeQuality.get(4).getB_1()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){}
          %></td>
-         <td name="no2"><%
-         try{%><%=intakeQuality.get(3).getB_1()%>
+         <td id='I02' name="no2"><%
+         try{%><%=intakeQuality.get(3).getB_1()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){}
          %></td>
-         <td name="no3"><%
-         try{%><%=intakeQuality.get(2).getB_1()%>
+         <td id='I03' name="no3"><%
+         try{%><%=intakeQuality.get(2).getB_1()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){}
          %></td>
-         <td name="no4"><%
-         try{%><%=intakeQuality.get(1).getB_1()%>
+         <td id='I04' name="no4"><%
+         try{%><%=intakeQuality.get(1).getB_1()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){}
          %></td>
-         <td name="no5"><%
-         try{%><%=intakeQuality.get(0).getB_1()%>
+         <td id='I05' name="no5"><%
+         try{%><%=intakeQuality.get(0).getB_1()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){}
          %></td>
       </tr>
       <tr class="i_code">
       <td>생물화학적_산소요구량</td>
-         <td name="no1"><%
-         try{%><%=intakeQuality.get(4).getB_2()%>
+         <td id='I06' name="no1"><%
+         try{%><%=intakeQuality.get(4).getB_2()+0%>
+         <%} 
+         catch(NullPointerException e){%><%='N'%>
          <%}
-         catch(Exception e){ }
          %></td>
-         <td name="no2"><%
-         try{%><%=intakeQuality.get(3).getB_2()%>
+         <td id='I07' name="no2"><%
+         try{%><%=intakeQuality.get(3).getB_2()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
-         <td name="no3"><%
-         try{%><%=intakeQuality.get(2).getB_2()%>
+         <td id='I08' name="no3"><%
+         try{%><%=intakeQuality.get(2).getB_2()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
-         <td name="no4"><%
-         try{%><%=intakeQuality.get(1).getB_2()%>
+         <td id='I09' name="no4"><%
+         try{%><%=intakeQuality.get(1).getB_2()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
-         <td name="no5"><%
-         try{%><%=intakeQuality.get(0).getB_2()%>
+         <td id='I10' name="no5"><%
+         try{%><%=intakeQuality.get(0).getB_2()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
       </tr>
       <tr class="i_code">
          <td>화학적_산소요구량</td>
-         <td name="no1"><%
-         try{%><%=intakeQuality.get(4).getB_3()%>
+         <td id='I11' name="no1"><%
+         try{%><%=intakeQuality.get(4).getB_3()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){%><%='N'%><%}
          %></td>
-         <td name="no2"><%
-         try{%><%=intakeQuality.get(3).getB_3()%>
+         <td id='I12' name="no2"><%
+         try{%><%=intakeQuality.get(3).getB_3()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){%><%='N'%><%}
          %></td>
-         <td name="no3"><%
-         try{%><%=intakeQuality.get(2).getB_3()%>
+         <td id='I13' name="no3"><%
+         try{%><%=intakeQuality.get(2).getB_3()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){%><%='N'%><%}
          %></td>
-         <td name="no4"><%
-         try{%><%=intakeQuality.get(1).getB_3()%>
+         <td id='I14' name="no4"><%
+         try{%><%=intakeQuality.get(1).getB_3()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){%><%='N'%><%}
          %></td>
-         <td name="no5"><%
-         try{%><%=intakeQuality.get(0).getB_3()%>
+         <td id='I15' name="no5"><%
+         try{%><%=intakeQuality.get(0).getB_3()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
       </tr>
       <tr class="i_code">
          
          <td>총유기탄소</td>
          <td name="no1"><%
-         try{%><%=intakeQuality.get(4).getB_4()%>
+         try{%><%=intakeQuality.get(4).getB_4()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
          <td name="no2"><%
-         try{%><%=intakeQuality.get(3).getB_4()%>
+         try{%><%=intakeQuality.get(3).getB_4()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
          <td name="no3"><%
-         try{%><%=intakeQuality.get(2).getB_4()%>
+         try{%><%=intakeQuality.get(2).getB_4()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
          <td name="no4"><%
-         try{%><%=intakeQuality.get(1).getB_4()%>
+         try{%><%=intakeQuality.get(1).getB_4()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
          <td name="no5"><%
-         try{%><%=intakeQuality.get(0).getB_4()%>
+         try{%><%=intakeQuality.get(0).getB_4()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
       </tr>
       <tr class="i_code">
          <td>총인</td>
          <td name="no1"><%
-         try{%><%=intakeQuality.get(4).getB_5()%>
+         try{%><%=intakeQuality.get(4).getB_5()+0%>
          <%}
-         catch(Exception e){ }
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
          <td name="no2"><%
-         try{%><%=intakeQuality.get(3).getB_5()%>
+         try{%><%=intakeQuality.get(3).getB_5()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no3"><%
-         try{%><%=intakeQuality.get(2).getB_5()%>
+         try{%><%=intakeQuality.get(2).getB_5()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no4"><%
-         try{%><%=intakeQuality.get(1).getB_5()%>
+         try{%><%=intakeQuality.get(1).getB_5()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no5"><%
-         try{%><%=intakeQuality.get(0).getB_5()%>
+         try{%><%=intakeQuality.get(0).getB_5()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
       </tr>
       <tr class="i_code">
          <td>부유물질량</td>
          <td name="no1"><%
-         try{%><%=intakeQuality.get(4).getB_6()%>
+         try{%><%=intakeQuality.get(4).getB_6()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no2"><%
-         try{%><%=intakeQuality.get(3).getB_6()%>
+         try{%><%=intakeQuality.get(3).getB_6()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no3"><%
-         try{%><%=intakeQuality.get(2).getB_6()%>
+         try{%><%=intakeQuality.get(2).getB_6()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no4"><%
-         try{%><%=intakeQuality.get(1).getB_6()%>
+         try{%><%=intakeQuality.get(1).getB_6()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no5"><%
-         try{%><%=intakeQuality.get(0).getB_6()%>
+         try{%><%=intakeQuality.get(0).getB_6()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
       </tr>
       <tr class="i_code">
          <td>용존산소량</td>
          <td name="no1"><%
-         try{%><%=intakeQuality.get(4).getB_7()%>
+         try{%><%=intakeQuality.get(4).getB_7()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no2"><%
-         try{%><%=intakeQuality.get(3).getB_7()%>
+         try{%><%=intakeQuality.get(3).getB_7()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no3"><%
-         try{%><%=intakeQuality.get(2).getB_7()%>
+         try{%><%=intakeQuality.get(2).getB_7()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no4"><%
-         try{%><%=intakeQuality.get(1).getB_7()%>
+         try{%><%=intakeQuality.get(1).getB_7()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no5"><%
-         try{%><%=intakeQuality.get(0).getB_7()%>
+         try{%><%=intakeQuality.get(0).getB_7()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
       </tr>
       <tr class="i_code">
          <td>총대장균군</td>
          <td name="no1"><%
-         try{%><%=intakeQuality.get(4).getB_8()%>
+         try{%><%=intakeQuality.get(4).getB_8()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no2"><%
-         try{%><%=intakeQuality.get(3).getB_8()%>
+         try{%><%=intakeQuality.get(3).getB_8()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no3"><%
-         try{%><%=intakeQuality.get(2).getB_8()%>
+         try{%><%=intakeQuality.get(2).getB_8()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no4"><%
-         try{%><%=intakeQuality.get(1).getB_8()%>
+         try{%><%=intakeQuality.get(1).getB_8()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no5"><%
-         try{%><%=intakeQuality.get(0).getB_8()%>
+         try{%><%=intakeQuality.get(0).getB_8()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
       </tr>
       <tr class="i_code">
          <td>대장균_분원성대장균군</td>
          <td name="no1"><%
-         try{%><%=intakeQuality.get(4).getB_9()%>
+         try{%><%=intakeQuality.get(4).getB_9()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no2"><%
-         try{%><%=intakeQuality.get(3).getB_9()%>
+         try{%><%=intakeQuality.get(3).getB_9()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no3"><%
-         try{%><%=intakeQuality.get(2).getB_9()%>
+         try{%><%=intakeQuality.get(2).getB_9()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no4"><%
-         try{%><%=intakeQuality.get(1).getB_9()%>
+         try{%><%=intakeQuality.get(1).getB_9()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no5"><%
-         try{%><%=intakeQuality.get(0).getB_9()%>
+         try{%><%=intakeQuality.get(0).getB_9()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
       </tr>
    </table>
    <table id="f_table">
@@ -599,62 +659,90 @@ li{
       <tr clase="f_value">
          <td name="no1">
          <%
-         try{%><%=filtQuality.getA_1() %>
+         try{%><%=filtQuality.getA_1()+0%>
          <%}
-         catch(Exception e){ } %>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %>
          </td>
          <td name="no2"><%
-         try{%><%=filtQuality.getA_2() %>
+         try{%><%=filtQuality.getA_2()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no3"><%
-         try{%><%=filtQuality.getA_3() %>
+         try{%><%=filtQuality.getA_3()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no4"><%
-         try{%><%=filtQuality.getA_4() %>
+         try{%><%=filtQuality.getA_4()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no5"><%
-         try{%><%=filtQuality.getA_5() %>
+         try{%><%=filtQuality.getA_5()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no6"><%
-         try{%><%=filtQuality.getA_6() %>
+         try{%><%=filtQuality.getA_6()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no7"><%
-         try{%><%=filtQuality.getA_7() %>
+         try{%><%=filtQuality.getA_7()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no8"><%
-         try{%><%=filtQuality.getA_8() %>
+         try{%><%=filtQuality.getA_8()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no9"><%
-         try{%><%=filtQuality.getA_9() %>
+         try{%><%=filtQuality.getA_9()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no10"><%
-         try{%><%=filtQuality.getA_10() %>
+         try{%><%=filtQuality.getA_10()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no11"><%
-         try{%><%=filtQuality.getA_11() %>
+         try{%><%=filtQuality.getA_11()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no12"><%
-         try{%><%=filtQuality.getA_12() %>
+         try{%><%=filtQuality.getA_12()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no13"><%
-         try{%><%=filtQuality.getA_13() %>
+         try{%><%=filtQuality.getA_13()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no14"><%
-         try{%><%=filtQuality.getA_14() %>
+         try{%><%=filtQuality.getA_14()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
       </tr>
       <tr clase="f_code">
          <td name="no15">1.1.1-트리클로로에탄</td>
@@ -674,61 +762,89 @@ li{
       </tr>
       <tr clase="f_value">
          <td name="no15"><%
-         try{%><%=filtQuality.getA_15() %>
+         try{%><%=filtQuality.getA_15()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no16"><%
-         try{%><%=filtQuality.getA_16() %>
+         try{%><%=filtQuality.getA_16()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no17"><%
-         try{%><%=filtQuality.getA_17() %>
+         try{%><%=filtQuality.getA_17()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no18"><%
-         try{%><%=filtQuality.getA_18() %>
+         try{%><%=filtQuality.getA_18()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no19"><%
-         try{%><%=filtQuality.getA_19() %>
+         try{%><%=filtQuality.getA_19()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no20"><%
-         try{%><%=filtQuality.getA_20() %>
+         try{%><%=filtQuality.getA_20()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no21"><%
-         try{%><%=filtQuality.getA_21() %>
+         try{%><%=filtQuality.getA_21()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no22"><%
-         try{%><%=filtQuality.getA_22() %>
+         try{%><%=filtQuality.getA_22()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no23"><%
-         try{%><%=filtQuality.getA_23() %>
+         try{%><%=filtQuality.getA_23()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no24"><%
-         try{%><%=filtQuality.getA_24() %>
+         try{%><%=filtQuality.getA_24()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no25"><%
-         try{%><%=filtQuality.getA_25() %>
+         try{%><%=filtQuality.getA_25()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no26"><%
-         try{%><%=filtQuality.getA_26() %>
+         try{%><%=filtQuality.getA_26()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no27"><%
-         try{%><%=filtQuality.getA_27() %>
+         try{%><%=filtQuality.getA_27()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no28"><%
-         try{%><%=filtQuality.getA_28() %>
+         try{%><%=filtQuality.getA_28()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
       </tr>
       <tr clase="f_code">
          <td name="no29">1,2-디브로모-3-클로로프로판</td>
@@ -748,61 +864,89 @@ li{
       </tr>
       <tr clase="f_value">
          <td name="no29"><%
-         try{%><%=filtQuality.getA_29() %>
+         try{%><%=filtQuality.getA_29()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no30"><%
-         try{%><%=filtQuality.getA_30() %>
+         try{%><%=filtQuality.getA_30()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no31"><%
-         try{%><%=filtQuality.getA_31() %>
+         try{%><%=filtQuality.getA_31()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no32"><%
-         try{%><%=filtQuality.getA_32() %>
+         try{%><%=filtQuality.getA_32()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no33"><%
-         try{%><%=filtQuality.getA_33() %>
+         try{%><%=filtQuality.getA_33()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no34"><%
-         try{%><%=filtQuality.getA_34() %>
+         try{%><%=filtQuality.getA_34()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no35"><%
-         try{%><%=filtQuality.getA_35() %>
+         try{%><%=filtQuality.getA_35()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no36"><%
-         try{%><%=filtQuality.getA_36() %>
+         try{%><%=filtQuality.getA_36()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no37"><%
-         try{%><%=filtQuality.getA_37() %>
+         try{%><%=filtQuality.getA_37()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no38"><%
-         try{%><%=filtQuality.getA_38() %>
+         try{%><%=filtQuality.getA_38()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no39"><%
-         try{%><%=filtQuality.getA_39() %>
+         try{%><%=filtQuality.getA_39()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no40"><%
-         try{%><%=filtQuality.getA_40() %>
+         try{%><%=filtQuality.getA_40()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no41"><%
-         try{%><%=filtQuality.getA_41() %>
+         try{%><%=filtQuality.getA_41()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no42"><%
-         try{%><%=filtQuality.getA_42() %>
+         try{%><%=filtQuality.getA_42()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
       </tr>
       </tr>
       <tr clase="f_code">
@@ -823,61 +967,89 @@ li{
       </tr>
       <tr clase="f_value">
          <td name="no43"><%
-         try{%><%=filtQuality.getA_43() %>
+         try{%><%=filtQuality.getA_43()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no44"><%
-         try{%><%=filtQuality.getA_44() %>
+         try{%><%=filtQuality.getA_44()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no45"><%
-         try{%><%=filtQuality.getA_45() %>
+         try{%><%=filtQuality.getA_45()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no46"><%
-         try{%><%=filtQuality.getA_46() %>
+         try{%><%=filtQuality.getA_46()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no47"><%
-         try{%><%=filtQuality.getA_47() %>
+         try{%><%=filtQuality.getA_47()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no48"><%
-         try{%><%=filtQuality.getA_48() %>
+         try{%><%=filtQuality.getA_48()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no49"><%
-         try{%><%=filtQuality.getA_49() %>
+         try{%><%=filtQuality.getA_49()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no50"><%
-         try{%><%=filtQuality.getA_50() %>
+         try{%><%=filtQuality.getA_50()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no51"><%
-         try{%><%=filtQuality.getA_51() %>
+         try{%><%=filtQuality.getA_51()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no52"><%
-         try{%><%=filtQuality.getA_52() %>
+         try{%><%=filtQuality.getA_52()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no53"><%
-         try{%><%=filtQuality.getA_53() %>
+         try{%><%=filtQuality.getA_53()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no54"><%
-         try{%><%=filtQuality.getA_54() %>
+         try{%><%=filtQuality.getA_54()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no55"><%
-         try{%><%=filtQuality.getA_55() %>
+         try{%><%=filtQuality.getA_55()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
          <td name="no56"><%
-         try{%><%=filtQuality.getA_56() %>
+         try{%><%=filtQuality.getA_56()+0%>
          <%}
-         catch(Exception e){ } %></td>
+         catch(NullPointerException e){%><%='N'%>
+         <%}
+         %></td>
       </tr>
    </table>
 
@@ -892,6 +1064,94 @@ li{
          $(this).removeClass('h_menu');
          $(this).attr('class', 'menu');
       }) */
+     /*  let b1=document.getElementById("I01").textContent;
+      console.log(b1);
+      if(b1=="null N"){
+    	  console.log(b1)
+          document.getElementById("I01").innerText='N';          
+      } else{ console.log(b1)}
+      
+      
+      
+      let b2=document.getElementById("I02").textContent;
+      console.log(b2);
+      if(b2=="null N){
+          document.getElementById("I02").innerText='N';
+          
+      }
+      let b3=document.getElementById("I03").textContent;
+      console.log(b3);
+      if(b3=="null N"){
+          document.getElementById("I03").innerText='N';
+          
+      }
+      let b5=document.getElementById("I05").textContent;
+      console.log(b5);
+      if(b5=="null N"){
+          document.getElementById("I05").innerText='N';
+          
+      }
+      let b6=document.getElementById("I06").textContent;
+      console.log(b6);
+      if(b6=="null N"){
+          document.getElementById("I06").innerText='N';
+          
+      } else{ console.log(b1)}
+      let b7=document.getElementById("I07").textContent;
+      console.log(b7);
+      if(b7=="null N"){
+          document.getElementById("I07").innerText='N';
+          
+      } else{ console.log(b1)}
+      let b8=document.getElementById("I08").textContent;
+      console.log(b8);
+      if(b8=="null N"){
+          document.getElementById("I08").innerText='N';
+          
+      } else{ console.log(b1)}
+      let b9=document.getElementById("I09").textContent;
+      console.log(b9);
+      if(b9=="null N"){
+          document.getElementById("I09").innerText='N';
+          
+      }
+      let b10=document.getElementById("I10").textContent;
+      console.log(b10);
+      if(b10=="null N"){
+          document.getElementById("I10").innerText='N';
+          
+      }
+      let b11=document.getElementById("I11").textContent;
+      console.log(b11);
+      if(b11=="null N"){
+          document.getElementById("I11").innerText='N';
+          
+      }
+      let b12=document.getElementById("I12").textContent;
+      console.log(b12);
+      if(b12=="null N"){
+          document.getElementById("I12").innerText='N';
+          
+      }
+      let b13=document.getElementById("I13").textContent;
+      console.log(b13);
+      if(b13=="null N"){
+          document.getElementById("I13").innerText='N';
+          
+      }
+      let b14=document.getElementById("I14").textContent;
+      console.log(b14);
+      if(b14=="null N"){
+          document.getElementById("I14").innerText='N';
+          
+      }
+      let b15=document.getElementById("I15").textContent;
+      console.log(b15);
+      if(b15=="null N"){
+          document.getElementById("I15").innerText='N';
+          
+      } */
+      
       
       
       
