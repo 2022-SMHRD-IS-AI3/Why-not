@@ -304,6 +304,7 @@ li {
 		listlocal.push('<%=list.get(i).getLocal()%>')
 		<%}%>
 		console.log(listlocal)
+		console.log(listlocal.length)
 
 		// 주소 이름 이차원배열
 		const mapicon = new Array(<%=list.size()%>);
@@ -323,8 +324,19 @@ li {
 		}
 		console.log(mapicon);
 
-		// 마커를 담을 배열 생성
+		
+		// 전체 마커를 담을 배열 생성
 		var markers = [];
+		
+		// 광주광역시 마커를 담을 배열 생성
+		var gjmarkers = [];
+		
+		// 전라남도 마커를 담을 배열 생성
+		var jnmarkers = [];
+		
+		// 전라북도 마커를 담을 배열 생성
+		var jbmarkers = [];		
+		
 
 		// foreach loop
 		mapicon.forEach(function(addr, index) {
@@ -341,6 +353,20 @@ li {
         			
         			// 생성된 마커를 배열에 추가
 		            markers.push(marker);
+		            console.log("전체")
+        			
+        			if(addr[2]=="광주광역시"){
+        				gjmarkers.push(marker);
+        				console.log("광주")
+        			}
+        			if(addr[2]=="전라남도"){
+        				jnmarkers.push(marker);
+        			}
+        			if(addr[2]=="전라북도"){
+        				jbmarkers.push(marker);
+        			}
+		          
+		            
 
 		            // 인포윈도우 생성
 		            var infowindow = new kakao.maps.InfoWindow({
@@ -396,43 +422,46 @@ li {
 		// 호남(전국)버튼 함수
 		function honam(){
 			setMarkers(null);
+			map.setLevel(11);
 			setMarkers(map);
+			var moveLatLon = new kakao.maps.LatLng(35.450701, 126.570667);
+			map.panTo(moveLatLon);		
 		}
+		
 		
 		// 광주버튼 함수
 		function gwangju(){
 			setMarkers(null);
-			var i=0;
-			while(true){
-				if(mapicon[i][2]=='광주광역시'){
-					markers[i].setMap(map);
-				}
-				i++;
+			map.setLevel(8);
+			for (var i = 0; i < gjmarkers.length; i++) {
+			        gjmarkers[i].setMap(map);             
 			}
+			var moveLatLon = new kakao.maps.LatLng(35.141063, 126.930287);
+			map.panTo(moveLatLon);
+			
 		}
 		
 		// 전남버튼 함수
 		function jeonnam(){
 			setMarkers(null);
-			var i=0;
-			while(true){
-				if(mapicon[i][2]=='전라남도'){
-					markers[i].setMap(map);
-				}
-				i++;
+			map.setLevel(11);
+			for (var i = 0; i < jnmarkers.length; i++) {
+		        jnmarkers[i].setMap(map);             
 			}
+			var moveLatLon = new kakao.maps.LatLng(34.749231, 126.675501);
+			map.panTo(moveLatLon);
 		}
 		
 		// 전북버튼 함수
 		function jeonbuk(){
 			setMarkers(null);
-			var i=0;
-			while(true){
-				if(mapicon[i][2]=='전라북도'){
-					markers[i].setMap(map);
-				}
-				i++;
+			map.setLevel(11);
+			for (var i = 0; i < jbmarkers.length; i++) {
+		        jbmarkers[i].setMap(map);             
 			}
+			var moveLatLon = new kakao.maps.LatLng(35.721621, 127.116523);
+			map.panTo(moveLatLon);
+			
 		}
 		
 								
