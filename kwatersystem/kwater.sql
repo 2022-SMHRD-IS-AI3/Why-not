@@ -10,3 +10,6 @@ create table test (
 select * from test;
 
 commit
+
+
+select * from FILTLATION_INFO;
