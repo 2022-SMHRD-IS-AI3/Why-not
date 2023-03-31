@@ -6,6 +6,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+	@font-face{
+		font-family:one_pop;
+		src: local(※), url('./font/ONE-Mobile-POP-OTF.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+	}
+
 	.team_info{
 		width:1800px;
 		height:150px;
@@ -14,10 +21,12 @@
 		left:60px;
 		background-color:#5778ff;
 		text-align:center;
-		font-size:80px;
+		font-family:one_pop;
+		font-size:100px;
 		font-weight:500;
 	}
 	.warp{
+		font-family:one_pop;
 		width:1800px;
 		height:700px;
 		position:fixed;
@@ -47,7 +56,8 @@
 		top:520px;
 		left:310px;
 		font-size:80px;
-		color: black;
+		color: white;
+		text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
 	}
 	#warp_map img{
 		width:900px;
@@ -66,7 +76,8 @@
 		top:520px;
 		left:1210px;
 		font-size:80px;
-		color: black;
+		color: white;
+		text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
 	}
 	#warp_dan img{
 		width:900px;
@@ -83,7 +94,7 @@
 </head>
 <body>
 	<div class="team_info">
-		<div style="height:20px;"></div>
+		<div style="height:12px;"></div>
 		정수장 관리 시스템
 	</div>
 	<div class="warp">
