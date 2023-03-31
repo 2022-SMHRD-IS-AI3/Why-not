@@ -23,6 +23,7 @@ List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute(
 %>
 
 <style>
+
 <%
    double val_num = filtinfo.getOper_rate() ;
    double val_num2 = val_num*(0.01) ;
@@ -82,26 +83,34 @@ li{
 }
 
 .menu {
-   width: 1668px;
-   position: fixed;
-   top: 0px;
-   left: 78px;
+	width: 1685px;
+	position: fixed;
+	top: 0px;
+	left: 78px;
 }
 
-.menu > li {
-  width: 20%; /*20*5=100%*/
-  float: left;
-  text-align: center;
-  line-height: 40px;
-  background-color: #5778ff;
+.menu>li {
+	width: 33.3%; 
+	float: left;
+	text-align: center;
+	line-height: 40px;
+	background-color: #5778ff;
 }
 
 .menu a {
-  color: #fff;
-  text-decoration:none;
-  font-size:14px
+	color: #fff;
+	text-decoration: none;
+	font-size: 14px
 }
-
+.menu>li:hover{
+    background-color:#002cdb; 
+    
+}
+.menu a:hover{
+    color : #fff;
+    text-decoration: none;
+    
+}
 
 #details_head {
    width: 1900px;
@@ -292,12 +301,7 @@ li{
       <li>
         <a href="TestDanger.jsp">위험도 순위</a>
       </li>
-      <li>
-        <a href="Details.jsp">상세보기</a>
-      </li>
-      <li>
-        <a href="#">MENU5</a>
-      </li>
+      
     </ul>
 
    <div id="details_head">
