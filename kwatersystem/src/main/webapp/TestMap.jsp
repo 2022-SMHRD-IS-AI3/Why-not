@@ -15,14 +15,14 @@ li {
 }
 
 .menu {
-	width: 1668px;
+	width: 1685px;
 	position: fixed;
 	top: 0px;
 	left: 78px;
 }
 
 .menu>li {
-	width: 20%; /*20*5=100%*/
+	width: 33.3%; 
 	float: left;
 	text-align: center;
 	line-height: 40px;
@@ -33,6 +33,15 @@ li {
 	color: #fff;
 	text-decoration: none;
 	font-size: 14px
+}
+.menu>li:hover{
+    background-color:#002cdb; 
+    
+}
+.menu a:hover{
+    color : #fff;
+    text-decoration: none;
+    
 }
 
 .head {
@@ -221,8 +230,6 @@ li {
 		<li><a href="TestMain.jsp">홈</a></li>
 		<li><a href="TestMap.jsp">정수장 현황</a></li>
 		<li><a href="TestDanger.jsp">위험도 순위</a></li>
-		<li><a href="Details.jsp">상세보기</a></li>
-		<li><a href="#">MENU5</a></li>
 	</ul>
 	
 	<!-- 정수장 현황 -->
