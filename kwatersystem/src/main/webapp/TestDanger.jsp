@@ -38,7 +38,7 @@ li{list-style:none}
 
 .head{
 	position:fixed;
-	top:90px;
+	top:70px;
 	left:145px;
 	font-size:40px;
 	font-weight:550;
@@ -48,8 +48,8 @@ li{list-style:none}
 	width:1350px;
 	height:620px;
 	position:fixed;
-	top:180px;
-	left:410px;
+	top:140px;
+	left:440px;
 }
 
 #danger{
@@ -58,23 +58,27 @@ li{list-style:none}
 }
 
 #danger th{
-	height:60px;
+	height:40px;
 	background-color:#5778ff;
 }
 
-#danger th:nth-child(1){
-	font-size:30px;
-	width:130px;
+#danger_tr1>th:nth-child(1){
+	width:120px;
 }
 
-#danger th:nth-child(2){
-	font-size:30px;
+#danger_tr1>th:nth-child(2){
 	width:200px;
 }
 
-#danger th:nth-child(3){
+#danger_tr1>th:nth-child(3){
+}
+
+#danger_tr1>th{
 	font-size:30px;
-	width:900px;
+}
+
+#danger_tr2>th{
+	font-size:20px;
 }
 
 #danger td a{
@@ -83,7 +87,7 @@ li{list-style:none}
 }
 
 #danger tr>td:nth-child(2):hover{
-    background-color:#00BFFF;
+    background-color:#6CB2FD;
     text-decoration: none;
 }
 
@@ -101,7 +105,7 @@ li{list-style:none}
 	/* 테두리 없음 */
 } 
 #danger td:nth-child(3){
-	width: 70px;
+	width: 100px;
 }
 #danger td:nth-child(4), #danger td:nth-child(5), #danger td:nth-child(6),
 #danger td:nth-child(7), #danger td:nth-child(8){
@@ -111,7 +115,7 @@ li{list-style:none}
 #danger td:nth-child(3)>a:nth-child(1){
 	position: absolute;
 	top:3px;
-	left:7px;
+	left:32px;
 }
 
 #danger td:nth-child(3)>a:nth-child(2){
@@ -126,22 +130,42 @@ li{list-style:none}
 	position: absolute;
 	text-align:center;
 	top: 3px;
-	left:20px;
+	left:53px;
+}
+
+#danger td:nth-child(5)>a, #danger td:nth-child(6)>a{
+	position: absolute;
+	text-align:center;
+	top: 3px;
+	left:55px;
+}
+
+#danger td:nth-child(7)>a,  #danger td:nth-child(8)>a{
+	position: absolute;
+	text-align:center;
+	top: 3px;
+	left:74px;
 }
 
 #danger td:nth-child(4)>canvas{
-	padding-top:26px;
+	padding-top:35px;
+}
+
+#danger td:nth-child(5)>img, #danger td:nth-child(6)>img, #danger td:nth-child(7)>img, #danger td:nth-child(8)>img{
+	width : 80px;
+	height : 80px;
+	padding-top:35px;
 }
 
 .bbb{
 	position:fixed; 
-	top:210px; 
-	left:150px;
+	top:170px; 
+	left:200px;
 }
 
 .button_box .button {
 border-radius: 5px;
-  background-color: #00BFFF;
+  background-color: #6CB2FD;
   border: 1px solid green;
   color: white;
   padding: 15px 32px;
@@ -158,7 +182,8 @@ border-radius: 5px;
 }
 
 .button_box .button:hover {
-  background-color: #008CBA;
+  background-color: white;
+  color:black;
 }
 
 #oper_td{
@@ -190,7 +215,7 @@ border-radius: 5px;
 		<table class="button_box">
 	
 			<tr>
-				<td><button id="jungook" class="button">전국</button></td>
+				<td><button id="jungook" class="button">전체</button></td>
 			</tr>
 			<tr>
 				<td><button id="gwang" class="button">광주광역시</button></td>
@@ -311,6 +336,12 @@ border-radius: 5px;
 		int const_num = 0;
 		int inta_num = 0;
 		int filt_num = 0;
+		String img_smile = null;
+		String img_smile2 = null;
+		String img_smile3 = null;
+		String img_smile4 = null;
+		String aorf1 = null;
+		String aorf2 = null;
 	%>	 
 /* 	 var filt_name = mapicon[1][0];
 	 console.log(filt_name); */
@@ -326,10 +357,18 @@ border-radius: 5px;
 		
 		  let tableForm =`
             <table id='danger'>
-                <tr>
-                    <th>순위</th>
-                    <th>정수장 이름</th>
+                <tr id='danger_tr1'>
+                    <th rowspan="2">순위</th>
+                    <th rowspan="2">정수장 이름</th>
                     <th colspan="6">위험도</th>
+                </tr>
+                <tr id='danger_tr2'>
+                	<th>총 점</th>
+                	<th>가동률</th>
+                	<th>급수인구</th>
+                	<th>준공년도</th>
+                	<th>취수장 수질</th>
+                	<th>정수장 수질</th>
                 </tr>
             `;
             
@@ -345,8 +384,71 @@ border-radius: 5px;
 			const_num = mapicon[i][4];
 			inta_num = mapicon[i][5];
 			filt_num = mapicon[i][6];
-			dang_g[i] = dang_num/4;
+			dang_g[i] = dang_num;
 			oper_g[i] = oper_num*0.01;
+			inta_g[i] = inta_num;
+			filt_g[i] = filt_num;
+			console.log(inta_g[i]);
+			
+			// 취수장 수질 위험도
+			if(inta_num == 0){
+				aorf1 = 'A'
+				img_smile = './smile/11_img.png'
+			}else if(inta_num == 10){
+				aorf1 = 'F'
+				img_smile = './smile/9_img.png'				
+			}
+			// 정수장 수질 위험도
+			if(filt_num == 0){
+				aorf2 = 'A'
+				img_smile2 = './smile/11_img.png'
+			}else if(filt_num == 10){
+				aorf2 = 'F'
+				img_smile2 = './smile/9_img.png'				
+			}
+			// 준공년도 위험도
+			if(const_num == 0){
+				img_smile3 = './smile/11_img.png'
+			}else if(const_num == 1){
+				img_smile3 = './smile/22_img.png'
+			}else if(const_num <= 3){
+				img_smile3 = './smile/3_img.png'
+			}else if(const_num <= 5){
+				img_smile3 = './smile/4_img.png'
+			}else if(const_num <= 7){
+				img_smile3 = './smile/5_img.png'
+			}else if(const_num <= 9){
+				img_smile3 = './smile/6_img.png'
+			}else if(const_num <= 11){
+				img_smile3 = './smile/7_img.png'
+			}else if(const_num == 12){
+				img_smile3 = './smile/8_img.png'
+			}else if(const_num == 13){
+				img_smile3 = './smile/9_img.png'
+			}
+			// 공급인구 위험도
+			if(popu_num == 0){
+				img_smile4 = 'X'
+			}else if(popu_num == 1){
+				img_smile4 = './smile/11_img.png'
+			}else if(popu_num == 2){
+				img_smile4 = './smile/22_img.png'
+			}else if(popu_num == 3){
+				img_smile4 = './smile/3_img.png'
+			}else if(popu_num == 4){
+				img_smile4 = './smile/4_img.png'
+			}else if(popu_num == 5){
+				img_smile4 = './smile/5_img.png'
+			}else if(popu_num == 6){
+				img_smile4 = './smile/6_img.png'
+			}else if(popu_num == 7){
+				img_smile4 = './smile/7_img.png'
+			}else if(popu_num == 8){
+				img_smile4 = './smile/8_img.png'
+			}else if(popu_num == 9){
+				img_smile4 = './smile/9_img.png'
+			}
+			
 			inta_g[i] = inta_num;
 			filt_g[i] = filt_num;
 			console.log(inta_g[i]);
@@ -356,14 +458,28 @@ border-radius: 5px;
         	    <td>${i+1}</td>
              	<td><a href='DetailsCon?data=${mapicon[i][0]}'>${mapicon[i][0]}</a></td>
            		<td id='dang_td${i}'>
-           			<a>위험도</a>
+           			<a>${dang_num}점</a>
            			<a></a>
            		</td>
-       			<td id='oper_td${i}'><a>가동률 ${oper_num}점</a></td>
-       			<td id='popu_td'>피해세대수${popu_num}</td>
-       			<td id='const'>준공년도 위험도 :${const_num}</td>
-       			<td id='inta_td${i}'><img src='img_smile'>취수장 수질위험도 : ${inta_num}</td>
-       			<td id='filt_td${i}'>정수장 수질 위험도 : ${filt_num}</td>
+       			<td id='oper_td${i}'>
+       				<a>${oper_num}점</a>
+       			</td>
+       			<td id='popu_td'>
+       				<a>${popu_num}등급</a>
+       				<img src='${img_smile4}'>
+       			</td>
+       			<td id='const_td'>
+       				<a>${const_num}등급</a>
+       				<img src='${img_smile3}'>
+       			</td>
+       			<td id='inta_td'>
+       				<a>${aorf1}</a>
+       				<img src='${img_smile}'>
+       			</td>
+       			<td id='filt_td'>
+       				<a>${aorf2}</a>
+       				<img src='${img_smile2}'>
+       			</td>
          	</tr>
          	`;        	
 	    }
@@ -373,7 +489,6 @@ border-radius: 5px;
 	    
 	    $('#dangerid').html(tableForm);
 	   	
-	    //위험도 총점 그래프
 	    $('#dang_td0>a:nth-child(2)').css('height', 0);
  	    $('#dang_td0>a:nth-child(2)').animate({
  	    	height : dang_g[0]
@@ -394,8 +509,7 @@ border-radius: 5px;
  	    $('#dang_td4>a:nth-child(2)').animate({
  	    	height : dang_g[4]
  	    },1500);	    
-	    // 위험도 총점 그래프 끝
- 	    
+	    
 	    // 가동률 위험도 그래프
 	    $('#oper_td0').circleProgress({
 			startAngle: -Math.PI ,
@@ -446,8 +560,8 @@ border-radius: 5px;
 			fill: {gradient: ["#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
-		//가동률 위험도 그래프 끝
-			
+		// 가동률 위험도 그래프 끝
+				
 	})
 	//전국 위험도 이벤트 끝
 	
