@@ -4,7 +4,7 @@
 <%@page import="com.smhrd.model.MapDAO"%>
 <%@page import="com.smhrd.model.Filtration_infoDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,9 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="./circle-progress.js"></script>
 <style>
-li{list-style:none}
+li {
+	list-style: none
+}
 
 .menu {
 	width: 1668px;
@@ -23,7 +25,7 @@ li{list-style:none}
 }
 
 .menu>li {
-	width: 33.3%; 
+	width: 33.3%;
 	float: left;
 	text-align: center;
 	line-height: 40px;
@@ -35,217 +37,215 @@ li{list-style:none}
 	text-decoration: none;
 	font-size: 14px
 }
-.menu>li:hover{
-    background-color:#002cdb; 
-    
-}
-.menu a:hover{
-    color : #fff;
-    text-decoration: none;
-    
+
+.menu>li:hover {
+	background-color: #002cdb;
 }
 
-.head{
-	position:fixed;
-	top:70px;
-	left:170px;
-	font-size:40px;
-	font-weight:550;
+.menu a:hover {
+	color: #fff;
+	text-decoration: none;
 }
 
-.box{
-	width:1350px;
-	height:620px;
-	position:fixed;
-	top:140px;
-	left:440px;
+.head {
+	position: fixed;
+	top: 70px;
+	left: 170px;
+	font-size: 40px;
+	font-weight: 550;
 }
 
-#danger{
-	text-align:center;
-	background-color:black;
+.box {
+	width: 1350px;
+	height: 620px;
+	position: fixed;
+	top: 140px;
+	left: 440px;
 }
 
-#danger th{
-	height:40px;
+#danger {
+	text-align: center;
+	background-color: black;
+}
+
+#danger th {
+	height: 40px;
 	background-color: #859dff;
 }
 
-#danger_tr1>th:nth-child(1){
-	width:120px;
+#danger_tr1>th:nth-child(1) {
+	width: 120px;
 }
 
-#danger_tr1>th:nth-child(2){
-	width:200px;
+#danger_tr1>th:nth-child(2) {
+	width: 200px;
 }
 
-#danger_tr1>th:nth-child(3){
+#danger_tr1>th {
+	font-size: 30px;
 }
 
-#danger_tr1>th{
-	font-size:30px;
+#danger_tr2>th {
+	font-size: 20px;
 }
 
-#danger_tr2>th{
-	font-size:20px;
-}
-
-#danger td a{
-    text-decoration-line: none;
-	color:black;
-}
-
-#danger tr>td:nth-child(2):hover{
-    background-color:#6CB2FD;
-    text-decoration: none;
-}
-
-#danger td{
+#danger td {
 	position: relative;
-	height:120px;
-	background-color:white;
-	font-size:30px;
+	height: 120px;
+	background-color: white;
+	font-size: 30px;
 	text-align: center;
 }
 
-#danger td:nth-child(3), #danger td:nth-child(4), #danger td:nth-child(5), 
-#danger td:nth-child(6), #danger td:nth-child(7), #danger td:nth-child(8){
+#danger td a {
+	text-decoration-line: none;
+	color: black;
+}
+
+#danger td:nth-child(2):hover {
+	background-color: #6CB2FD;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+#danger td:nth-child(3), #danger td:nth-child(4), #danger td:nth-child(5),
+	#danger td:nth-child(6), #danger td:nth-child(7), #danger td:nth-child(8)
+	{
 	font-size: 20px;
 	/* 테두리 없음 */
-} 
-#danger td:nth-child(3){
+}
+
+#danger td:nth-child(3) {
 	width: 100px;
 }
+
 #danger td:nth-child(4), #danger td:nth-child(5), #danger td:nth-child(6),
-#danger td:nth-child(7), #danger td:nth-child(8){
+	#danger td:nth-child(7), #danger td:nth-child(8) {
 	width: 170px;
 }
 
-#danger td:nth-child(3)>a:nth-child(1){
+#danger td:nth-child(3)>a:nth-child(1) {
 	position: absolute;
-	top:3px;
-	left:32px;
+	top: 3px;
+	left: 32px;
 }
 
-#danger td:nth-child(3)>a:nth-child(2){
+#danger td:nth-child(3)>a:nth-child(2) {
 	position: absolute;
-	width : 100%; 
-	background-image : linear-gradient(to top, yellow, red);
-	bottom:0;
-	right:0;
+	width: 100%;
+	background-image: linear-gradient(to top, yellow, red);
+	bottom: 0;
+	right: 0;
 }
 
-#danger td:nth-child(4)>a{
+#danger td:nth-child(4)>a {
 	position: absolute;
-	text-align:center;
+	text-align: center;
 	top: 47px;
-	left:67px;
+	left: 67px;
 }
 
-#danger td:nth-child(5)>a, #danger td:nth-child(6)>a{
+#danger td:nth-child(5)>a, #danger td:nth-child(6)>a {
 	position: absolute;
-	text-align:center;
+	text-align: center;
 	top: 3px;
-	left:55px;
+	left: 55px;
 }
 
-#danger td:nth-child(7)>a,  #danger td:nth-child(8)>a{
+#danger td:nth-child(7)>a, #danger td:nth-child(8)>a {
 	position: absolute;
-	text-align:center;
+	text-align: center;
 	top: 3px;
-	left:74px;
+	left: 74px;
 }
 
-#danger td:nth-child(4)>canvas{
-	padding-top:4px;
+#danger td:nth-child(4)>canvas {
+	padding-top: 4px;
 }
 
-#danger td:nth-child(5)>img, #danger td:nth-child(6)>img, #danger td:nth-child(7)>img, #danger td:nth-child(8)>img{
-	width : 90px;
-	height : 90px;
-	padding-top:4px;
+#danger td:nth-child(5)>img, #danger td:nth-child(6)>img, #danger td:nth-child(7)>img,
+	#danger td:nth-child(8)>img {
+	width: 90px;
+	height: 90px;
+	padding-top: 4px;
 }
 
-.bbb{
-	position:fixed; 
-	top:145px; 
-	left:200px;
+.bbb {
+	position: fixed;
+	top: 145px;
+	left: 200px;
 }
 
 .button_box .button {
-border-radius: 5px;
-  background-color: #6CB2FD;
-  border: 1px solid #6CB2FD;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  width: 150px;
-  display: block;
-  font-weight:600;
+	border-radius: 5px;
+	background-color: #6CB2FD;
+	border: 1px solid #6CB2FD;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	cursor: pointer;
+	width: 150px;
+	font-weight: 600;
 }
 
 .button_box .button:not(:last-child) {
-  border-bottom: none; /* Prevent double borders */
+	border-bottom: none; /* Prevent double borders */
 }
 
 .button_box .button:hover {
-  background-color: white;
-  color:black;
+	background-color: white;
+	color: black;
 }
 
-#oper_td{
+#oper_td {
 	text-align: center;
 }
 
-.smile_info{
-	position:fixed; 
-	top:395px; 
-	left:198px;
-	text-align:center;
+.smile_info {
+	position: fixed;
+	top: 395px;
+	left: 198px;
+	text-align: center;
 	width: 160px;
 }
 
-.smile_info table{
-	width:160px;
-/* 	background-color:black; */
+.smile_info table {
+	width: 160px;
+	/* 	background-color:black; */
 }
-.smile_info th{
-	width:50%;
-/* 	background-color:#6CB2FD; */
+
+.smile_info th {
+	width: 50%;
+	/* 	background-color:#6CB2FD; */
 }
-.smile_info td{
-	height:35px;
-/* 	background-color:white; */
+
+.smile_info td {
+	height: 35px;
+	/* 	background-color:white; */
 }
-.smile_info img{
-	width:35px;
-	height:35px;
-	padding-top:4px;
+
+.smile_info img {
+	width: 35px;
+	height: 35px;
+	padding-top: 4px;
 }
 
 </style>
 </head>
-<body>	
+<body>
 	<ul class="menu">
-      <li>
-        <a href="TestMain.jsp">홈</a>
-      </li>
-      <li>
-        <a href="TestMap.jsp">지도</a>
-      </li>
-      <li>
-        <a href="TestDanger.jsp">위험도 순위</a>
-      </li>
-    </ul>
-    
+		<li><a href="TestMain.jsp">홈</a></li>
+		<li><a href="TestMap.jsp">지도</a></li>
+		<li><a href="TestDanger.jsp">위험도 순위</a></li>
+	</ul>
+
 	<div class="head">위험도 순위</div>
-	
+
 	<div class="bbb">
 		<table class="button_box">
-	
+
 			<tr>
 				<td><button id="jungook" class="button">전체</button></td>
 			</tr>
@@ -260,9 +260,9 @@ border-radius: 5px;
 			</tr>
 		</table>
 		<!--버튼에 클릭 이벤트 넣을 것-->
-	
+
 	</div>
-	
+
 	<!-- smile 설명 란 -->
 	<div class="smile_info">
 		<table>
@@ -271,61 +271,44 @@ border-radius: 5px;
 				<th>등급 정보</th>
 			</tr>
 			<tr>
-				<td>
-					<img src='./smile/11_img.png'>
-				</td>
+				<td><img src='./smile/11_img.png'></td>
 				<td>1등급</td>
 			</tr>
 			<tr>
-				<td>
-					<img src='./smile/22_img.png'>
-				</td>
+				<td><img src='./smile/22_img.png'></td>
 				<td>2등급</td>
 			</tr>
 			<tr>
-				<td>
-					<img src='./smile/3_img.png'>
-				</td>
+				<td><img src='./smile/3_img.png'></td>
 				<td>3등급</td>
 			</tr>
 			<tr>
-				<td>
-					<img src='./smile/4_img.png'>
-				</td><td>4등급</td>
+				<td><img src='./smile/4_img.png'></td>
+				<td>4등급</td>
 			</tr>
 			<tr>
-				<td>
-					<img src='./smile/5_img.png'>
-				</td>
+				<td><img src='./smile/5_img.png'></td>
 				<td>5등급</td>
 			</tr>
 			<tr>
-				<td>
-					<img src='./smile/6_img.png'>
-				</td>
+				<td><img src='./smile/6_img.png'></td>
 				<td>6등급</td>
 			</tr>
 			<tr>
-				<td>
-					<img src='./smile/7_img.png'>
-				</td>
+				<td><img src='./smile/7_img.png'></td>
 				<td>7등급</td>
 			</tr>
 			<tr>
-				<td>
-					<img src='./smile/8_img.png'>
-				</td>
+				<td><img src='./smile/8_img.png'></td>
 				<td>8등급</td>
 			</tr>
 			<tr>
-				<td>
-					<img src='./smile/9_img.png'>
-				</td>
+				<td><img src='./smile/9_img.png'></td>
 				<td>9등급</td>
 			</tr>
 		</table>
 	</div>
-	
+
 	<script>
 	
 	console.log("test")
@@ -1497,11 +1480,10 @@ border-radius: 5px;
 	</script>
 
 	<div class="box">
-		<div id="dangerid">
-		</div>
+		<div id="dangerid"></div>
 	</div>
 	<script>$("#jungook").trigger("click");</script>
-		
+
 
 
 </body>
