@@ -76,7 +76,7 @@ public class MapCon extends HttpServlet {
 			map.put("const_year", simpleContext.getConst_year());
 			map.put("oper_rate", simpleContext.getOper_rate());
 			map.put("sup_popu", simpleContext.getSup_popu());
-			map.put("rank", rank);
+			map.put("rank", rank+1);
 			
 			json.put("map", map);
 		
