@@ -350,62 +350,155 @@ li{
          <td name="no4">2019</td>
          <td name="no5">2018</td>
       </tr>
+      
+       <%-- <td id='I05' name="no5"><%
+         try{%><%=intakeQuality.get(0).getB_1()+0%>
+         
+            <script>
+            if(<%=intakeQuality.get(0).getB_1()+0%><7){
+               console.log("이게 되나?")
+               // 함수 만들어보기!!
+               $("#I05").css("background-color","red");
+               // getsimplecon(addr[0],addr[1]);
+            }
+            </script>
+         
+         <%}
+         catch(NullPointerException e){}
+         %></td> --%>
+      
+      
+      
         <tr class="i_code">
          <td>수소이온농도</td>
          <td id='I01' name="no1"><%
          try{%><%=intakeQuality.get(4).getB_1()+0%>
+         <script>
+            if(<%=intakeQuality.get(4).getB_1()+0%><7&<%=intakeQuality.get(4).getB_1()+0%>>1){
+              
+               $("#I01").css("background-color","yellow");
+               }
+            </script>
+         
          <%}
-         catch(NullPointerException e){}
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
          <td id='I02' name="no2"><%
          try{%><%=intakeQuality.get(3).getB_1()+0%>
+         <script>
+            if(<%=intakeQuality.get(3).getB_1()+0%><7&<%=intakeQuality.get(3).getB_1()+0%>>1){
+              
+               $("#I02").css("background-color","yellow");
+               }
+            </script>
+                  
          <%}
-         catch(NullPointerException e){}
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
          <td id='I03' name="no3"><%
          try{%><%=intakeQuality.get(2).getB_1()+0%>
+         <script>
+            if(<%=intakeQuality.get(2).getB_1()+0%><7&<%=intakeQuality.get(2).getB_1()+0%>>1){
+              
+               $("#I03").css("background-color","yellow");
+               }
+            </script>
+         
          <%}
-         catch(NullPointerException e){}
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
          <td id='I04' name="no4"><%
          try{%><%=intakeQuality.get(1).getB_1()+0%>
+         <script>
+            if(<%=intakeQuality.get(1).getB_1()+0%><7&<%=intakeQuality.get(1).getB_1()+0%>>1){
+              
+               $("#I04").css("background-color","yellow");
+               }
+            </script>
+         
          <%}
-         catch(NullPointerException e){}
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
          <td id='I05' name="no5"><%
          try{%><%=intakeQuality.get(0).getB_1()+0%>
+         <script>
+            if(<%=intakeQuality.get(0).getB_1()+0%><7&<%=intakeQuality.get(0).getB_1()+0%>>1){
+              
+               $("#I05").css("background-color","yellow");
+               }
+            </script>
+         
          <%}
-         catch(NullPointerException e){}
+         catch(NullPointerException e){%><%='N'%>
+         <%}
          %></td>
       </tr>
+      
+      
+      
+      
       <tr class="i_code">
       <td>생물화학적_산소요구량</td>
          <td id='I06' name="no1"><%
          try{%><%=intakeQuality.get(4).getB_2()+0%>
+         <script>
+            if(<%=intakeQuality.get(4).getB_2()+0%>>6){
+              
+               $("#I06").css("background-color","yellow");
+               }
+            </script>
          <%} 
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
          <td id='I07' name="no2"><%
          try{%><%=intakeQuality.get(3).getB_2()+0%>
+         <script>
+            if(<%=intakeQuality.get(3).getB_2()+0%>>6){
+              
+               $("#I07").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
          <td id='I08' name="no3"><%
          try{%><%=intakeQuality.get(2).getB_2()+0%>
+         <script>
+            if(<%=intakeQuality.get(2).getB_2()+0%>>6){
+              
+               $("#I08").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
          <td id='I09' name="no4"><%
          try{%><%=intakeQuality.get(1).getB_2()+0%>
+         <script>
+            if(<%=intakeQuality.get(1).getB_2()+0%>>6){
+              
+               $("#I09").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
          <td id='I10' name="no5"><%
          try{%><%=intakeQuality.get(0).getB_2()+0%>
+         <script>
+            if(<%=intakeQuality.get(0).getB_2()+0%>>6){
+              
+               $("#I10").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
@@ -415,26 +508,57 @@ li{
          <td>화학적_산소요구량</td>
          <td id='I11' name="no1"><%
          try{%><%=intakeQuality.get(4).getB_3()+0%>
+         <script>
+            if(<%=intakeQuality.get(4).getB_3()+0%>>6){
+              
+               $("#I11").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%><%}
          %></td>
          <td id='I12' name="no2"><%
          try{%><%=intakeQuality.get(3).getB_3()+0%>
+         <script>
+            if(<%=intakeQuality.get(3).getB_3()+0%>>6){
+              
+               $("#I12").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%><%}
          %></td>
          <td id='I13' name="no3"><%
          try{%><%=intakeQuality.get(2).getB_3()+0%>
+         <script>
+            if(<%=intakeQuality.get(2).getB_3()+0%>>6){
+              
+               $("#I13").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%><%}
          %></td>
+         
          <td id='I14' name="no4"><%
          try{%><%=intakeQuality.get(1).getB_3()+0%>
+         <script>
+            if(<%=intakeQuality.get(1).getB_3()+0%>>6){
+              
+               $("#I14").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%><%}
          %></td>
          <td id='I15' name="no5"><%
          try{%><%=intakeQuality.get(0).getB_3()+0%>
+         <script>
+            if(<%=intakeQuality.get(0).getB_3()+0%>>6){
+              
+               $("#I15").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
@@ -443,32 +567,62 @@ li{
       <tr class="i_code">
          
          <td>총유기탄소</td>
-         <td name="no1"><%
+         <td id='I16' name="no1"><%
          try{%><%=intakeQuality.get(4).getB_4()+0%>
+         <script>
+            if(<%=intakeQuality.get(4).getB_4()+0%>>6){
+              
+               $("#I16").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no2"><%
+         <td id='I17' name="no2"><%
          try{%><%=intakeQuality.get(3).getB_4()+0%>
+         <script>
+            if(<%=intakeQuality.get(3).getB_4()+0%>>6){
+              
+               $("#I17").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no3"><%
+         <td id='I18' name="no3"><%
          try{%><%=intakeQuality.get(2).getB_4()+0%>
+         <script>
+            if(<%=intakeQuality.get(2).getB_4()+0%>>6){
+              
+               $("#I18").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no4"><%
+         <td id='I19' name="no4"><%
          try{%><%=intakeQuality.get(1).getB_4()+0%>
+         <script>
+            if(<%=intakeQuality.get(1).getB_4()+0%>>6){
+              
+               $("#I19").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no5"><%
+         <td id='I20' name="no5"><%
          try{%><%=intakeQuality.get(0).getB_4()+0%>
+         <script>
+            if(<%=intakeQuality.get(0).getB_4()+0%>>6){
+              
+               $("#I20").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
@@ -476,32 +630,62 @@ li{
       </tr>
       <tr class="i_code">
          <td>총인</td>
-         <td name="no1"><%
+         <td id='I21' name="no1"><%
          try{%><%=intakeQuality.get(4).getB_5()+0%>
+         <script>
+            if(<%=intakeQuality.get(4).getB_5()+0%>>6){
+              
+               $("#I21").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no2"><%
+         <td id='I22' name="no2"><%
          try{%><%=intakeQuality.get(3).getB_5()+0%>
+         <script>
+            if(<%=intakeQuality.get(3).getB_5()+0%>>6){
+              
+               $("#I22").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no3"><%
+         <td id='I23' name="no3"><%
          try{%><%=intakeQuality.get(2).getB_5()+0%>
+         <script>
+            if(<%=intakeQuality.get(2).getB_5()+0%>>6){
+              
+               $("#I23").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no4"><%
+         <td id='I24' name="no4"><%
          try{%><%=intakeQuality.get(1).getB_5()+0%>
+         <script>
+            if(<%=intakeQuality.get(1).getB_5()+0%>>6){
+              
+               $("#I24").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no5"><%
+         <td id='I25' name="no5"><%
          try{%><%=intakeQuality.get(0).getB_5()+0%>
+         <script>
+            if(<%=intakeQuality.get(0).getB_5()+0%>>6){
+              
+               $("#I25").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
@@ -509,32 +693,62 @@ li{
       </tr>
       <tr class="i_code">
          <td>부유물질량</td>
-         <td name="no1"><%
+         <td id='I26' name="no1"><%
          try{%><%=intakeQuality.get(4).getB_6()+0%>
+         <script>
+            if(<%=intakeQuality.get(4).getB_6()+0%>>20){
+              
+               $("#I26").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no2"><%
+         <td id='I27' name="no2"><%
          try{%><%=intakeQuality.get(3).getB_6()+0%>
+         <script>
+            if(<%=intakeQuality.get(3).getB_6()+0%>>20){
+              
+               $("#I27").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no3"><%
+         <td id='I28' name="no3"><%
          try{%><%=intakeQuality.get(2).getB_6()+0%>
+         <script>
+            if(<%=intakeQuality.get(2).getB_6()+0%>>20){
+              
+               $("#I28").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no4"><%
+         <td id='I29' name="no4"><%
          try{%><%=intakeQuality.get(1).getB_6()+0%>
+         <script>
+            if(<%=intakeQuality.get(1).getB_6()+0%>>20){
+              
+               $("#I29").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no5"><%
+         <td id='I30' name="no5"><%
          try{%><%=intakeQuality.get(0).getB_6()+0%>
+         <script>
+            if(<%=intakeQuality.get(0).getB_6()+0%>>20){
+              
+               $("#I30").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
@@ -542,32 +756,62 @@ li{
       </tr>
       <tr class="i_code">
          <td>용존산소량</td>
-         <td name="no1"><%
+         <td id='I31' name="no1"><%
          try{%><%=intakeQuality.get(4).getB_7()+0%>
+         <script>
+            if(<%=intakeQuality.get(4).getB_7()+0%><5&<%=intakeQuality.get(4).getB_7()+0%>>0){
+              
+               $("#I31").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no2"><%
+         <td id='I32' name="no2"><%
          try{%><%=intakeQuality.get(3).getB_7()+0%>
+         <script>
+            if(<%=intakeQuality.get(4).getB_7()+0%><5&<%=intakeQuality.get(4).getB_7()+0%>>0){
+              
+               $("#I32").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no3"><%
+         <td id='I33' name="no3"><%
          try{%><%=intakeQuality.get(2).getB_7()+0%>
+         <script>
+            if(<%=intakeQuality.get(4).getB_7()+0%><5&<%=intakeQuality.get(4).getB_7()+0%>>0){
+              
+               $("#I33").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no4"><%
+         <td id='I34' name="no4"><%
          try{%><%=intakeQuality.get(1).getB_7()+0%>
+         <script>
+            if(<%=intakeQuality.get(4).getB_7()+0%><5&<%=intakeQuality.get(4).getB_7()+0%>>0){
+              
+               $("#I34").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no5"><%
+         <td id='I35' name="no5"><%
          try{%><%=intakeQuality.get(0).getB_7()+0%>
+         <script>
+            if(<%=intakeQuality.get(4).getB_7()+0%><5&<%=intakeQuality.get(4).getB_7()+0%>>0){
+              
+               $("#I35").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
@@ -575,65 +819,129 @@ li{
       </tr>
       <tr class="i_code">
          <td>총대장균군</td>
-         <td name="no1"><%
+         <td id='I36' name="no1"><%
          try{%><%=intakeQuality.get(4).getB_8()+0%>
+         <script>
+            if(<%=intakeQuality.get(4).getB_8()+0%>>5000){
+              
+               $("#I36").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no2"><%
+         <td id='I37' name="no2"><%
          try{%><%=intakeQuality.get(3).getB_8()+0%>
+         <script>
+            if(<%=intakeQuality.get(3).getB_8()+0%>>5000){
+              
+               $("#I37").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no3"><%
+         <td id='I38' name="no3"><%
          try{%><%=intakeQuality.get(2).getB_8()+0%>
+         <script>
+            if(<%=intakeQuality.get(2).getB_8()+0%>>5000){
+              
+               $("#I38").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no4"><%
+         <td id='I39' name="no4"><%
          try{%><%=intakeQuality.get(1).getB_8()+0%>
+         <script>
+            if(<%=intakeQuality.get(1).getB_8()+0%>>5000){
+              
+               $("#I39").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no5"><%
+         <td id='I40' name="no5"><%
          try{%><%=intakeQuality.get(0).getB_8()+0%>
+         <script>
+            if(<%=intakeQuality.get(0).getB_8()+0%>>5000){
+              
+               $("#I40").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
+         
+        
+         
+         
       </tr>
       <tr class="i_code">
          <td>대장균_분원성대장균군</td>
-         <td name="no1"><%
+         <td id='I41' name="no1"><%
          try{%><%=intakeQuality.get(4).getB_9()+0%>
+         <script>
+            if(<%=intakeQuality.get(4).getB_9()+0%>>1000){
+              
+               $("#I41").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no2"><%
+         <td id='I42' name="no2"><%
          try{%><%=intakeQuality.get(3).getB_9()+0%>
+         <script>
+            if(<%=intakeQuality.get(3).getB_9()+0%>>1000){
+              
+               $("#I42").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no3"><%
+         <td id='I43' name="no3"><%
          try{%><%=intakeQuality.get(2).getB_9()+0%>
+         <script>
+            if(<%=intakeQuality.get(2).getB_9()+0%>>1000){
+              
+               $("#I43").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no4"><%
+         <td id='I44' name="no4"><%
          try{%><%=intakeQuality.get(1).getB_9()+0%>
+         <script>
+            if(<%=intakeQuality.get(1).getB_9()+0%>>1000){
+              
+               $("#44I").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no5"><%
+         <td id='I45' name="no5"><%
          try{%><%=intakeQuality.get(0).getB_9()+0%>
+         <script>
+            if(<%=intakeQuality.get(0).getB_9()+0%>>1000){
+              
+               $("#I45").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
@@ -660,94 +968,182 @@ li{
          <td name="no13">카드뮴</td>
          <td name="no14">페놀</td>
       </tr>
+      
       <tr clase="f_value">
-         <td name="no1">
+         <td id='F01' name="no1">
          <%
          try{%><%=filtQuality.getA_1()+0%>
+         <script>
+            if(<%=filtQuality.getA_1()+0%>>100){
+              
+               $("#F01").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %>
          </td>
-         <td name="no2"><%
+         <td id='F02' name="no2"><%
          try{%><%=filtQuality.getA_2()%>
+         <script>
+            if(<%=filtQuality.getA_2()+0%>=='검출'){
+              
+               $("#F02").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no3"><%
+         <td id='F03' name="no3"><%
          try{%><%=filtQuality.getA_3()%>
+         <script>
+            if(<%=filtQuality.getA_3()+0%>=='검출'){
+              
+               $("#F03").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no4"><%
+         <td id='F04' name="no4"><%
          try{%><%=filtQuality.getA_4()+0%>
+         <script>
+            if(<%=filtQuality.getA_4()+0%>>0.05){
+              
+               $("#F04").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no5"><%
+         <td id='F05' name="no5"><%
          try{%><%=filtQuality.getA_5()+0%>
+         <script>
+            if(<%=filtQuality.getA_5()+0%>>1.5){
+              
+               $("#F05").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no6"><%
+         <td id='F06' name="no6"><%
          try{%><%=filtQuality.getA_6()+0%>
+         <script>
+            if(<%=filtQuality.getA_6()+0%>>0.05){
+              
+               $("#F06").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no7"><%
+         <td id='F07' name="no7"><%
          try{%><%=filtQuality.getA_7()+0%>
+         <script>
+            if(<%=filtQuality.getA_7()+0%>>0.01){
+              
+               $("#F07").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no8"><%
+         <td id='F08'd name="no8"><%
          try{%><%=filtQuality.getA_8()+0%>
+         <script>
+            if(<%=filtQuality.getA_8()+0%>>0.001){
+              
+               $("#F08").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no9"><%
+         <td id='F09' name="no9"><%
          try{%><%=filtQuality.getA_9()+0%>
+         <script>
+            if(<%=filtQuality.getA_9()+0%>>0.01){
+              
+               $("#F09").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no10"><%
+         <td id='F10' name="no10"><%
          try{%><%=filtQuality.getA_10()+0%>
+         <script>
+            if(<%=filtQuality.getA_10()+0%>>0.05){
+              
+               $("#F10").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no11"><%
+         <td id='F11' name="no11"><%
          try{%><%=filtQuality.getA_11()+0%>
+         <script>
+            if(<%=filtQuality.getA_11()+0%>>0.5){
+              
+               $("#F11").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no12"><%
+         <td id='F12' name="no12"><%
          try{%><%=filtQuality.getA_12()+0%>
+         <script>
+            if(<%=filtQuality.getA_12()+0%>>10){
+              
+               $("#F12").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no13"><%
+         <td id='F13' name="no13"><%
          try{%><%=filtQuality.getA_13()+0%>
+         <script>
+            if(<%=filtQuality.getA_13()+0%>>0.005){
+              
+               $("#F13").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no14"><%
+         
+         <td id='F14' name="no14"><%
          try{%><%=filtQuality.getA_14()+0%>
+         <script>
+            if(<%=filtQuality.getA_14()+0%>>0.005){
+              
+               $('#F14').css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
+         
       </tr>
+      
       <tr clase="f_code">
          <td name="no15">1.1.1-트리클로로에탄</td>
          <td name="no16">테트라클로로에틸렌</td>
@@ -765,86 +1161,170 @@ li{
          <td name="no28">카바릴</td>
       </tr>
       <tr clase="f_value">
-         <td name="no15"><%
+         <td id='F15' name="no15"><%
          try{%><%=filtQuality.getA_15()+0%>
+         <script>
+            if(<%=filtQuality.getA_15()+0%>>0.1){
+              
+               $("#F15").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no16"><%
+         <td id='F16' name="no16"><%
          try{%><%=filtQuality.getA_16()+0%>
+         <script>
+            if(<%=filtQuality.getA_16()+0%>>0.01){
+              
+               $("#F16").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no17"><%
+         <td id='F17' name="no17"><%
          try{%><%=filtQuality.getA_17()+0%>
+         <script>
+            if(<%=filtQuality.getA_17()+0%>>0.03){
+              
+               $("#F17").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no18"><%
+         <td id='F18' name="no18"><%
          try{%><%=filtQuality.getA_18()+0%>
+         <script>
+            if(<%=filtQuality.getA_18()+0%>>0.02){
+              
+               $("#F18").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no19"><%
+         <td id='F19' name="no19"><%
          try{%><%=filtQuality.getA_19()+0%>
+         <script>
+            if(<%=filtQuality.getA_19()+0%>>0.01){
+              
+               $("#F19").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no20"><%
+         <td id='F20' name="no20"><%
          try{%><%=filtQuality.getA_20()+0%>
+         <script>
+            if(<%=filtQuality.getA_20()+0%>>0.7){
+              
+               $("#F20").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no21"><%
+         <td id='F21' name="no21"><%
          try{%><%=filtQuality.getA_21()+0%>
+         <script>
+            if(<%=filtQuality.getA_21()+0%>>0.3){
+              
+               $("#F21").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no22"><%
+         <td id='F22' name="no22"><%
          try{%><%=filtQuality.getA_22()+0%>
+         <script>
+            if(<%=filtQuality.getA_22()+0%>>0.5){
+              
+               $("#F22").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no23"><%
+         <td id='F23' name="no23"><%
          try{%><%=filtQuality.getA_23()+0%>
+         <script>
+            if(<%=filtQuality.getA_23()+0%>>0.03){
+              
+               $("#F23").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no24"><%
+         <td id='F24' name="no24"><%
          try{%><%=filtQuality.getA_24()+0%>
+         <script>
+            if(<%=filtQuality.getA_24()+0%>>0.002){
+              
+               $("#F24").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no25"><%
+         <td id='F25' name="no25"><%
          try{%><%=filtQuality.getA_25()+0%>
+         <script>
+            if(<%=filtQuality.getA_25()+0%>>0.02){
+              
+               $("#F25").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no26"><%
+         <td id='F26' name="no26"><%
          try{%><%=filtQuality.getA_26()+0%>
+         <script>
+            if(<%=filtQuality.getA_26()+0%>>0.06){
+              
+               $("#F26").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no27"><%
+         <td id='F27' name="no27"><%
          try{%><%=filtQuality.getA_27()+0%>
+         <script>
+            if(<%=filtQuality.getA_27()+0%>>0.04){
+              
+               $("#F27").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no28"><%
+         <td id='F28' name="no28"><%
          try{%><%=filtQuality.getA_28()+0%>
+         <script>
+            if(<%=filtQuality.getA_28()+0%>>0.07){
+              
+               $("#F28").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
@@ -867,86 +1347,170 @@ li{
          <td name="no42">동</td>
       </tr>
       <tr clase="f_value">
-         <td name="no29"><%
+         <td id='F29' name="no29"><%
          try{%><%=filtQuality.getA_29()+0%>
+          <script>
+            if(<%=filtQuality.getA_29()+0%>>0.003){
+              
+               $("#F29").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no30"><%
+         <td id='F30' name="no30"><%
          try{%><%=filtQuality.getA_30()+0%>
+          <script>
+            if(<%=filtQuality.getA_30()+0%>>4){
+              
+               $("#F30").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no31"><%
+         <td id='F31' name="no31"><%
          try{%><%=filtQuality.getA_31()+0%>
+          <script>
+            if(<%=filtQuality.getA_31()+0%>>0.1){
+              
+               $("#F31").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no32"><%
+         <td id='F32' name="no32"><%
          try{%><%=filtQuality.getA_32()+0%>
+          <script>
+            if(<%=filtQuality.getA_32()+0%>>0.08){
+              
+               $("#F32").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no33"><%
+         <td id='F33' name="no33"><%
          try{%><%=filtQuality.getA_33()+0%>
+          <script>
+            if(<%=filtQuality.getA_33()+0%>>0.3){
+              
+               $("#F33").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no34"><%
+         <td id='F34' name="no34"><%
          try{%><%=filtQuality.getA_34()+0%>
+          <script>
+            if(<%=filtQuality.getA_34()+0%>>0.1){
+              
+               $("#F34").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no35"><%
+         <td id='F35' name="no35"><%
          try{%><%=filtQuality.getA_35()+0%>
+          <script>
+            if(<%=filtQuality.getA_35()+0%>>0.09){
+              
+               $("#F35").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no36"><%
+         <td id='F36' name="no36"><%
          try{%><%=filtQuality.getA_36()+0%>
+          <script>
+            if(<%=filtQuality.getA_36()+0%>>0.004){
+              
+               $("#F36").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no37"><%
+         <td id='F37' name="no37"><%
          try{%><%=filtQuality.getA_37()+0%>
+          <script>
+            if(<%=filtQuality.getA_37()+0%>>0.1){
+              
+               $("#F37").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no38"><%
+         <td id='F38' name="no38"><%
          try{%><%=filtQuality.getA_38()+0%>
+          <script>
+            if(<%=filtQuality.getA_38()+0%>>300){
+              
+               $("#F38").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no39"><%
+         <td id='F39' name="no39"><%
          try{%><%=filtQuality.getA_39()+0%>
+          <script>
+            if(<%=filtQuality.getA_39()+0%>>10){
+              
+               $("#F39").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no40"><%
+         <td id='F40' name="no40"><%
          try{%><%=filtQuality.getA_40()%>
+          <script>
+            if(<%=filtQuality.getA_40()+0%>=='부적합'){
+              
+               $("#F40").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no41"><%
+         <td id='F41' name="no41"><%
          try{%><%=filtQuality.getA_41()%>
+          <script>
+            if(<%=filtQuality.getA_41()+0%>=='부적합'){
+              
+               $("#F41").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no42"><%
+         <td id='F42' name="no42"><%
          try{%><%=filtQuality.getA_42()+0%>
+          <script>
+            if(<%=filtQuality.getA_42()+0%>>1){
+              
+               $("#F42").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
@@ -970,86 +1534,172 @@ li{
          <td name="no56">1,4-다이옥산</td>
       </tr>
       <tr clase="f_value">
-         <td name="no43"><%
+         <td id='F43' name="no43"><%
          try{%><%=filtQuality.getA_43()+0%>
+          <script>
+            if(<%=filtQuality.getA_43()+0%>>5){
+              
+               $("#F43").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no44"><%
+         <td id='F44' name="no44"><%
          try{%><%=filtQuality.getA_44()+0%>
+          <script>
+            if(<%=filtQuality.getA_44()+0%>>0.5){
+              
+               $("#F44").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no45"><%
+         <td id='F45' name="no45"><%
          try{%><%=filtQuality.getA_45()+0%>
+          <script>
+            if(<%=filtQuality.getA_45()+0%>>0&<%=filtQuality.getA_45()+0%><5.8){
+              
+               $("#F45").css("background-color","yellow");
+               } else if(<%=filtQuality.getA_45()+0%>>8.5){
+            	   $("#F45").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no46"><%
+         <td id='F46' name="no46"><%
          try{%><%=filtQuality.getA_46()+0%>
+          <script>
+            if(<%=filtQuality.getA_46()+0%>>1){
+              
+               $("#F46").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no47"><%
+         <td id='F47' name="no47"><%
          try{%><%=filtQuality.getA_47()+0%>
+          <script>
+            if(<%=filtQuality.getA_47()+0%>>250){
+              
+               $("#F47").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no48"><%
+         <td id='F48' name="no48"><%
          try{%><%=filtQuality.getA_48()+0%>
+          <script>
+            if(<%=filtQuality.getA_48()+0%>>500){
+              
+               $("#F48").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no49"><%
+         <td id='F49' name="no49"><%
          try{%><%=filtQuality.getA_49()+0%>
+          <script>
+            if(<%=filtQuality.getA_49()+0%>>0.3){
+              
+               $("#F49").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no50"><%
+         <td id='F50' name="no50"><%
          try{%><%=filtQuality.getA_50()+0%>
+          <script>
+            if(<%=filtQuality.getA_50()+0%>>0.3){
+              
+               $("#F50").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no51"><%
+         <td id='F51' name="no51"><%
          try{%><%=filtQuality.getA_51()+0%>
+          <script>
+            if(<%=filtQuality.getA_51()+0%>>0.5){
+              
+               $("#F51").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no52"><%
+         <td id='F52' name="no52"><%
          try{%><%=filtQuality.getA_52()+0%>
+          <script>
+            if(<%=filtQuality.getA_52()+0%>>200){
+              
+               $("#F52").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no53"><%
+         <td id='F53' name="no53"><%
          try{%><%=filtQuality.getA_53()+0%>
+          <script>
+            if(<%=filtQuality.getA_53()+0%>>0.2){
+              
+               $("#F53").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no54"><%
+         <td id='F54' name="no54"><%
          try{%><%=filtQuality.getA_54()+0%>
+          <script>
+            if(<%=filtQuality.getA_54()+0%>>0.03){
+              
+               $("#F54").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no55"><%
+         <td id='F55' name="no55"><%
          try{%><%=filtQuality.getA_55()+0%>
+          <script>
+            if(<%=filtQuality.getA_55()+0%>>0.1){
+              
+               $("#F55").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
-         <td name="no56"><%
+         <td id='F56' name="no56"><%
          try{%><%=filtQuality.getA_56()+0%>
+          <script>
+            if(<%=filtQuality.getA_56()+0%>>0.05){
+              
+               $("#F56").css("background-color","yellow");
+               }
+            </script>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
