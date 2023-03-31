@@ -362,7 +362,7 @@ border-radius: 5px;
        			<td id='oper_td${i}'><a>가동률 ${oper_num}점</a></td>
        			<td id='popu_td'>피해세대수${popu_num}</td>
        			<td id='const'>준공년도 위험도 :${const_num}</td>
-       			<td id='inta_td${i}'>취수장 수질위험도 : ${inta_num}</td>
+       			<td id='inta_td${i}'><img src='img_smile'>취수장 수질위험도 : ${inta_num}</td>
        			<td id='filt_td${i}'>정수장 수질 위험도 : ${filt_num}</td>
          	</tr>
          	`;        	
@@ -373,6 +373,7 @@ border-radius: 5px;
 	    
 	    $('#dangerid').html(tableForm);
 	   	
+	    //위험도 총점 그래프
 	    $('#dang_td0>a:nth-child(2)').css('height', 0);
  	    $('#dang_td0>a:nth-child(2)').animate({
  	    	height : dang_g[0]
@@ -393,7 +394,8 @@ border-radius: 5px;
  	    $('#dang_td4>a:nth-child(2)').animate({
  	    	height : dang_g[4]
  	    },1500);	    
-	    
+	    // 위험도 총점 그래프 끝
+ 	    
 	    // 가동률 위험도 그래프
 	    $('#oper_td0').circleProgress({
 			startAngle: -Math.PI ,
@@ -445,7 +447,6 @@ border-radius: 5px;
 			animationStartValue:0.0
 		});
 		//가동률 위험도 그래프 끝
-		
 			
 	})
 	//전국 위험도 이벤트 끝
