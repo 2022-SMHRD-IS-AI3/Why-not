@@ -567,27 +567,18 @@ border-radius: 5px;
 	
 	
 	
-	
-	
-	
-	
 	//광주 위험도 이벤트 스크립트
-	
 	// 정수장 이름 리스트
 	 var filt_name2 = [];
 	 <%for (int i = 0; i < gwangList.size(); i++) {%>
 	 filt_name2.push('<%=gwangList.get(i).getFilt_name() %>')
 	 <%}%>
-	 
-	 
-
 
 	 // 정수장 위험도 리스트
 	 var danger2 = [];
 	 <%for (int i = 0; i < gwangList.size(); i++) {%>
 	 danger2.push('<%=gwangList.get(i).getDanger_no()%>')
 	 <%}%>
-	 
 	 
 	  //가동률 위험도 리스트
  	  var oper_danger2 = [];
@@ -603,8 +594,6 @@ border-radius: 5px;
 	 sup_danger2.push('<%=gwangDList.get(i).getSup_danger() %>')
 	 <%}%>
 	 
-	
-	 
 	//준공년도 위험도 리스트 const_danger
  	 var const_danger2 = [];
 	 <%for (int i = 0; i < gwangDList.size(); i++) {%>
@@ -612,7 +601,6 @@ border-radius: 5px;
 	 <%}%>
 	 console.log('ㅜㅜ')
 	 console.log(const_danger2)
-	 
 	 
 	//취수장 수질 위험도 리스트 const_danger
  	 var inta_danger2 = [];
@@ -622,7 +610,6 @@ border-radius: 5px;
 	 console.log('ㅜㅜ')
 	 console.log(inta_danger2)
 	 
-	 
 	//정수장 수질 위험도 리스트 const_danger
  	 var filt_danger2 = [];
 	 <%for (int i = 0; i < gwangDList.size(); i++) {%>
@@ -630,15 +617,6 @@ border-radius: 5px;
 	 <%}%>
 	 console.log('ㅜㅜ')
 	 console.log(filt_danger2) 
-
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-
 
 	 // 주소 이름 이차원배열
 	 const mapicon2 = new Array(116);
@@ -671,44 +649,187 @@ border-radius: 5px;
 		 for(var i =0; i<3; i++){
 		 	mapicon2[i][6] = filt_danger2[i];
 		 }
-	   
-	 
-	 
-	 
 	
 	
 	 $("#gwang").on('click',function(){
 		console.log('ㅎㅇ');
+		
 		  let tableForm2 =  `
             <table id='danger'>
-                <tr>
-                    <th>순위</th>
-                    <th>정수장 이름</th>
-                    <th>위험도</th>
-                </tr>
+			  <tr id='danger_tr1'>
+             	 <th rowspan="2">순위</th>
+              	<th rowspan="2">정수장 이름</th>
+              	<th colspan="6">위험도</th>
+          	</tr>
+          	<tr id='danger_tr2'>
+	          	<th>총 점</th>
+          		<th>가동률</th>
+          		<th>급수인구</th>
+          		<th>준공년도</th>
+          		<th>취수장 수질</th>
+          		<th>정수장 수질</th>
+          	</tr>
             `;
 
+        var dang_g = [];
+		var oper_g = [];
+		var inta_g = [];
+		var filt_g = [];
+		
 		for(let i=0;i<3;i++){
-        tableForm2 +=`
-        	<tr>
-            <td>${i+1}</td>
-             <td><a href='DetailsCon?data=${mapicon2[i][0]}'>${mapicon2[i][0]}</a></td>
-             <td>위험도 총점: ${mapicon2[i][1]} 가동률위험도 :${mapicon2[i][2]} 피해세대수${mapicon2[i][3]} 준공년도 위험도 : ${mapicon2[i][4]} 취수장 수질위험도 : ${mapicon2[i][5]} 정수장 수질 위험도 : ${mapicon2[i][6]}</td> 
-         </tr>
-        `;
-	
-    }
-    tableForm2 += `</table>`; 
-    
-    console.log(tableForm2); 
-    
-    $('#dangerid').html(tableForm2);
+			dang_num = mapicon2[i][1];
+			oper_num = mapicon2[i][2];
+			popu_num = mapicon2[i][3];
+			const_num = mapicon2[i][4];
+			inta_num = mapicon2[i][5];
+			filt_num = mapicon2[i][6];
+			dang_g[i] = dang_num;
+			oper_g[i] = oper_num*0.01;
+			inta_g[i] = inta_num;
+			filt_g[i] = filt_num;
+			console.log(inta_g[i]);
+			
+			// 취수장 수질 위험도
+			if(inta_num == 0){
+				aorf1 = 'A'
+				img_smile = './smile/11_img.png'
+			}else if(inta_num == 10){
+				aorf1 = 'F'
+				img_smile = './smile/9_img.png'				
+			}
+			// 정수장 수질 위험도
+			if(filt_num == 0){
+				aorf2 = 'A'
+				img_smile2 = './smile/11_img.png'
+			}else if(filt_num == 10){
+				aorf2 = 'F'
+				img_smile2 = './smile/9_img.png'				
+			}
+			// 준공년도 위험도
+			if(const_num == 0){
+				img_smile3 = './smile/11_img.png'
+			}else if(const_num == 1){
+				img_smile3 = './smile/22_img.png'
+			}else if(const_num <= 3){
+				img_smile3 = './smile/3_img.png'
+			}else if(const_num <= 5){
+				img_smile3 = './smile/4_img.png'
+			}else if(const_num <= 7){
+				img_smile3 = './smile/5_img.png'
+			}else if(const_num <= 9){
+				img_smile3 = './smile/6_img.png'
+			}else if(const_num <= 11){
+				img_smile3 = './smile/7_img.png'
+			}else if(const_num == 12){
+				img_smile3 = './smile/8_img.png'
+			}else if(const_num == 13){
+				img_smile3 = './smile/9_img.png'
+			}
+			// 공급인구 위험도
+			if(popu_num == 0){
+				img_smile4 = 'X'
+			}else if(popu_num == 1){
+				img_smile4 = './smile/11_img.png'
+			}else if(popu_num == 2){
+				img_smile4 = './smile/22_img.png'
+			}else if(popu_num == 3){
+				img_smile4 = './smile/3_img.png'
+			}else if(popu_num == 4){
+				img_smile4 = './smile/4_img.png'
+			}else if(popu_num == 5){
+				img_smile4 = './smile/5_img.png'
+			}else if(popu_num == 6){
+				img_smile4 = './smile/6_img.png'
+			}else if(popu_num == 7){
+				img_smile4 = './smile/7_img.png'
+			}else if(popu_num == 8){
+				img_smile4 = './smile/8_img.png'
+			}else if(popu_num == 9){
+				img_smile4 = './smile/9_img.png'
+			}
+			
+			
+			tableForm2 +=`
+			<tr>
+	    	   	<td>${i+1}</td>
+         		<td><a href='DetailsCon?data=${mapicon2[i][0]}'>${mapicon2[i][0]}</a></td>
+       			<td id='dang_td${i}'>
+	       			<a>${dang_num}점</a>
+       				<a></a>
+    			</td>
+   				<td id='oper_td${i}'>
+		   			<a>${oper_num}점</a>
+   				</td>
+   				<td id='popu_td'>
+		   			<a>${popu_num}등급</a>
+   					<img src='${img_smile4}'>
+   				</td>
+   				<td id='const_td'>
+		   			<a>${const_num}등급</a>
+   					<img src='${img_smile3}'>
+   				</td>
+   				<td id='inta_td'>
+		   			<a>${aorf1}</a>
+   					<img src='${img_smile}'>
+   				</td>
+  				<td id='filt_td'>
+	   				<a>${aorf2}</a>
+   					<img src='${img_smile2}'>
+   				</td>
+     		</tr>
+       		`;
+    	}
+    	tableForm2 += `</table>`; 
+	    
+	    console.log(tableForm2); 
+	    
+	    $('#dangerid').html(tableForm2);
+			
+    	$('#dang_td0>a:nth-child(2)').css('height', 0);
+		$('#dang_td0>a:nth-child(2)').animate({
+		   	height : dang_g[0]
+		},1500);
+		$('#dang_td1>a:nth-child(2)').css('height', 0);
+	    $('#dang_td1>a:nth-child(2)').animate({
+	    	height : dang_g[1]
+	    },1500);
+	    $('#dang_td2>a:nth-child(2)').css('height', 0);
+	    $('#dang_td2>a:nth-child(2)').animate({
+	    	height : dang_g[2]
+	    },1500);
+	 	// 가동률 위험도 그래프
+	    $('#oper_td0').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[0],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+
+		$('#oper_td1').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[1],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
 		
-		
+		$('#oper_td2').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[2],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+		// 가동률 위험도 그래프 끝
 	})
 	//광주 위험도 이벤트 스크립트 끝
-	
-	
 	
 	
 	
@@ -720,7 +841,6 @@ border-radius: 5px;
 	 <%}%>
 	 console.log("filt_name3")
 	 console.log(filt_name3)
-
 
 	 // 정수장 위험도 리스트
 	 var danger3 = [];
@@ -741,40 +861,24 @@ border-radius: 5px;
 	 <%for (int i = 0; i < bookDList.size(); i++) {%>
 	 sup_danger3.push('<%=bookDList.get(i).getSup_danger() %>')
 	 <%}%>
-	
-	 
 	 
 	//준공년도 위험도 리스트 const_danger
  	 var const_danger3 = [];
 	 <%for (int i = 0; i < bookDList.size(); i++) {%>
 	 const_danger3.push('<%=bookDList.get(i).getConst_danger() %>')
 	 <%}%>
-
-	 
 	 
 	//취수장 수질 위험도 리스트 const_danger
  	 var inta_danger3 = [];
 	 <%for (int i = 0; i < bookDList.size(); i++) {%>
 	 inta_danger3.push('<%=bookDList.get(i).getInta_danger() %>')
 	 <%}%>
-
 	 
 	//정수장 수질 위험도 리스트 const_danger
  	 var filt_danger3 = [];
 	 <%for (int i = 0; i < bookDList.size(); i++) {%>
 	 filt_danger3.push('<%=bookDList.get(i).getFilt_danger() %>')
 	 <%}%>
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-
 
 	 // 주소 이름 이차원배열
 	 const mapicon3 = new Array(danger3.length);
@@ -798,57 +902,223 @@ border-radius: 5px;
 	 for(var i =0; i<danger3.length; i++){
 		 	mapicon3[i][4] = const_danger3[i];
 		 }
-		 
 	 for(var i =0; i<danger3.length; i++){
 		 	mapicon3[i][5] = inta_danger3[i];
 		 }
-		 
 	 for(var i =0; i<danger3.length; i++){
 		 	mapicon3[i][6] = filt_danger3[i];
 		 }
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
 	 console.log("mapicon3")
 	 console.log(mapicon3);
 	
 	
 	 $("#junbook").on('click',function(){
 		console.log('ㅎㅇ');
-		  let tableForm3 =  `
-            <table id='danger'>
-                <tr>
-                    <th>순위</th>
-                    <th>정수장 이름</th>
-                    <th>위험도</th>
-                </tr>
-            `;
-
-		for(let i=0;i<5;i++){
-        tableForm3 +=`
-        <tr>
-            <td>${i+1}</td>
-            
-            <td><a href='DetailsCon?data=${mapicon3[i][0]}'>${mapicon3[i][0]}</td> 
-            <td>위험도 총점: ${mapicon3[i][1]} 가동률위험도 :${mapicon3[i][2]} 피해세대수${mapicon3[i][3]} 준공년도 위험도 : ${mapicon3[i][4]} 취수장 수질위험도 : ${mapicon3[i][5]} 정수장 수질 위험도 : ${mapicon3[i][6]}</td> 
-
-         </tr>
+		
+		let tableForm3 =  `
+		<table id='danger'>
+           	<tr id='danger_tr1'>
+        	    <th rowspan="2">순위</th>
+                <th rowspan="2">정수장 이름</th>
+                <th colspan="6">위험도</th>
+            </tr>
+            <tr id='danger_tr2'>
+              	<th>총 점</th>
+              	<th>가동률</th>
+              	<th>급수인구</th>
+              	<th>준공년도</th>
+              	<th>취수장 수질</th>
+              	<th>정수장 수질</th>
+            </tr>
         `;
+
+        var dang_g = [];
+		var oper_g = [];
+		var inta_g = [];
+		var filt_g = [];
+        
+		for(let i=0;i<5;i++){
+			dang_num = mapicon3[i][1];
+			oper_num = mapicon3[i][2];
+			popu_num = mapicon3[i][3];
+			const_num = mapicon3[i][4];
+			inta_num = mapicon3[i][5];
+			filt_num = mapicon3[i][6];
+			dang_g[i] = dang_num;
+			oper_g[i] = oper_num*0.01;
+			inta_g[i] = inta_num;
+			filt_g[i] = filt_num;
+			console.log(inta_g[i]);			
+
+			// 취수장 수질 위험도
+			if(inta_num == 0){
+				aorf1 = 'A'
+				img_smile = './smile/11_img.png'
+			}else if(inta_num == 10){
+				aorf1 = 'F'
+				img_smile = './smile/9_img.png'				
+			}
+			// 정수장 수질 위험도
+			if(filt_num == 0){
+				aorf2 = 'A'
+				img_smile2 = './smile/11_img.png'
+			}else if(filt_num == 10){
+				aorf2 = 'F'
+				img_smile2 = './smile/9_img.png'				
+			}
+			// 준공년도 위험도
+			if(const_num == 0){
+				img_smile3 = './smile/11_img.png'
+			}else if(const_num == 1){
+				img_smile3 = './smile/22_img.png'
+			}else if(const_num <= 3){
+				img_smile3 = './smile/3_img.png'
+			}else if(const_num <= 5){
+				img_smile3 = './smile/4_img.png'
+			}else if(const_num <= 7){
+				img_smile3 = './smile/5_img.png'
+			}else if(const_num <= 9){
+				img_smile3 = './smile/6_img.png'
+			}else if(const_num <= 11){
+				img_smile3 = './smile/7_img.png'
+			}else if(const_num == 12){
+				img_smile3 = './smile/8_img.png'
+			}else if(const_num == 13){
+				img_smile3 = './smile/9_img.png'
+			}
+			// 공급인구 위험도
+			if(popu_num == 0){
+				img_smile4 = 'X'
+			}else if(popu_num == 1){
+				img_smile4 = './smile/11_img.png'
+			}else if(popu_num == 2){
+				img_smile4 = './smile/22_img.png'
+			}else if(popu_num == 3){
+				img_smile4 = './smile/3_img.png'
+			}else if(popu_num == 4){
+				img_smile4 = './smile/4_img.png'
+			}else if(popu_num == 5){
+				img_smile4 = './smile/5_img.png'
+			}else if(popu_num == 6){
+				img_smile4 = './smile/6_img.png'
+			}else if(popu_num == 7){
+				img_smile4 = './smile/7_img.png'
+			}else if(popu_num == 8){
+				img_smile4 = './smile/8_img.png'
+			}else if(popu_num == 9){
+				img_smile4 = './smile/9_img.png'
+			}
+			
+			tableForm3 +=`
+			<tr>
+        		<td>${i+1}</td>
+             	<td><a href='DetailsCon?data=${mapicon3[i][0]}'>${mapicon3[i][0]}</a></td>
+           		<td id='dang_td${i}'>
+           			<a>${dang_num}점</a>
+           			<a></a>
+           		</td>
+       			<td id='oper_td${i}'>
+       				<a>${oper_num}점</a>
+       			</td>
+       			<td id='popu_td'>
+       				<a>${popu_num}등급</a>
+       				<img src='${img_smile4}'>
+       			</td>
+       			<td id='const_td'>
+       				<a>${const_num}등급</a>
+       				<img src='${img_smile3}'>
+       			</td>
+       			<td id='inta_td'>
+       				<a>${aorf1}</a>
+       				<img src='${img_smile}'>
+       			</td>
+       			<td id='filt_td'>
+       				<a>${aorf2}</a>
+       				<img src='${img_smile2}'>
+       			</td>
+         	</tr>
+        	`;
 	
-    }
-    tableForm3 += `</table>`; 
+    	}
+    	tableForm3 += `</table>`; 
     
-    console.log(tableForm3); 
+    	console.log(tableForm3); 
     
-    $('#dangerid').html(tableForm3);
+    	$('#dangerid').html(tableForm3);
 		
+	    $('#dang_td0>a:nth-child(2)').css('height', 0);
+ 	    $('#dang_td0>a:nth-child(2)').animate({
+ 	    	height : dang_g[0]
+ 	    },1500);
+		$('#dang_td1>a:nth-child(2)').css('height', 0);
+ 	    $('#dang_td1>a:nth-child(2)').animate({
+ 	    	height : dang_g[1]
+ 	    },1500);
+  	    $('#dang_td2>a:nth-child(2)').css('height', 0);
+ 	    $('#dang_td2>a:nth-child(2)').animate({
+ 	    	height : dang_g[2]
+ 	    },1500);
+  	    $('#dang_td3>a:nth-child(2)').css('height', 0);
+ 	    $('#dang_td3>a:nth-child(2)').animate({
+ 	    	height : dang_g[3]
+ 	    },1500);
+ 	    $('#dang_td4>a:nth-child(2)').css('height', 0);
+ 	    $('#dang_td4>a:nth-child(2)').animate({
+ 	    	height : dang_g[4]
+ 	    },1500);	    
+	    
+	    // 가동률 위험도 그래프
+	    $('#oper_td0').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[0],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+
+		$('#oper_td1').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[1],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
 		
+		$('#oper_td2').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[2],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+		
+		$('#oper_td3').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[3],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+		
+		$('#oper_td4').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[4],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+		// 가동률 위험도 그래프 끝
+						
 	})
 	//전북 위험도 이벤트 스크립트 끝
 	
@@ -870,8 +1140,6 @@ border-radius: 5px;
 	 danger4.push('<%=namList.get(i).getDanger_no()%>')
 	 <%}%>
 	 
-	  
-	 
 	 // 가동률 위험도 리스트
 	 var oper_danger4 = [];
 	 <%for (int i = 0; i < namDList.size(); i++) {%>
@@ -883,38 +1151,24 @@ border-radius: 5px;
 	 <%for (int i = 0; i < namDList.size(); i++) {%>
 	 sup_danger4.push('<%=namDList.get(i).getSup_danger() %>')
 	 <%}%>
-	
-	 
 	 
 	//준공년도 위험도 리스트 const_danger
  	 var const_danger4 = [];
 	 <%for (int i = 0; i < namDList.size(); i++) {%>
 	 const_danger4.push('<%=namDList.get(i).getConst_danger() %>')
 	 <%}%>
-
-	 
 	 
 	//취수장 수질 위험도 리스트 const_danger
  	 var inta_danger4 = [];
 	 <%for (int i = 0; i < namDList.size(); i++) {%>
 	 inta_danger4.push('<%=namDList.get(i).getInta_danger() %>')
 	 <%}%>
-
 	 
 	//정수장 수질 위험도 리스트 const_danger
  	 var filt_danger4 = [];
 	 <%for (int i = 0; i < namDList.size(); i++) {%>
 	 filt_danger4.push('<%=namDList.get(i).getFilt_danger() %>')
 	 <%}%> 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-
 
 	 // 주소 이름 이차원배열
 	 const mapicon4 = new Array(danger4.length);
@@ -929,7 +1183,6 @@ border-radius: 5px;
 	 for(var i =0; i<danger4.length; i++){
 	 	mapicon4[i][1] = danger4[i];
 	 }
-	 
 	 
 	 console.log(mapicon4);
 	 
@@ -956,35 +1209,212 @@ border-radius: 5px;
 		 for(var i =0; i<danger4.length; i++){
 			 	mapicon4[i][6] = filt_danger4[i];
 			 }
-	
-	 $("#junnam").on('click',function(){
+
+		 
+	$("#junnam").on('click',function(){
 		console.log('ㅎㅇ');
-		  let tableForm4 =  `
-            <table id='danger'>
-                <tr>
-                    <th>순위</th>
-                    <th>정수장 이름</th>
-                    <th>위험도</th>
-                </tr>
-            `;
+		let tableForm4 =  `
+        <table id='danger'>
+			<tr id='danger_tr1'>
+        		<th rowspan="2">순위</th>
+              	<th rowspan="2">정수장 이름</th>
+               	<th colspan="6">위험도</th>
+           	</tr>
+           	<tr id='danger_tr2'>
+	           	<th>총 점</th>
+           		<th>가동률</th>
+           		<th>급수인구</th>
+           		<th>준공년도</th>
+           		<th>취수장 수질</th>
+           		<th>정수장 수질</th>
+           	</tr>
+		`;
 
+		var dang_g = [];
+		var oper_g = [];
+		var inta_g = [];
+		var filt_g = []; 
+		    
 		for(let i=0;i<5;i++){
-        tableForm4 +=`
-        <tr>
-            <td>${i+1}</td>
-             <td><a href='DetailsCon?data=${mapicon4[i][0]}'>${mapicon4[i][0]}</a></td>
-             <td>위험도 총점: ${mapicon4[i][1]} 가동률위험도 :${mapicon4[i][2]} 피해세대수${mapicon4[i][3]} 준공년도 위험도 : ${mapicon4[i][4]} 취수장 수질위험도 : ${mapicon4[i][5]} 정수장 수질 위험도 : ${mapicon4[i][6]}</td> 
-
-         </tr>
-        `;
-	
-    }
-    tableForm4 += `</table>`; 
+			dang_num = mapicon4[i][1];
+			oper_num = mapicon4[i][2];
+			popu_num = mapicon4[i][3];
+			const_num = mapicon4[i][4];
+			inta_num = mapicon4[i][5];
+			filt_num = mapicon4[i][6];
+			dang_g[i] = dang_num;
+			oper_g[i] = oper_num*0.01;
+			inta_g[i] = inta_num;
+			filt_g[i] = filt_num;
+			console.log(inta_g[i]);
+			
+			// 취수장 수질 위험도
+			if(inta_num == 0){
+				aorf1 = 'A'
+				img_smile = './smile/11_img.png'
+			}else if(inta_num == 10){
+				aorf1 = 'F'
+				img_smile = './smile/9_img.png'				
+			}
+			// 정수장 수질 위험도
+			if(filt_num == 0){
+				aorf2 = 'A'
+				img_smile2 = './smile/11_img.png'
+			}else if(filt_num == 10){
+				aorf2 = 'F'
+				img_smile2 = './smile/9_img.png'				
+			}
+			// 준공년도 위험도
+			if(const_num == 0){
+				img_smile3 = './smile/11_img.png'
+			}else if(const_num == 1){
+				img_smile3 = './smile/22_img.png'
+			}else if(const_num <= 3){
+				img_smile3 = './smile/3_img.png'
+			}else if(const_num <= 5){
+				img_smile3 = './smile/4_img.png'
+			}else if(const_num <= 7){
+				img_smile3 = './smile/5_img.png'
+			}else if(const_num <= 9){
+				img_smile3 = './smile/6_img.png'
+			}else if(const_num <= 11){
+				img_smile3 = './smile/7_img.png'
+			}else if(const_num == 12){
+				img_smile3 = './smile/8_img.png'
+			}else if(const_num == 13){
+				img_smile3 = './smile/9_img.png'
+			}
+			// 공급인구 위험도
+			if(popu_num == 0){
+				img_smile4 = 'X'
+			}else if(popu_num == 1){
+				img_smile4 = './smile/11_img.png'
+			}else if(popu_num == 2){
+				img_smile4 = './smile/22_img.png'
+			}else if(popu_num == 3){
+				img_smile4 = './smile/3_img.png'
+			}else if(popu_num == 4){
+				img_smile4 = './smile/4_img.png'
+			}else if(popu_num == 5){
+				img_smile4 = './smile/5_img.png'
+			}else if(popu_num == 6){
+				img_smile4 = './smile/6_img.png'
+			}else if(popu_num == 7){
+				img_smile4 = './smile/7_img.png'
+			}else if(popu_num == 8){
+				img_smile4 = './smile/8_img.png'
+			}else if(popu_num == 9){
+				img_smile4 = './smile/9_img.png'
+			}
+			
+			tableForm4 +=`
+			<tr>
+        		<td>${i+1}</td>
+             	<td><a href='DetailsCon?data=${mapicon4[i][0]}'>${mapicon4[i][0]}</a></td>
+           		<td id='dang_td${i}'>
+           			<a>${dang_num}점</a>
+           			<a></a>
+           		</td>
+       			<td id='oper_td${i}'>
+       				<a>${oper_num}점</a>
+       			</td>
+       			<td id='popu_td'>
+       				<a>${popu_num}등급</a>
+       				<img src='${img_smile4}'>
+       			</td>
+       			<td id='const_td'>
+       				<a>${const_num}등급</a>
+       				<img src='${img_smile3}'>
+       			</td>
+       			<td id='inta_td'>
+       				<a>${aorf1}</a>
+       				<img src='${img_smile}'>
+       			</td>
+       			<td id='filt_td'>
+       				<a>${aorf2}</a>
+       				<img src='${img_smile2}'>
+       			</td>
+         	</tr>
+        	`;
+		}
+    	tableForm4 += `</table>`; 
     
-    console.log(tableForm4); 
+    	console.log(tableForm4); 
     
-    $('#dangerid').html(tableForm4);
+		$('#dangerid').html(tableForm4);
 		
+	    $('#dang_td0>a:nth-child(2)').css('height', 0);
+ 	    $('#dang_td0>a:nth-child(2)').animate({
+ 	    	height : dang_g[0]
+ 	    },1500);
+		$('#dang_td1>a:nth-child(2)').css('height', 0);
+ 	    $('#dang_td1>a:nth-child(2)').animate({
+ 	    	height : dang_g[1]
+ 	    },1500);
+  	    $('#dang_td2>a:nth-child(2)').css('height', 0);
+ 	    $('#dang_td2>a:nth-child(2)').animate({
+ 	    	height : dang_g[2]
+ 	    },1500);
+  	    $('#dang_td3>a:nth-child(2)').css('height', 0);
+ 	    $('#dang_td3>a:nth-child(2)').animate({
+ 	    	height : dang_g[3]
+ 	    },1500);
+ 	    $('#dang_td4>a:nth-child(2)').css('height', 0);
+ 	    $('#dang_td4>a:nth-child(2)').animate({
+ 	    	height : dang_g[4]
+ 	    },1500);	    
+	    
+	    // 가동률 위험도 그래프
+	    $('#oper_td0').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[0],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+
+		$('#oper_td1').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[1],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+		
+		$('#oper_td2').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[2],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+		
+		$('#oper_td3').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[3],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+		
+		$('#oper_td4').circleProgress({
+			startAngle: -Math.PI ,
+			value: oper_g[4],
+			size: 80,
+			thickness:20,
+			emptyFill: "rgba(0,0,0,0.1)",
+			fill: {gradient: ["#FED32A", "#F72509"]},
+			animationStartValue:0.0
+		});
+		// 가동률 위험도 그래프 끝
 		
 	})
 	</script>
