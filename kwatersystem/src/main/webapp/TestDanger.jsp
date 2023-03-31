@@ -22,18 +22,27 @@ li{list-style:none}
 	left: 78px;
 }
 
-.menu > li {
-  width: 20%; /*20*5=100%*/
-  float: left;
-  text-align: center;
-  line-height: 40px;
-  background-color: #5778ff;
+.menu>li {
+	width: 33.3%; 
+	float: left;
+	text-align: center;
+	line-height: 40px;
+	background-color: #5778ff;
 }
 
 .menu a {
-  color: #fff;
-  text-decoration:none;
-  font-size:14px
+	color: #fff;
+	text-decoration: none;
+	font-size: 14px
+}
+.menu>li:hover{
+    background-color:#002cdb; 
+    
+}
+.menu a:hover{
+    color : #fff;
+    text-decoration: none;
+    
 }
 
 .head{
@@ -59,7 +68,7 @@ li{list-style:none}
 
 #danger th{
 	height:40px;
-	background-color:#5778ff;
+	background-color: #859dff;
 }
 
 #danger_tr1>th:nth-child(1){
@@ -166,7 +175,7 @@ li{list-style:none}
 .button_box .button {
 border-radius: 5px;
   background-color: #6CB2FD;
-  border: 1px solid green;
+  border: 1px solid #6CB2FD;
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -175,6 +184,7 @@ border-radius: 5px;
   cursor: pointer;
   width: 150px;
   display: block;
+  font-weight:600;
 }
 
 .button_box .button:not(:last-child) {
@@ -203,14 +213,10 @@ border-radius: 5px;
       <li>
         <a href="TestDanger.jsp">위험도 순위</a>
       </li>
-      <li>
-        <a href="Details.jsp">상세보기</a>
-      </li>
-      <li>
-        <a href="#">MENU5</a>
-      </li>
     </ul>
+    
 	<div class="head">위험도 순위</div>
+	
 	<div class="bbb">
 		<table class="button_box">
 	
