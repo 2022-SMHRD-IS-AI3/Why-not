@@ -666,13 +666,13 @@ li{
          %>
          </td>
          <td name="no2"><%
-         try{%><%=filtQuality.getA_2()+0%>
+         try{%><%=filtQuality.getA_2()%>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
          <td name="no3"><%
-         try{%><%=filtQuality.getA_3()+0%>
+         try{%><%=filtQuality.getA_3()%>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
@@ -930,13 +930,13 @@ li{
          <%}
          %></td>
          <td name="no40"><%
-         try{%><%=filtQuality.getA_40()+0%>
+         try{%><%=filtQuality.getA_40()%>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
          %></td>
          <td name="no41"><%
-         try{%><%=filtQuality.getA_41()+0%>
+         try{%><%=filtQuality.getA_41()%>
          <%}
          catch(NullPointerException e){%><%='N'%>
          <%}
