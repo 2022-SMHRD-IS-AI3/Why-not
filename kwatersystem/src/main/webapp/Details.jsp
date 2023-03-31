@@ -1797,7 +1797,7 @@ li{
       console.log(b14);
       if(b14=="null N"){
           document.getElementById("I14").innerText='N';
-          
+          321312312
       }
       let b15=document.getElementById("I15").textContent;
       console.log(b15);
