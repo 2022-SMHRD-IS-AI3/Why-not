@@ -48,7 +48,7 @@ li{list-style:none}
 .head{
 	position:fixed;
 	top:70px;
-	left:145px;
+	left:170px;
 	font-size:40px;
 	font-weight:550;
 }
@@ -118,7 +118,7 @@ li{list-style:none}
 }
 #danger td:nth-child(4), #danger td:nth-child(5), #danger td:nth-child(6),
 #danger td:nth-child(7), #danger td:nth-child(8){
-	width: 160px;
+	width: 170px;
 }
 
 #danger td:nth-child(3)>a:nth-child(1){
@@ -138,8 +138,8 @@ li{list-style:none}
 #danger td:nth-child(4)>a{
 	position: absolute;
 	text-align:center;
-	top: 3px;
-	left:53px;
+	top: 47px;
+	left:67px;
 }
 
 #danger td:nth-child(5)>a, #danger td:nth-child(6)>a{
@@ -157,18 +157,18 @@ li{list-style:none}
 }
 
 #danger td:nth-child(4)>canvas{
-	padding-top:35px;
+	padding-top:4px;
 }
 
 #danger td:nth-child(5)>img, #danger td:nth-child(6)>img, #danger td:nth-child(7)>img, #danger td:nth-child(8)>img{
-	width : 80px;
-	height : 80px;
-	padding-top:35px;
+	width : 90px;
+	height : 90px;
+	padding-top:4px;
 }
 
 .bbb{
 	position:fixed; 
-	top:170px; 
+	top:145px; 
 	left:200px;
 }
 
@@ -198,6 +198,32 @@ border-radius: 5px;
 
 #oper_td{
 	text-align: center;
+}
+
+.smile_info{
+	position:fixed; 
+	top:395px; 
+	left:198px;
+	text-align:center;
+	width: 160px;
+}
+
+.smile_info table{
+	width:160px;
+/* 	background-color:black; */
+}
+.smile_info th{
+	width:50%;
+/* 	background-color:#6CB2FD; */
+}
+.smile_info td{
+	height:35px;
+/* 	background-color:white; */
+}
+.smile_info img{
+	width:35px;
+	height:35px;
+	padding-top:4px;
 }
 
 </style>
@@ -235,6 +261,69 @@ border-radius: 5px;
 		</table>
 		<!--버튼에 클릭 이벤트 넣을 것-->
 	
+	</div>
+	
+	<!-- smile 설명 란 -->
+	<div class="smile_info">
+		<table>
+			<tr>
+				<th>등급 표시</th>
+				<th>등급 정보</th>
+			</tr>
+			<tr>
+				<td>
+					<img src='./smile/11_img.png'>
+				</td>
+				<td>1등급</td>
+			</tr>
+			<tr>
+				<td>
+					<img src='./smile/22_img.png'>
+				</td>
+				<td>2등급</td>
+			</tr>
+			<tr>
+				<td>
+					<img src='./smile/3_img.png'>
+				</td>
+				<td>3등급</td>
+			</tr>
+			<tr>
+				<td>
+					<img src='./smile/4_img.png'>
+				</td><td>4등급</td>
+			</tr>
+			<tr>
+				<td>
+					<img src='./smile/5_img.png'>
+				</td>
+				<td>5등급</td>
+			</tr>
+			<tr>
+				<td>
+					<img src='./smile/6_img.png'>
+				</td>
+				<td>6등급</td>
+			</tr>
+			<tr>
+				<td>
+					<img src='./smile/7_img.png'>
+				</td>
+				<td>7등급</td>
+			</tr>
+			<tr>
+				<td>
+					<img src='./smile/8_img.png'>
+				</td>
+				<td>8등급</td>
+			</tr>
+			<tr>
+				<td>
+					<img src='./smile/9_img.png'>
+				</td>
+				<td>9등급</td>
+			</tr>
+		</table>
 	</div>
 	
 	<script>
@@ -337,7 +426,7 @@ border-radius: 5px;
 	 
 	 <%
 		int dang_num = 0;
-		double oper_num = 0.0;
+		int oper_num = 0;
 		int popu_num = 0;
 		int const_num = 0;
 		int inta_num = 0;
@@ -346,8 +435,6 @@ border-radius: 5px;
 		String img_smile2 = null;
 		String img_smile3 = null;
 		String img_smile4 = null;
-		String aorf1 = null;
-		String aorf2 = null;
 	%>	 
 /* 	 var filt_name = mapicon[1][0];
 	 console.log(filt_name); */
@@ -385,7 +472,7 @@ border-radius: 5px;
 		
 		for(let i=0;i<5;i++){
 			dang_num = mapicon[i][1];
-			oper_num = mapicon[i][2];
+			oper_num = parseInt(mapicon[i][2]);
 			popu_num = mapicon[i][3];
 			const_num = mapicon[i][4];
 			inta_num = mapicon[i][5];
@@ -471,19 +558,15 @@ border-radius: 5px;
        				<a>${oper_num}점</a>
        			</td>
        			<td id='popu_td'>
-       				<a>${popu_num}등급</a>
        				<img src='${img_smile4}'>
        			</td>
        			<td id='const_td'>
-       				<a>${const_num}등급</a>
        				<img src='${img_smile3}'>
        			</td>
        			<td id='inta_td'>
-       				<a>${aorf1}</a>
        				<img src='${img_smile}'>
        			</td>
        			<td id='filt_td'>
-       				<a>${aorf2}</a>
        				<img src='${img_smile2}'>
        			</td>
          	</tr>
@@ -520,50 +603,50 @@ border-radius: 5px;
 	    $('#oper_td0').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[0],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 
 		$('#oper_td1').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[1],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 		
 		$('#oper_td2').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[2],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 		
 		$('#oper_td3').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[3],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 		
 		$('#oper_td4').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[4],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 		// 가동률 위험도 그래프 끝
@@ -684,7 +767,7 @@ border-radius: 5px;
 		
 		for(let i=0;i<3;i++){
 			dang_num = mapicon2[i][1];
-			oper_num = mapicon2[i][2];
+			oper_num = parseInt(mapicon2[i][2]);
 			popu_num = mapicon2[i][3];
 			const_num = mapicon2[i][4];
 			inta_num = mapicon2[i][5];
@@ -767,19 +850,15 @@ border-radius: 5px;
 		   			<a>${oper_num}점</a>
    				</td>
    				<td id='popu_td'>
-		   			<a>${popu_num}등급</a>
    					<img src='${img_smile4}'>
    				</td>
    				<td id='const_td'>
-		   			<a>${const_num}등급</a>
    					<img src='${img_smile3}'>
    				</td>
    				<td id='inta_td'>
-		   			<a>${aorf1}</a>
    					<img src='${img_smile}'>
    				</td>
   				<td id='filt_td'>
-	   				<a>${aorf2}</a>
    					<img src='${img_smile2}'>
    				</td>
      		</tr>
@@ -807,30 +886,30 @@ border-radius: 5px;
 	    $('#oper_td0').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[0],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 
 		$('#oper_td1').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[1],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 		
 		$('#oper_td2').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[2],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 		// 가동률 위험도 그래프 끝
@@ -945,7 +1024,7 @@ border-radius: 5px;
         
 		for(let i=0;i<5;i++){
 			dang_num = mapicon3[i][1];
-			oper_num = mapicon3[i][2];
+			oper_num = parseInt(mapicon3[i][2]);
 			popu_num = mapicon3[i][3];
 			const_num = mapicon3[i][4];
 			inta_num = mapicon3[i][5];
@@ -1027,19 +1106,15 @@ border-radius: 5px;
        				<a>${oper_num}점</a>
        			</td>
        			<td id='popu_td'>
-       				<a>${popu_num}등급</a>
        				<img src='${img_smile4}'>
        			</td>
        			<td id='const_td'>
-       				<a>${const_num}등급</a>
        				<img src='${img_smile3}'>
        			</td>
        			<td id='inta_td'>
-       				<a>${aorf1}</a>
        				<img src='${img_smile}'>
        			</td>
        			<td id='filt_td'>
-       				<a>${aorf2}</a>
        				<img src='${img_smile2}'>
        			</td>
          	</tr>
@@ -1077,50 +1152,50 @@ border-radius: 5px;
 	    $('#oper_td0').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[0],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 
 		$('#oper_td1').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[1],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 		
 		$('#oper_td2').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[2],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 		
 		$('#oper_td3').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[3],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 		
 		$('#oper_td4').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[4],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 		// 가동률 위험도 그래프 끝
@@ -1243,7 +1318,7 @@ border-radius: 5px;
 		    
 		for(let i=0;i<5;i++){
 			dang_num = mapicon4[i][1];
-			oper_num = mapicon4[i][2];
+			oper_num = parseInt(mapicon4[i][2]);
 			popu_num = mapicon4[i][3];
 			const_num = mapicon4[i][4];
 			inta_num = mapicon4[i][5];
@@ -1325,19 +1400,15 @@ border-radius: 5px;
        				<a>${oper_num}점</a>
        			</td>
        			<td id='popu_td'>
-       				<a>${popu_num}등급</a>
        				<img src='${img_smile4}'>
        			</td>
        			<td id='const_td'>
-       				<a>${const_num}등급</a>
        				<img src='${img_smile3}'>
        			</td>
        			<td id='inta_td'>
-       				<a>${aorf1}</a>
        				<img src='${img_smile}'>
        			</td>
        			<td id='filt_td'>
-       				<a>${aorf2}</a>
        				<img src='${img_smile2}'>
        			</td>
          	</tr>
@@ -1374,50 +1445,50 @@ border-radius: 5px;
 	    $('#oper_td0').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[0],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 
 		$('#oper_td1').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[1],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 		
 		$('#oper_td2').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[2],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 		
 		$('#oper_td3').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[3],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 		
 		$('#oper_td4').circleProgress({
 			startAngle: -Math.PI ,
 			value: oper_g[4],
-			size: 80,
-			thickness:20,
+			size: 95,
+			thickness:15,
 			emptyFill: "rgba(0,0,0,0.1)",
-			fill: {gradient: ["#FED32A", "#F72509"]},
+			fill: {gradient: ["#2afc4d","#bafe5c","#FED32A", "#F72509"]},
 			animationStartValue:0.0
 		});
 		// 가동률 위험도 그래프 끝
