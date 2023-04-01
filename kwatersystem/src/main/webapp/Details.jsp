@@ -633,7 +633,7 @@ li{
          <td id='I21' name="no1"><%
          try{%><%=intakeQuality.get(4).getB_5()+0%>
          <script>
-            if(<%=intakeQuality.get(4).getB_5()+0%>>6){
+            if(<%=intakeQuality.get(4).getB_5()+0%>>0.05){
               
                $("#I21").css("background-color","yellow");
                }
@@ -645,7 +645,7 @@ li{
          <td id='I22' name="no2"><%
          try{%><%=intakeQuality.get(3).getB_5()+0%>
          <script>
-            if(<%=intakeQuality.get(3).getB_5()+0%>>6){
+            if(<%=intakeQuality.get(3).getB_5()+0%>>0.05){
               
                $("#I22").css("background-color","yellow");
                }
@@ -657,7 +657,7 @@ li{
          <td id='I23' name="no3"><%
          try{%><%=intakeQuality.get(2).getB_5()+0%>
          <script>
-            if(<%=intakeQuality.get(2).getB_5()+0%>>6){
+            if(<%=intakeQuality.get(2).getB_5()+0%>>0.05){
               
                $("#I23").css("background-color","yellow");
                }
@@ -669,7 +669,7 @@ li{
          <td id='I24' name="no4"><%
          try{%><%=intakeQuality.get(1).getB_5()+0%>
          <script>
-            if(<%=intakeQuality.get(1).getB_5()+0%>>6){
+            if(<%=intakeQuality.get(1).getB_5()+0%>>0.05){
               
                $("#I24").css("background-color","yellow");
                }
@@ -681,7 +681,7 @@ li{
          <td id='I25' name="no5"><%
          try{%><%=intakeQuality.get(0).getB_5()+0%>
          <script>
-            if(<%=intakeQuality.get(0).getB_5()+0%>>6){
+            if(<%=intakeQuality.get(0).getB_5()+0%>>0.05){
               
                $("#I25").css("background-color","yellow");
                }
@@ -696,7 +696,7 @@ li{
          <td id='I26' name="no1"><%
          try{%><%=intakeQuality.get(4).getB_6()+0%>
          <script>
-            if(<%=intakeQuality.get(4).getB_6()+0%>>20){
+            if(<%=intakeQuality.get(4).getB_6()+0%>>15){
               
                $("#I26").css("background-color","yellow");
                }
@@ -708,7 +708,7 @@ li{
          <td id='I27' name="no2"><%
          try{%><%=intakeQuality.get(3).getB_6()+0%>
          <script>
-            if(<%=intakeQuality.get(3).getB_6()+0%>>20){
+            if(<%=intakeQuality.get(3).getB_6()+0%>>15){
               
                $("#I27").css("background-color","yellow");
                }
@@ -720,7 +720,7 @@ li{
          <td id='I28' name="no3"><%
          try{%><%=intakeQuality.get(2).getB_6()+0%>
          <script>
-            if(<%=intakeQuality.get(2).getB_6()+0%>>20){
+            if(<%=intakeQuality.get(2).getB_6()+0%>>15){
               
                $("#I28").css("background-color","yellow");
                }
@@ -732,7 +732,7 @@ li{
          <td id='I29' name="no4"><%
          try{%><%=intakeQuality.get(1).getB_6()+0%>
          <script>
-            if(<%=intakeQuality.get(1).getB_6()+0%>>20){
+            if(<%=intakeQuality.get(1).getB_6()+0%>>15){
               
                $("#I29").css("background-color","yellow");
                }
@@ -744,7 +744,7 @@ li{
          <td id='I30' name="no5"><%
          try{%><%=intakeQuality.get(0).getB_6()+0%>
          <script>
-            if(<%=intakeQuality.get(0).getB_6()+0%>>20){
+            if(<%=intakeQuality.get(0).getB_6()+0%>>15){
               
                $("#I30").css("background-color","yellow");
                }
