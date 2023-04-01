@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>K-water System</title>
+<link rel="icon" href="wwwww.ico" type="image/x-icon" />
 <style>
 	@font-face{
 		font-family:one_pop;

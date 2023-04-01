@@ -9,7 +9,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>K-water System</title>
+<link rel="icon" href="wwwww.ico" type="image/x-icon" />
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="./circle-progress.js"></script>
 <style>
@@ -18,7 +19,7 @@ li {
 }
 
 .menu {
-	width: 1668px;
+	width: 1685px;
 	position: fixed;
 	top: 0px;
 	left: 78px;
@@ -237,7 +238,7 @@ li {
 <body>
 	<ul class="menu">
 		<li><a href="TestMain.jsp">홈</a></li>
-		<li><a href="TestMap.jsp">지도</a></li>
+		<li><a href="TestMap.jsp">정수장 현황</a></li>
 		<li><a href="TestDanger.jsp">위험도 순위</a></li>
 	</ul>
 

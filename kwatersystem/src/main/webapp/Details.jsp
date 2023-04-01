@@ -10,7 +10,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>K-water System</title>
+<link rel="icon" href="wwwww.ico" type="image/x-icon" />
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="./circle-progress.js"></script>
 <%
