@@ -94,14 +94,14 @@ li{
 	width: 33.3%; 
 	float: left;
 	text-align: center;
-	line-height: 40px;
+	line-height: 45px;
 	background-color: #5778ff;
 }
 
 .menu a {
 	color: #fff;
 	text-decoration: none;
-	font-size: 14px
+	font-size: 18px
 }
 .menu>li:hover{
     background-color:#002cdb; 
@@ -122,7 +122,7 @@ li{
 }
 
 #details_head>a {
-   margin-left: 100px;
+   margin-left: 60px;
    font-weight:550;
 }
 #details_head>a:nth-child(1){
@@ -130,21 +130,22 @@ li{
    font-size: 30px;
    position: fixed;
    top: 80px;
-   left: 30px;
+   left: 120px;
+}
+
+#details_head>a:nth-child(2){
+   font-size: 30px;
+   position: fixed;
+   top: 80px;
+   left: 550px;
+   width: 1010px;
 }
 #details_head>a:nth-child(3){
    width:250px;    
    font-size: 30px;
    position: fixed;
    top: 80px;
-   left: 1450px;
-}
-#details_head>a:nth-child(2){
-   width: 1010px;
-   font-size: 30px;
-   position: fixed;
-   top: 80px;
-   left: 420px;
+   left: 1320px;
 }
 #oper_table {
    position: fixed;
@@ -280,6 +281,7 @@ li{
    font-size: 15px;
    background-color: white;
 }
+
 
 #f_table td[name=no15], #f_table td[name=no16], #f_table td[name=no17],
    #f_table td[name=no23], #f_table td[name=no29], #f_table td[name=no33],

@@ -26,14 +26,14 @@ li {
 	width: 33.3%; 
 	float: left;
 	text-align: center;
-	line-height: 40px;
+	line-height: 45px;
 	background-color: #5778ff;
 }
 
 .menu a {
 	color: #fff;
 	text-decoration: none;
-	font-size: 14px
+	font-size: 18px
 }
 .menu>li:hover{
     background-color:#002cdb; 
@@ -51,6 +51,7 @@ li {
 	left: 145px;
 	font-size: 40px;
 	font-weight: 550;
+	font-family: 'OTWelcomeRA';
 }
 
 .map1 {
@@ -84,14 +85,17 @@ li {
 	text-align: center;
 }
 
-#ccc>tr {
-	height: 25px;
-}
-
 #ccc td:nth-child(1) {
 	width: 100px;
 	height: 50px;
 	font-size: 15px;
+}
+#ccc tr:nth-child(1) >td{
+	font-size:25px;
+}
+#ccc tr:nth-child(8) >td{
+	font-size:25px;
+	color : red;
 }
 
 .bubutton {
@@ -184,8 +188,8 @@ li {
 
 .button_button2 {
 	position: fixed;
-	top: 840px;
-	left: 1640px;
+	top: 780px;
+	left: 1365px;
 	border-radius: 5px;
 	border: none;
 	padding: 16px 32px;
@@ -214,7 +218,7 @@ li {
 
 #simplecontext {
 	width: 400px;
-	height: 500px;
+	height: 400px;
 	position: fixed;
 	top: 300px;
 	left: 1360px;
@@ -494,8 +498,8 @@ li {
 	
 					let tableForm = `
 					    <table border="1" id="ccc">
-							<tr class="imfor">
-								<td colspan="2">간략정보</td>
+							<tr  class="imfor">
+								<td colspan="2">간 략 정 보</td>
 							</tr>
 							<tr class="name">
 								<td>정수장   이름</td>
@@ -521,8 +525,8 @@ li {
 						        <td>급수인구</td>
 						        <td>${data.map.sup_popu}명</td>
 					        </tr>
-					        <tr>
-					        <td colspan="2">120위 중 ${data.map.rank}위</td>
+					        <tr class="rank116">
+					        <td colspan="2">116위 중 ${data.map.rank}위</td>
 					      
 					        </tr>
 						</table>`;

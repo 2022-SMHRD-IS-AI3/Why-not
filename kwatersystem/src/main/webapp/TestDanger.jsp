@@ -29,14 +29,14 @@ li {
 	width: 33.3%;
 	float: left;
 	text-align: center;
-	line-height: 40px;
+	line-height: 45px;
 	background-color: #5778ff;
 }
 
 .menu a {
 	color: #fff;
 	text-decoration: none;
-	font-size: 14px
+	font-size: 18px
 }
 
 .menu>li:hover {
