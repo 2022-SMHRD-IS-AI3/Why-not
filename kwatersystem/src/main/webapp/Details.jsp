@@ -149,7 +149,7 @@ li{
 }
 #oper_table {
    position: fixed;
-   top: 185px;
+   top: 150px;
    width: 500px;
    margin-left: 110px;
    background-color: whitesmoke;
@@ -185,7 +185,7 @@ li{
 
 #popu_table {
    position: fixed;
-   top: 185px;
+   top: 150px;
    width: 500px;
    margin-left: 670px;
    background-color: whitesmoke;
@@ -235,7 +235,7 @@ li{
    width: 570px;
    position: fixed;
    background-color: black;
-   top: 185px;
+   top: 150px;
    left: 1215px;
    border: 1px solid white;
 }
@@ -267,7 +267,7 @@ li{
    position: fixed;
    background-color: #696969;
    width:1668px;
-   top: 580px;
+   top: 550px;
    margin-left: 110px;
    border: 1px solid white;
 }
