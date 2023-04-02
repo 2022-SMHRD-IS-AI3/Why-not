@@ -78,7 +78,7 @@ List<Intake_quality> intakeQuality = (List<Intake_quality>)request.getAttribute(
       n_top = -10;
       n_width = 300;
    }%>
-     
+      
 li{
    list-style:none
 }
@@ -166,11 +166,11 @@ li{
 #circle{
    text-align: center;
 }
-
+  
 #circle2 {
    display: hidden;
    position: fixed;
-   top: 254px;
+   top: 219px; 
    left: 228px;
    animation-delay: 2s;
 }
@@ -228,9 +228,9 @@ li{
       left: <%=n_left%>%;
       top: <%=n_top%>%;
       width: <%=n_width%>px;
-   }
+   } 
 }
- 
+
 #i_table {
    width: 570px;
    position: fixed;
