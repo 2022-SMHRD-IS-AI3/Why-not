@@ -41,6 +41,7 @@ li {
 
 .menu>li:hover {
 	background-color: #002cdb;
+	font-weight: 800; /*font-weight 적용*/
 }
 
 .menu a:hover {
@@ -61,7 +62,7 @@ li {
 	height: 620px;
 	position: fixed;
 	top: 140px;
-	left: 440px;
+	left: 480px;
 }
 
 #danger {
@@ -79,7 +80,8 @@ li {
 }
 
 #danger_tr1>th:nth-child(2) {
-	width: 200px;
+	width: 180px;
+	font-size:28px;
 }
 
 #danger_tr1>th {
@@ -94,7 +96,7 @@ li {
 	position: relative;
 	height: 120px;
 	background-color: white;
-	font-size: 30px;
+	font-size: 27px;
 	text-align: center;
 }
 
@@ -174,7 +176,7 @@ li {
 .bbb {
 	position: fixed;
 	top: 145px;
-	left: 200px;
+	left: 180px;
 }
 
 .button_box .button {
@@ -187,8 +189,8 @@ li {
 	text-decoration: none;
 	font-size: 16px;
 	cursor: pointer;
-	width: 150px;
-	font-weight: 600;
+	width: 180px;
+	font-weight: 500;
 }
 
 .button_box .button:not(:last-child) {
@@ -198,6 +200,7 @@ li {
 .button_box .button:hover {
 	background-color: white;
 	color: black;
+	font-weight: 770; /*font-weight 적용*/
 }
 
 #oper_td {
@@ -238,8 +241,8 @@ li {
 <body>
 	<ul class="menu">
 		<li><a href="TestMain.jsp">홈</a></li>
-		<li><a href="TestMap.jsp">정수장 현황</a></li>
-		<li><a href="TestDanger.jsp">위험도 순위</a></li>
+		<li><a href="TestMap.jsp">정 수 장 현 황</a></li>
+		<li><a href="TestDanger.jsp">위 험 도 순 위</a></li>
 	</ul>
 
 	<div class="head">위험도 순위</div>
@@ -248,16 +251,16 @@ li {
 		<table class="button_box">
 
 			<tr>
-				<td><button id="jungook" class="button">전체</button></td>
+				<td><button id="jungook" class="button">전 체</button></td>
 			</tr>
 			<tr>
-				<td><button id="gwang" class="button">광주광역시</button></td>
+				<td><button id="gwang" class="button">광 주 광 역 시</button></td>
 			</tr>
 			<tr>
-				<td><button id="junbook" class="button">전라북도</button></td>
+				<td><button id="junbook" class="button">전 라 북 도</button></td>
 			</tr>
 			<tr>
-				<td><button id="junnam" class="button">전라남도</button></td>
+				<td><button id="junnam" class="button">전 라 남 도</button></td>
 			</tr>
 		</table>
 		<!--버튼에 클릭 이벤트 넣을 것-->
@@ -435,17 +438,17 @@ li {
 		  let tableForm =`
             <table id='danger'>
                 <tr id='danger_tr1'>
-                    <th rowspan="2">순위</th>
+                    <th rowspan="2">순 위</th>
                     <th rowspan="2">정수장 이름</th>
-                    <th colspan="6">위험도</th>
+                    <th colspan="6">위 험 도</th>
                 </tr>
                 <tr id='danger_tr2'>
                 	<th>총 점</th>
-                	<th>가동률</th>
-                	<th>급수인구</th>
-                	<th>준공년도</th>
-                	<th>취수장 수질</th>
-                	<th>정수장 수질</th>
+                	<th>가 동 률</th>
+                	<th>급 수 인 구</th>
+                	<th>준 공 년 도</th>
+                	<th>취 수 장 수 질</th>
+                	<th>정 수 장 수 질</th>
                 </tr>
             `;
             
@@ -730,17 +733,17 @@ li {
 		  let tableForm2 =  `
             <table id='danger'>
 			  <tr id='danger_tr1'>
-             	 <th rowspan="2">순위</th>
+             	 <th rowspan="2">순 위</th>
               	<th rowspan="2">정수장 이름</th>
-              	<th colspan="6">위험도</th>
+              	<th colspan="6">위 험 도</th>
           	</tr>
           	<tr id='danger_tr2'>
 	          	<th>총 점</th>
-          		<th>가동률</th>
-          		<th>급수인구</th>
-          		<th>준공년도</th>
-          		<th>취수장 수질</th>
-          		<th>정수장 수질</th>
+          		<th>가 동 률</th>
+          		<th>급 수 인 구</th>
+          		<th>준 공 년 도</th>
+          		<th>취 수 장 수 질</th>
+          		<th>정 수 장 수 질</th>
           	</tr>
             `;
 
@@ -987,17 +990,17 @@ li {
 		let tableForm3 =  `
 		<table id='danger'>
            	<tr id='danger_tr1'>
-        	    <th rowspan="2">순위</th>
+        	    <th rowspan="2">순 위</th>
                 <th rowspan="2">정수장 이름</th>
-                <th colspan="6">위험도</th>
+                <th colspan="6">위 험 도</th>
             </tr>
             <tr id='danger_tr2'>
               	<th>총 점</th>
-              	<th>가동률</th>
-              	<th>급수인구</th>
-              	<th>준공년도</th>
-              	<th>취수장 수질</th>
-              	<th>정수장 수질</th>
+              	<th>가 동 률</th>
+              	<th>급 수 인 구</th>
+              	<th>준 공 년 도</th>
+              	<th>취 수 장 수 질</th>
+              	<th>정 수 장 수 질</th>
             </tr>
         `;
 
@@ -1281,17 +1284,17 @@ li {
 		let tableForm4 =  `
         <table id='danger'>
 			<tr id='danger_tr1'>
-        		<th rowspan="2">순위</th>
+        		<th rowspan="2">순 위</th>
               	<th rowspan="2">정수장 이름</th>
-               	<th colspan="6">위험도</th>
+               	<th colspan="6">위 험 도</th>
            	</tr>
            	<tr id='danger_tr2'>
 	           	<th>총 점</th>
-           		<th>가동률</th>
-           		<th>급수인구</th>
-           		<th>준공년도</th>
-           		<th>취수장 수질</th>
-           		<th>정수장 수질</th>
+           		<th>가 동 률</th>
+           		<th>급 수 인 구</th>
+           		<th>준 공 년 도</th>
+           		<th>취 수 장 수 질</th>
+           		<th>정 수 장 수 질</th>
            	</tr>
 		`;
 

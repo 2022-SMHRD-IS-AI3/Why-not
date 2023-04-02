@@ -37,7 +37,7 @@ li {
 }
 .menu>li:hover{
     background-color:#002cdb; 
-    
+    font-weight: 700;/*font-weight 적용*/
 }
 .menu a:hover{
     color : #fff;
@@ -45,10 +45,11 @@ li {
     
 }
 
+/* 위치 조정*/
 .head {
 	position: fixed;
-	top: 90px;
-	left: 145px;
+	top: 70px;
+	left: 170px;
 	font-size: 40px;
 	font-weight: 550;
 	font-family: 'OTWelcomeRA';
@@ -65,11 +66,11 @@ li {
 
 #mapWrap {
 	position: fixed;
-	top: 183px;
+	top: 155px; /* 위치 조정*/
 	left: 120px;
 	padding: 10px;
 	overflow: hidden;
-	box-shadow: 0px 0px 0px 1px black;
+	box-shadow: 0px 0px 0px 1px gray;
 	border-radius: 5px;
 }
 
@@ -78,7 +79,7 @@ li {
 	top: 315px;
 	left: 1361px;
 	border-radius: 5px;
-	border: 1px solid black;
+	border: 1px solid lightgrey;
 	width: 430px;
 	height: 430px;
 	font-size: 15px;
@@ -91,7 +92,8 @@ li {
 	font-size: 15px;
 }
 #ccc tr:nth-child(1) >td{
-	font-size:25px;
+	font-size:27px;
+	font-weight:700;
 }
 #ccc tr:nth-child(8) >td{
 	font-size:25px;
@@ -102,51 +104,51 @@ li {
 	width: 430px;
 	height: 40px;
 	position: fixed;
-	top: 255px;
+	top: 250px;
 	left: 1360px;
 }
 
 .bubutton button {
 	height: 40px;
 	width: 104px;
-	border: 2px solid #008CBA;
-	background-color: white;
-	color: black;
+	border: 2px solid #6CB2FD;
+	background-color: #6CB2FD;
+	color: white;
 	border-radius: 5px;
 	font-size: 15px;
 }
 
 .bubutton button:hover {
-	background-color: #008CBA;
-	color: white;
+	background-color: white;
+	color: #6CB2FD;
 	text-decoration: none;
 }
 
 .f_search {
 	width: 430px;
 	height: 55px;
-	font-size: 20px;
+	font-size: 25px;
 	position: fixed;
-	top: 182px;
+	top: 160px;
 	left: 1360px;
-	border: 1px solid black;
-	border-radius: 5px;
+	border: 0px;
+	border-bottom:1px solid gray;
 }
 
 .f_search .sesearch {
 	height: 45px;
 	width: 80px;
-	border: 2px solid #008CBA;
-	background-color: white;
-	color: black;
+	border: 2px solid #6CB2FD;
+	background-color: #6CB2FD;
+	color: white;
 	border-radius: 5px;
 	font-size: 15px;
-	margin-left: 15px;
+	margin-left: 5px;
 }
 
 .f_search .sesearch:hover {
-	background-color: #008CBA;
-	color: white;
+	background-color: white;
+	color: #6CB2FD;
 	text-decoration: none;
 }
 
@@ -170,6 +172,9 @@ li {
 	background-color: white;
 	width: 200px;
 	padding: 10px;
+	padding-left:100px;
+	padding-bottom:15px;
+	font-weight:700; /* font-size 적용 */
 }
 
 .f_search td>button {
@@ -192,7 +197,7 @@ li {
 	left: 1365px;
 	border-radius: 5px;
 	border: none;
-	padding: 16px 32px;
+	padding: 16px 25px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
@@ -200,14 +205,14 @@ li {
 	-webkit-transition-duration: 0.4s; /* Safari */
 	transition-duration: 0.4s;
 	cursor: pointer;
-	background-color: white;
+	background-color: #6CB2FD;
 	color: black;
-	border: 2px solid #008CBA;
+	border: 2px solid #6CB2FD;
 }
 
 .button_button2:hover {
-	background-color: #008CBA;
-	color: white;
+	background-color: white;
+	color: black;
 	text-decoration: none;
 }
 
@@ -233,8 +238,8 @@ li {
 	<!-- 상단메뉴바 -->
 	<ul class="menu">
 		<li><a href="TestMain.jsp">홈</a></li>
-		<li><a href="TestMap.jsp">정수장 현황</a></li>
-		<li><a href="TestDanger.jsp">위험도 순위</a></li>
+		<li><a href="TestMap.jsp">정 수 장 현 황</a></li>
+		<li><a href="TestDanger.jsp">위 험 도 순 위</a></li>
 	</ul>
 	
 	<!-- 정수장 현황 -->

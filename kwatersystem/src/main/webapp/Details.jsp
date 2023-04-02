@@ -105,7 +105,7 @@ li{
 }
 .menu>li:hover{
     background-color:#002cdb; 
-    
+    font-weight:700;
 }
 .menu a:hover{
     color : #fff;
@@ -141,7 +141,7 @@ li{
    width: 1010px;
 }
 #details_head>a:nth-child(3){
-   width:250px;    
+   width:290px;    
    font-size: 30px;
    position: fixed;
    top: 80px;
@@ -178,7 +178,7 @@ li{
 #circle>div{
    position: fixed;
    top: 363px;
-   left: 330px;
+   left: 310px;
    font-size: 40px;
    text-align: center;
 }
@@ -237,12 +237,13 @@ li{
    background-color: black;
    top: 185px;
    left: 1215px;
+   border: 1px solid white;
 }
 
 #i_table th {
    height: 50px;
    font-size: 30px;
-   background-color: skyblue;
+   background-color: #859dff;
 }
 
 #i_table td {
@@ -253,44 +254,58 @@ li{
 }
 
 .i_years {
-   font-size: 15px;
+   font-size: 20px;
 }
 
 .i_code>td:first-child {
    font-size: 10px;
 }
-
+#i_table tr>td:nth-child(1){
+   background-color: #DCDCDC;
+}
 #f_table {
    position: fixed;
-   background-color: black;
+   background-color: #696969;
    width:1668px;
    top: 580px;
    margin-left: 110px;
+   border: 1px solid white;
 }
 
 #f_table th {
    height: 50px;
    font-size: 30px;
-   background-color: skyblue;
+   background-color: #859dff;
 }
-
-#f_table td {
+#f_table tr:nth-child(2) td, #f_table tr:nth-child(4) td, 
+#f_table tr:nth-child(6) td, #f_table tr:nth-child(8) td{
    width: 115px;
    height: 30px;
    text-align: center;
    font-size: 15px;
+   background-color: #DCDCDC;
+}
+#f_table tr:nth-child(3) td, #f_table tr:nth-child(5) td, 
+#f_table tr:nth-child(7) td, #f_table tr:nth-child(9) td{
+   width: 115px;
+   height: 30px;
+   text-align: center;
+   font-size: 18px;
    background-color: white;
 }
 
-
-#f_table td[name=no15], #f_table td[name=no16], #f_table td[name=no17],
-   #f_table td[name=no23], #f_table td[name=no29], #f_table td[name=no33],
-   #f_table td[name=no34], #f_table td[name=no35], #f_table td[name=no36],
-   #f_table td[name=no37], #f_table td[name=no39], #f_table td[name=no54],
-   #f_table td[name=no55], #f_table td[name=no3], #f_table td[name=no11],
-   #f_table td[name=no31] {
-   font-size: 12px;
+#f_table tr:nth-child(2) td[name=no3], #f_table tr:nth-child(2) td[name=no11],
+#f_table tr:nth-child(4) td[name=no15], #f_table tr:nth-child(4) td[name=no16], 
+#f_table tr:nth-child(4) td[name=no17], #f_table tr:nth-child(4) td[name=no23],
+#f_table tr:nth-child(6) td[name=no29], #f_table tr:nth-child(6) td[name=no33], 
+#f_table tr:nth-child(6) td[name=no34], #f_table tr:nth-child(6) td[name=no35],
+#f_table tr:nth-child(6) td[name=no36], #f_table tr:nth-child(6) td[name=no37],
+#f_table tr:nth-child(6) td[name=no39], #f_table tr:nth-child(6) td[name=no31],
+#f_table tr:nth-child(8) td[name=no54], #f_table tr:nth-child(8) td[name=no55]{
+	font-size: 13px;
 }
+
+
 </style>
 </head>
 <body>
@@ -299,23 +314,23 @@ li{
         <a href="TestMain.jsp">홈</a>
       </li>
       <li>
-        <a href="TestMap.jsp">정수장 현황</a>
+        <a href="TestMap.jsp">정 수 장 현 황</a>
       </li>
       <li>
-        <a href="TestDanger.jsp">위험도 순위</a>
+        <a href="TestDanger.jsp">위 험 도 순 위</a>
       </li>
       
     </ul>
 
    <div id="details_head">
-      <a>이름 : <%=filtinfo.getFilt_name() %> 정수장</a> 
-      <a>주소 : <%=filtinfo.getAddr() %></a> 
-      <a>준공년도 : <%=filtinfo.getConst_year() %></a>
+      <a>이 름 : <%=filtinfo.getFilt_name() %> 정수장</a> 
+      <a>주 소 : <%=filtinfo.getAddr() %></a> 
+      <a>준 공 년 도 : <%=filtinfo.getConst_year() %>년</a>
    </div>
 
    <table id="oper_table">
       <tr>
-         <th>가동률</th>
+         <th>가 동 률</th>
       </tr>
       <tr>
          <td id="oper_g">
@@ -330,23 +345,23 @@ li{
    </table>
    <table id="popu_table">
       <tr>
-         <th>급수 인구</th>
+         <th>급 수 인 구</th>
       </tr>
       <tr>
          <td id="popu_g">
             <div style="position:relative">
                <img src="./icon_users.png" id="popu_img">
             </div>
-            <div><%=popu_num  %></div>
+            <div><%=popu_num  %>명</div>
          </td>
       </tr>
    </table>
    <table id="i_table">
       <tr>
-         <th colspan="6">취수장 수질</th>
+         <th colspan="6">취 수 장 수 질</th>
       </tr>
       <tr class="i_years">
-         <td style="width: 120px">항목</td>
+         <td style="width: 120px">항 목</td>
          <td name="no1">2022</td>
          <td name="no2">2021</td>
          <td name="no3">2020</td>
@@ -953,7 +968,7 @@ li{
    </table>
    <table id="f_table">
       <tr>
-         <th colspan="14">정수장 수질</th>
+         <th colspan="14">정 수 장 수 질</th>
       </tr>
       <tr clase="f_code">
          <td name="no1">일반세균</td>
